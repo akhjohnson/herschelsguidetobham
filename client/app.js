@@ -47,4 +47,4 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         templateUrl: 'views/map.html',
         controller: 'MapController'
     })
-}])
+}]);
