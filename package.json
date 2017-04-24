@@ -1,0 +1,29 @@
+{
+  "name": "herschel",
+  "version": "1.0.0",
+  "description": "herschels guide project",
+  "main": "server/index.js",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.2",
+    "express-mysql-session": "^1.2.0",
+    "express-session": "^1.15.2",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akhjohnson/herschelsguidetobham.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akhjohnson/herschelsguidetobham/issues"
+  },
+  "homepage": "https://github.com/akhjohnson/herschelsguidetobham#readme"
+}
