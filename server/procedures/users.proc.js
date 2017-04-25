@@ -12,10 +12,6 @@ exports.readByEmail = function(email) {
     return db.row('GetUserByEmail(?)', [email]);
 };
 
-exports.delete = function(id) {
-    return db.empty("DeleteUser(?)", [id]);
-};
-
 exports.create = function(u, hash) {
     return db.row('CreateUser(?, ?, ?, ?)', [u.email, hash, u.firstname, u.lastname]);   
 };
