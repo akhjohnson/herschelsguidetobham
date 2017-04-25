@@ -64,26 +64,26 @@ app.controller('cameraController', ['$scope', '$location', function () {
 
 }])
 
-app.controller('playController', ['$scope', '$location', function () {
+app.controller('PlayController', ['$scope', '$location', function () {
     $scope.goToSpots = function () {
         $path.location = ('/')
     }
 
 }]);
 
-app.controller('drinkController', ['$scope', '$location', function () {
+app.controller('DrinkController', ['$scope', '$location', function () {
     $scope.goToBars = function () {
         $path.location = ('/')
     }
 }]);
 
-app.controller('eatController', ['$scope', '$location', function () {
+app.controller('EatController', ['$scope', '$location', function () {
     $scope.goToRes = function () {
         $path.location = ('/')
     }
 }]);
 
-app.controller('shopController', ['$scope', '$location', function () {
+app.controller('ShopController', ['$scope', '$location', function () {
     $scope.goToStores = function () {
         $path.location = ('/')
     }
@@ -93,7 +93,7 @@ app.controller('locationController', ['$scope', '$location', function () {
 
 }]);
 
-app.controller('uploadController', ['$scope', '$location', 'fileUploadService', function ($scope, $location, fileUploadService) {
+app.controller('UploadController', ['$scope', '$location', 'fileUploadService', function ($scope, $location, fileUploadService) {
 
 
     $scope.uploadFile = function () {
@@ -110,11 +110,11 @@ app.controller('uploadController', ['$scope', '$location', 'fileUploadService', 
     };
 }]);
 
-app.controller('howToController', ['$scope', '$location', function () {
+app.controller('HowToController', ['$scope', '$location', function () {
 
 }]);
 
-app.controller('aboutController', ['$scope', '$location', function () {
+app.controller('AboutController', ['$scope', '$location', function () {
 
 }]);
 
