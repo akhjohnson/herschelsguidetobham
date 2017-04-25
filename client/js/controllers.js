@@ -71,10 +71,9 @@ app.controller('PlayController', ['$scope', '$location', function () {
 
 }]);
 
-app.controller('DrinkController', ['$scope', '$location', function ($scope, $location) {
-    $scope.goToBars = function () {
-        $path.location = ('/')
-    }
+app.controller('DrinkController', ['$scope', '$location', 'Location', 'Objective', function ($scope, $location) {
+    $scope.locations = Location.query();
+    $scope.objectives = Objective.query(); 
 }]);
 
 app.controller('EatController', ['$scope', '$location', function () {
