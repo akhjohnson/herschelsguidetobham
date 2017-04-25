@@ -10,9 +10,9 @@ app.controller('LoginController', ['$scope', '$location', 'UserService', 'User',
 
     $scope.badges = Badge.query();
 
-    UserService.me().then(function (success) {
-        $location.path('/home');
-    });
+    // UserService.me().then(function (success) {
+    //     $location.path('/home');
+    // });
 
         function redirect() {
             var dest = $location.search().p;

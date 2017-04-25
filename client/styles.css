@@ -96,7 +96,8 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; 
-  padding-bottom: 70px;     
+  padding-bottom: 70px; 
+  padding-top: 70px;    
 }
 
 .How-to-play-header {
@@ -112,4 +113,10 @@ body {
   height: auto;
   background-color: rgba(00, 53, 00, 0.5);
   color: white;
+}
+
+.navbar-brand img {
+  width: 5%;
+  height: auto;
+  float: left;
 }
