@@ -21,7 +21,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     })
     .when('/drink', {
         templateUrl: 'views/drink.html',
-        controller: 'drinkController'
+        controller: 'DrinkController'
     })
     .when('/eat', {
         templateUrl: 'views/eat.html',
