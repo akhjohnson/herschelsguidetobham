@@ -74,7 +74,7 @@ app.service('UserService', ['$http', '$location', function ($http, $location) {
  
             return deffered.promise;
         }
-    });
+    }]);
 
 
 // app.service("AuthService", ['$http', '$location', function ($http, $location) {
