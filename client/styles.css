@@ -1,5 +1,6 @@
 * {
     font-family: 'Roboto', sans-serif;
+    
 }
       
 .login-page {
@@ -94,7 +95,8 @@ body {
   background: #3F5765; /* fallback for old browsers */
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;      
+  -moz-osx-font-smoothing: grayscale; 
+  padding-bottom: 70px;     
 }
 
 .How-to-play-header {
@@ -103,4 +105,11 @@ body {
 .How-to-play-content {
     font-family: 'Roboto', sans-serif;
 
+}
+
+#cat-buttons {
+  width: 100%;
+  height: auto;
+  background-color: rgba(00, 53, 00, 0.5);
+  color: white;
 }
