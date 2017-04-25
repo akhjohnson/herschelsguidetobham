@@ -43,7 +43,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         templateUrl: 'views/aboutCreators.html',
         controller: 'AboutController'
     })
-    .when('/howto', {
+    .when('/howtoplay', {
         templateUrl: 'views/howToPlay.html',
         controller: 'HowToController'
     })
