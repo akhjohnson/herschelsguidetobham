@@ -1,8 +1,7 @@
 * {
     font-family: 'Roboto', sans-serif;
 }
-
-<<<<<<< HEAD
+      
 .login-page {
   width: 360px;
   padding: 8% 0 0;
@@ -44,7 +43,7 @@
   cursor: pointer;
 }
 .form button:hover,.form button:active,.form button:focus {
-  background: #43A047;
+  background: #FF741C;
 }
 .form .message {
   margin: 15px 0 0;
@@ -52,7 +51,7 @@
   font-size: 12px;
 }
 .form .message a {
-  color: #BDD4DE;
+  color: #2B3A42;
   text-decoration: none;
 }
 .form .register-form {
@@ -92,10 +91,11 @@
   color: #EF3B3A;
 }
 body {
-  background: #3F5765;
+  background: #3F5765; /* fallback for old browsers */
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
+}
 
 .How-to-play-header {
     font-family: 'Roboto', sans-serif;
