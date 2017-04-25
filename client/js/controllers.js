@@ -71,7 +71,7 @@ app.controller('PlayController', ['$scope', '$location', function () {
 
 }]);
 
-app.controller('DrinkController', ['$scope', '$location', function () {
+app.controller('DrinkController', ['$scope', '$location', function ($scope, $location) {
     $scope.goToBars = function () {
         $path.location = ('/')
     }
