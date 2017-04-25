@@ -1,6 +1,14 @@
 var app = angular.module('myApp.controllers', []);
 
-app.controller('LoginController', ['$scope', '$location', 'UserService', function ($scope, $location, UserService) {
+app.controller('LoginController', ['$scope', '$location', 'UserService', 'User', 'Cat', 'Objective', 'Location', 'Badge', function ($scope, $location, UserService, User, Cat, Objective, Location, Badge) {
+
+    $scope.cats = Cat.query();
+
+    $scope.objectives = Objective.query();
+
+    $scope.locations = Location.query();
+
+    $scope.badges = Badge.query();
 
     UserService.me().then(function (success) {
         $location.path('/home');
@@ -22,15 +30,17 @@ app.controller('LoginController', ['$scope', '$location', 'UserService', functio
                     console.log(err);
                 })
         }
-    }])
+    }]);
 
-app.controller('HomeController', ['$scope', '$location', '$SEOService', function ($scope, $location, $SEOService) {
+app.controller('HomeController', ['$scope', '$location', '$SEOService', 'Cat', function ($scope, $location, $SEOService) {
         // $scope.location = path('/login');
         SEOService.setSEO({
             title: ' herschelsguide | Home',
             description: 'herschelsguide',
             url: $location.url()
         });
+
+        $scope.cats = Cat.query();
 
         $scope.goToDrink = function () {
             $location.path('/tabsController/dRINK')
