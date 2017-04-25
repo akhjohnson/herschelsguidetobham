@@ -6,6 +6,7 @@ var api = require('./api')
 var routeMw = require("./middleware/routing.mw");
 var configurePassport = require("./config/passport");
 
+
 var app = express();
 
 app.use(express.static(path.join(__dirname, "../client")));
