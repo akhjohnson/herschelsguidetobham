@@ -32,13 +32,7 @@ app.controller('LoginController', ['$scope', '$location', 'UserService', 'User',
         }
     }]);
 
-app.controller('HomeController', ['$scope', '$location', '$SEOService', 'Cat', function ($scope, $location, $SEOService) {
-        // $scope.location = path('/login');
-        SEOService.setSEO({
-            title: ' herschelsguide | Home',
-            description: 'herschelsguide',
-            url: $location.url()
-        });
+app.controller('HomeController', ['$scope', '$location', 'Cat', function ($scope, $location, Cat) {
 
         $scope.cats = Cat.query();
 
