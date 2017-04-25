@@ -53,6 +53,30 @@ app.service('UserService', ['$http', '$location', function ($http, $location) {
     }
 }])
 
+  app.service('fileUploadService', ['$http', '$q', function ($http, $q) {
+ 
+        this.uploadFileToUrl = function (file, uploadUrl) {
+            //FormData, object of key/value pair for form fields and values
+            var fileFormData = new FormData();
+            fileFormData.append('file', file);
+ 
+            var deffered = $q.defer();
+            $http.post(uploadUrl, fileFormData, {
+                transformRequest: angular.identity,
+                headers: {'Content-Type': undefined}
+ 
+            }).success(function (response) {
+                deffered.resolve(response);
+ 
+            }).error(function (response) {
+                deffered.reject(response);
+            });
+ 
+            return deffered.promise;
+        }
+    });
+
+
 // app.service("AuthService", ['$http', '$location', function ($http, $location) {
 //     var google = require('googleapis');
 //     var OAuth2 = google.auth.OAuth2;
