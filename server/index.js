@@ -10,6 +10,7 @@ const simpleOauthModule = require('./../');
 
 
 
+
 var app = express();
 
 app.use(express.static(path.join(__dirname, "../client")));
