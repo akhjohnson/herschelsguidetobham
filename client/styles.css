@@ -151,3 +151,7 @@ body {
 .media-body {
   color: #FF530D;
 }
+
+.media-object {
+  height: 20em;
+}
