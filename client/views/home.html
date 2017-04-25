@@ -3,7 +3,7 @@
       <ul class="nav navbar-nav navbar-left">
         <li>
           <p class="navbar-text">
-            <a href="/"><img src="images/badge_coaster-cool"></a>
+            <a href="/"><img src="images/badge_coaster-cool.png"></a>
         </li>
         <li>
           <p class="navbar-text"> | </p>
@@ -22,12 +22,16 @@
     </div>
   </header>-->
 
-<div class="jumbotron">
+<!--<div class="jumbotron">
   <h1>Welcome to Herschel's Guide to Birmingham!</h1>
   <p>Explore the Magic City...</p>
-</div>
+</div>-->
 
-
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    ...
+  </div>
+</nav>
 
 <!--all of the Categories -->
 <div class="container">
@@ -60,7 +64,7 @@
     <div class="row">
         <div class="col-lg-12">
             <ul class="list-group">
-                <li ng-repeat="cat in cats" class='list-group-item list-group-item-default'>
+                <li ng-repeat="cat in cats" class='list-group-item list-group-item-default' id="cat-buttons">
                     <h1>{{ cat.name }}</h1>
                     </li>
             </ul>

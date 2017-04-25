@@ -4,7 +4,11 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     $locationProvider.html5Mode(true);
 
     $routeProvider.when('/', {
-        templateUrl: 'views/login.html',
+        templateUrl: 'views/welcome.html',
+        controller: 'WelcomeController'
+    })
+    .when('/login', {
+        templateUrl: 'views/signup.html',
         controller: 'LoginController'
     })
     .when('/signup', {
