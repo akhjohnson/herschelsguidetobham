@@ -85,4 +85,4 @@ app.get("*", function(req, res, next) {
 //   res.send('Hello<br><a href="/auth">Log in with Github</a>');
 // });
 
-// app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3000);
