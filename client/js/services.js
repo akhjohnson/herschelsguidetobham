@@ -53,7 +53,7 @@ app.service('UserService', ['$http', '$location', function ($http, $location) {
     }
 }])
 
-app.service("AuthService", ['$http', '$location', function () {
+app.service("AuthService", ['$http', '$location', function ($http, $location) {
     var google = require('googleapis');
     var OAuth2 = google.auth.OAuth2;
 
