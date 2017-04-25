@@ -11,7 +11,7 @@
 .form {
   position: relative;
   z-index: 1;
-  background: #FFFFFF;
+  background: #EFEFEF;
   max-width: 360px;
   margin: 0 auto 100px;
   padding: 45px;
@@ -119,4 +119,8 @@ body {
   width: 5%;
   height: auto;
   float: left;
+}
+
+.media-body {
+  color: #FF530D;
 }
