@@ -68,9 +68,7 @@ app.controller('playController', ['$scope', '$location', function () {
         $scope.goToSpots = function () {
             $path.location = ('/')
         }
-        $scope.Spots = function () {
-            var spots
-        }
+      
     }]);
 
 app.controller('drinkController', ['$scope', '$location', function () {
