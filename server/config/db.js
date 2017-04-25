@@ -10,7 +10,7 @@ var pool = mysql.createPool({
 
 exports.pool = pool;
 
-console.log(pool);
+// console.log(pool);
 
 //a mysql query that has zero return values - so an empty query
 exports.empty = function(procedure, values) {
