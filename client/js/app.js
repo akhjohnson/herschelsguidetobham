@@ -48,3 +48,4 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         controller: 'MapController'
     })
 }]);
+

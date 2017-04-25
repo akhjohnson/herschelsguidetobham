@@ -2,9 +2,6 @@ var image = require('URL FOR IMAGE ONclick()')
 
 var encoded = new Buffer(imageFile).toString('base64');
 
-
-
-
 function base64_encode(file) {
     var bitmap = fs.readFileSync(file);
     return new Buffer(bitmap).toString('base64');

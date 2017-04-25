@@ -52,7 +52,7 @@ app.controller('HomeController', ['$scope', '$location', '$SEOService', 'Cat', f
             $location.path('/tabsController/pLAY')
         }
         $scope.goToShop = function () {
-            $location.path('/tabsController/sHOP')
+            $location.path('/shop')
         }
     }]);
 
