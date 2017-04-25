@@ -44,7 +44,7 @@
   cursor: pointer;
 }
 .form button:hover,.form button:active,.form button:focus {
-  background: #FF741C;
+  background-color: #FF741C;
 }
 .form .message {
   margin: 15px 0 0;
@@ -115,7 +115,34 @@ body {
   color: white;
 }
 
-.navbar-brand img {
+.header {
+    color: black;
+    line-height: 2em;
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: 1.75px;
+}
+
+.header li {
+    padding-right: 25px;
+
+}
+
+.header li a {
+    /*color: black;*/
+}
+
+.header li a:hover {
+    color: #EF3B3A;
+}
+
+.header li a:active {
+    color: #EF3B3A;
+    text-decoration: underline;
+}
+
+
+#ourlogo {
   width: 5%;
   height: auto;
   float: left;
