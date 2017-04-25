@@ -14,22 +14,22 @@ app.controller('LoginController', ['$scope', '$location', 'UserService', 'User',
     //     $location.path('/home');
     // });
 
-        function redirect() {
-            var dest = $location.search().p;
-            if (!dest) {
-                dest = '/login';
-            }
-            $location.path(dest).search('p', null);
-        }
+        // function redirect() {
+        //     var dest = $location.search().p;
+        //     if (!dest) {
+        //         dest = '/login';
+        //     }
+        //     $location.path(dest).search('p', null);
+        // }
 
-        $scope.login = function () {
-            UserService.login($scope.email, $scope.password)
-                .then(function () {
-                    $location.path('/');
-                }, function (err) {
-                    console.log(err);
-                })
-        }
+        // $scope.login = function () {
+        //     UserService.login($scope.email, $scope.password)
+        //         .then(function () {
+        //             $location.path('/');
+        //         }, function (err) {
+        //             console.log(err);
+        //         })
+        // }
     }]);
 
 app.controller('HomeController', ['$scope', '$location', 'Cat', function ($scope, $location, Cat) {
