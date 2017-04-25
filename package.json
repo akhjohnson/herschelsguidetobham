@@ -4,6 +4,8 @@
   "description": "herschels guide project",
   "main": "server/index.js",
   "dependencies": {
+    "angular-base64": "^2.0.5",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.1",
     "cookie-parser": "^1.4.3",
     "express": "^4.15.2",

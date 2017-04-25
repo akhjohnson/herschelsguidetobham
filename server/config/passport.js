@@ -3,7 +3,7 @@ var passport = require("passport");
 var session = require("express-session");
 var mySQLStore = require("express-mysql-session")(session);
 var LocalStrategy = require("passport-local").Strategy;
-// var userProc = require("../procedures/users.proc");
+var userProc = require("../procedures/users.proc");
 var pool = require("./db").pool;
 
 function configurePassport(app) {
@@ -13,24 +13,27 @@ function configurePassport(app) {
     }, function (email, password, done) {
         userProc.readByEmail(email).then(function (user) {
             if (!user) {
-                //done is a built-in thing for passport
                 return done(null, false);
             }
-            if (user.password !== password) {
-
-                return done(null, false, { message: 'Nope!' });
-            }
-            //here null is a placeholder for where err goes (like err,success) - but we don't want to throw err messages, so we use null because only user will show up unless it meets the if/if criteria above
-            return done(null, user);
-        }, function (err) {
+            utils.checkPassword(password, user.password)
+                .then(function(matches) {
+                    if(matches) {
+                        return done(null, user);
+                    } else {
+                        return done(null, false, {message: "Nope!"});
+                    }
+                }, function(err) {
+                    return done(err);
+                })
+        }, function(err) {
             return done(err);
-            throw err;
-        });
+        })
     }));
-
-    passport.serializeUser(function (user, done) {
+    //SET UP HOW TO HANDLE USER-SERIALIZATION
+    passport.serializeUser(function(user, done) {
         done(null, user.id);
     })
+    //SET UP HOW TO HANDLE USER-DESERIALIZATION
     passport.deserializeUser(function(id, done) {
         userProc.read(id).then(function(user) {
             done(null, user);
@@ -38,19 +41,21 @@ function configurePassport(app) {
             done(err);
         })
     })
-
-    var sessionStore = new mySQLStore({
+    //CONFIGURE OUR DATABASE TO CREATE A 'SESSIONS' TABLE
+    //AND START STORING USER SESSIONS THERE
+    var sessionStore = new MySQLStore({
         createDatabaseTable: true
     }, pool);
-
+    //CONFIGURE OUR SESSIONS TO HAVE THESE PROPERTIES
     app.use(session({
-        secret: "randomly-generated string!",
-        store: sessionStore,
+        secret: 'randomly-generated string!',
+        store: sessionStore, 
         resave: false,
         saveUninitialized: false
     }))
+    //START UP PASSPORT AND BIND EXPRESS SESSIONS THROUGH IT
     app.use(passport.initialize());
     app.use(passport.session());
-};
+}
 
 module.exports = configurePassport;

@@ -11,14 +11,6 @@ router.route('/')
             console.log(err);
             res.status(500).send(err);
         })
-    })
-    .post(function (req, res) {
-        procedures.write(req.body).then(function (success) {
-            res.status(201).send(success);
-        }, function (err) {
-            console.log(err);
-            res.status(500).send(err);
-        })
     });
 
 router.route('/:id')
