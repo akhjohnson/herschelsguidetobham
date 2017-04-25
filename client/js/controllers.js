@@ -100,7 +100,7 @@ angular.module('myApp.controllers', [])
     .controller('locationController', ['$scope', '$location', function () {
 
     }])
-    .controller('uploadController', ['$scope', '$location', 'fileUploadService' function () {
+    .controller('uploadController', ['$scope', '$location', 'fileUploadService', function () {
 
             var myApp = angular.module('app');
             myApp.controller('FileUploadController', function ($scope, fileUploadService) {
