@@ -1,4 +1,4 @@
-var bcrypt = require("bcrypt");
+var bcrypt = require("bcryptjs");
 const saltRounds = 12;
 
 exports.encryptPassword = function(pw) {
