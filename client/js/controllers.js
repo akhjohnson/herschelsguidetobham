@@ -21,7 +21,7 @@ angular.module('myApp.controllers', [])
     }
 }])
 
-```angular.module('myApp.controllers', [])
+angular.module('myApp.controllers', [])
 // .controller ('LoginController', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
 //     UserService.me().then(function(success) {
 //     })
