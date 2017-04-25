@@ -1,9 +1,19 @@
-angular.module('myApp.controllers', [])
+var app = angular.module('myApp.controllers', []);
 
-    .controller('LoginController', ['$scope', '$location', 'UserService', function ($scope, $location, UserService) {
-        UserService.me().then(function (success) {
+app.controller('LoginController', ['$scope', '$location', 'UserService', 'User', 'Cat', 'Objective', 'Location', 'Badge', function ($scope, $location, UserService, User, Cat, Objective, Location, Badge) {
 
-        })
+    $scope.cats = Cat.query();
+
+    $scope.objectives = Objective.query();
+
+    $scope.locations = Location.query();
+
+    $scope.badges = Badge.query();
+
+    UserService.me().then(function (success) {
+        $location.path('/home');
+    });
+
         function redirect() {
             var dest = $location.search().p;
             if (!dest) {
@@ -11,44 +21,26 @@ angular.module('myApp.controllers', [])
             }
             $location.path(dest).search('p', null);
         }
+
         $scope.login = function () {
             UserService.login($scope.email, $scope.password)
                 .then(function () {
-                    redirect();
+                    $location.path('/');
                 }, function (err) {
                     console.log(err);
                 })
         }
-    }])
+    }]);
 
-angular.module('myApp.controllers', [])
-    // .controller ('LoginController', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
-    //     UserService.me().then(function(success) {
-    //     })
-    //     function redirect() {
-    //         var dest= $location.search().p;
-    //         if (!dest) {
-    //             dest = '/login';
-    //         }
-    //         $location.path(dest).search('p', null);
-    //     }
-    //     $scope.login = function() {
-    //         UserService.login($scope.email, $scope.password)
-    //             .then(function() {
-    //                 redirect();
-    //             }, function(err) {
-    //                 console.log(err);
-    //             })
-    //     }
-    // }])
-    // angular.module('app.controllers', [])
-    .controller('HomeController', ['$scope', '$location', '$SEOService', function ($scope, $location, $SEOService) {
-        $scope.location = path('/login');
+app.controller('HomeController', ['$scope', '$location', '$SEOService', 'Cat', function ($scope, $location, $SEOService) {
+        // $scope.location = path('/login');
         SEOService.setSEO({
             title: ' herschelsguide | Home',
             description: 'herschelsguide',
             url: $location.url()
         });
+
+        $scope.cats = Cat.query();
 
         $scope.goToDrink = function () {
             $location.path('/tabsController/dRINK')
@@ -60,10 +52,11 @@ angular.module('myApp.controllers', [])
             $location.path('/tabsController/pLAY')
         }
         $scope.goToShop = function () {
-            $location.path('/tabsController/sHOP')
+            $location.path('/shop')
         }
-    }])
-    .controller('badgesCtrl', ['$scope', '$location', '$ionicUser', function ($scope, $location, $ionicUser) {
+    }]);
+
+app.controller('badgesCtrl', ['$scope', '$location', '$ionicUser', function ($scope, $location, $ionicUser) {
         $scope.badges = Badges.query();
         $scope.goToBadges = function () {
             $location.path('/tabsController/yourBadges')
@@ -71,36 +64,44 @@ angular.module('myApp.controllers', [])
         $scope.badgeById = function (id) {
             return $scope.badges[id]
         }
-    }])
-    .controller('cameraController', ['$scope', '$location', function () {
-    }])
-    .controller('playController', ['$scope', '$location', function () {
+    }]);
+
+app.controller('cameraController', ['$scope', '$location', function () {
+
+}])
+
+app.controller('playController', ['$scope', '$location', function () {
         $scope.goToSpots = function () {
             $path.location = ('/')
         }
         $scope.Spots = function () {
             var spots
         }
-    }])
-    .controller('drinkController', ['$scope', '$location', function () {
+    }]);
+
+app.controller('drinkController', ['$scope', '$location', function () {
         $scope.goToBars = function () {
             $path.location = ('/')
         }
-    }])
-    .controller('eatController', ['$scope', '$location', function () {
+    }]);
+
+app.controller('eatController', ['$scope', '$location', function () {
         $scope.goToRes = function () {
             $path.location = ('/')
         }
-    }])
-    .controller('shopController', ['$scope', '$location', function () {
+    }]);
+
+app.controller('shopController', ['$scope', '$location', function () {
         $scope.goToStores = function () {
             $path.location = ('/')
         }
-    }])
-    .controller('locationController', ['$scope', '$location', function () {
+    }]);
 
-    }])
-    .controller('uploadController', ['$scope', '$location', 'fileUploadService', function () {
+app.controller('locationController', ['$scope', '$location', function () {
+
+    }]);
+
+app.controller('uploadController', ['$scope', '$location', 'fileUploadService', function () {
 
             var myApp = angular.module('app');
             myApp.controller('FileUploadController', function ($scope, fileUploadService) {
@@ -117,9 +118,13 @@ angular.module('myApp.controllers', [])
                             })
                     };
             });
-    }])
-    .controller('howToController', ['$scope', '$location', function () {
-    }])
-    .controller('aboutController', ['$scope', '$location', function () {
-    }])
+    }]);
+
+app.controller('howToController', ['$scope', '$location', function () {
+
+    }]);
+    
+app.controller('aboutController', ['$scope', '$location', function () {
+    
+    }]);
 
