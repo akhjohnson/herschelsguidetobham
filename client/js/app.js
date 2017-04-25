@@ -8,7 +8,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         controller: 'WelcomeController'
     })
     .when('/login', {
-        templateUrl: 'views/signup.html',
+        templateUrl: 'views/login.html',
         controller: 'LoginController'
     })
     .when('/signup', {
