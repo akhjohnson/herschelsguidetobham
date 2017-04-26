@@ -57,7 +57,7 @@ app.controller('HomeController', ['$scope', '$location', 'Cat', function ($scope
 
 }]);
 
-app.controller('badgesCtrl', ['$scope', '$location', '$ionicUser', function ($scope, $location, $ionicUser) {
+app.controller('badgesCtrl', ['$scope', '$location', function ($scope, $location) {
     $scope.badges = Badges.query();
     $scope.goToBadges = function () {
         $location.path('/tabsController/yourBadges')
