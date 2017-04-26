@@ -1,6 +1,6 @@
 var app = angular.module('myApp.controllers', []);
 
-app.controller('LoginController', ['$scope', '$location', 'UserService', 'User', 'Cat', 'Obj', 'Loc', 'Badge', function ($scope, $location, UserService, User, Cat, Objective, Location, Badge) {
+app.controller('LoginController', ['$scope', '$location', 'UserService', 'User', 'Cat', 'Obj', 'Loc', 'Badge', function ($scope, $location, UserService, User, Cat, Obj, Loc, Badge) {
 
     $scope.cats = Cat.query();
 
@@ -33,7 +33,7 @@ app.controller('LoginController', ['$scope', '$location', 'UserService', 'User',
 }]);
 
 
-app.controller('SignupController', ['$scope', '$location', 'UserService', 'User', 'Cat', 'Obj', 'Loc', 'Badge', function ($scope, $location, UserService, User, Cat, Objective, Loc, Badge) {
+app.controller('SignupController', ['$scope', '$location', 'UserService', 'User', 'Cat', 'Obj', 'Loc', 'Badge', function ($scope, $location, UserService, User, Cat, Obj, Loc, Badge) {
 
     $scope.cats = Cat.query();
 
