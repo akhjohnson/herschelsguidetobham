@@ -43,6 +43,12 @@ app.controller('SignupController', ['$scope', '$location', 'UserService', 'User'
     $scope.badges = Badge.query();
 }]);
 
+
+app.controller('WelcomeController', ['$scope', '$location', function($scope, $location){
+    
+}])
+
+
 app.controller('HomeController', ['$scope', '$location', 'Cat', function ($scope, $location, Cat) {
 
     $scope.cats = Cat.query();
@@ -147,8 +153,13 @@ app.controller('locationController', ['$scope', '$location', function ($scope, $
 
 app.controller('UploadController', ['$scope', '$location', 'fileUploadService', function ($scope, $location, fileUploadService) {
 
+        // var config = {
+        //     projectId: 'api-project-346993894176',
+        //     keyFilename: '/server/config/config.json'
+        // };
 
-    $scope.uploadFile = function () {
+  
+        var uploadUrl = "https://vision.googleapis.com/v1/images:annotate"; //Url of webservice/api/server
         var myfile = $scope.file;
 
         var dataFile = function () {
@@ -156,47 +167,23 @@ app.controller('UploadController', ['$scope', '$location', 'fileUploadService', 
                 if (err) {
                     console.log(error + file)
                 } else {
-                    content = data
+                    content= data;
+                    console.log(content) 
                 }
             })
         }
 
-        var config = {
-            projectId: 'api-project-346993894176',
-            keyFilename: '/server/config/config.json'
-        };
-
-        var uploadUrl = "https://vision.googleapis.com/v1/images:annotate"; //Url of webservice/api/server
         var promise = fileUploadService.uploadFileToUrl(myfile, uploadUrl);
+            return promise;
 
-
-        promise.then(function (response) {
-            serverResponse = response;
-        }.then(function () {
-            serverResponse.read(15)
-        }), function () {
-            $scope.serverResponse = 'An error has occurred';
-        })
-    };
-
-    var content;
-    // First I want to read the file
-    fs.readFile('./Index.html', function read(err, data) {
-        if (err) {
-            throw err;
-        }
-        content = data;
-
-        // Invoke the next step here however you like
-        console.log(content);   // Put all of the code here (not the best solution)
-        processFile();          // Or put the next step in a function and invoke it
-    });
-
-    function processFile() {
-        console.log(content);
-
-
-
+    //     promise.then(function (response) {
+    //         serverResponse = response;
+    //     }.then(function () {
+    //         serverResponse.read(15)
+    //     }), function () {
+    //         $scope.serverResponse = 'An error has occurred';
+    //     })
+    // };
     }]);
 
 app.controller('HowToController', ['$scope', '$location', function ($scope, $location) {

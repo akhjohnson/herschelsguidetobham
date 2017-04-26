@@ -61,6 +61,11 @@ module.exports = {
   }
 }
 
+ var config = {
+            projectId: 'api-project-346993894176',
+            keyFilename: '/server/config/config.json'
+        };
+
 
 // const oauth2 = simpleOauthModule.create({
 //   client: {
