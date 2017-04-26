@@ -43,6 +43,12 @@ app.controller('SignupController', ['$scope', '$location', 'UserService', 'User'
     $scope.badges = Badge.query();
 }]);
 
+
+app.controller('WelcomeController', ['$scope', '$location', function($scope, $location){
+    
+}])
+
+
 app.controller('HomeController', ['$scope', '$location', 'Cat', function ($scope, $location, Cat) {
 
     $scope.cats = Cat.query();
@@ -147,8 +153,13 @@ app.controller('locationController', ['$scope', '$location', function ($scope, $
 
 app.controller('UploadController', ['$scope', '$location', 'fileUploadService', function ($scope, $location, fileUploadService) {
 
+        // var config = {
+        //     projectId: 'api-project-346993894176',
+        //     keyFilename: '/server/config/config.json'
+        // };
 
-    $scope.uploadFile = function () {
+  
+        var uploadUrl = "https://vision.googleapis.com/v1/images:annotate"; //Url of webservice/api/server
         var myfile = $scope.file;
 
         var dataFile = function () {
@@ -156,18 +167,25 @@ app.controller('UploadController', ['$scope', '$location', 'fileUploadService', 
                 if (err) {
                     console.log(error + file)
                 } else {
-                    content = data
+                    content= data;
+                    console.log(content) 
                 }
             })
         }
 
-        var config = {
-            projectId: 'api-project-346993894176',
-            keyFilename: '/server/config/config.json'
-        };
-
-        var uploadUrl = "https://vision.googleapis.com/v1/images:annotate"; //Url of webservice/api/server
         var promise = fileUploadService.uploadFileToUrl(myfile, uploadUrl);
+
+            return promise;
+
+    //     promise.then(function (response) {
+    //         serverResponse = response;
+    //     }.then(function () {
+    //         serverResponse.read(15)
+    //     }), function () {
+    //         $scope.serverResponse = 'An error has occurred';
+    //     })
+    // };
+
 
 
         promise.then(function (response) {
@@ -197,6 +215,7 @@ app.controller('UploadController', ['$scope', '$location', 'fileUploadService', 
 
 
     }
+>>>>>>> 267e38b5ecff3329ba701875080aec51efba2a91
     }]);
 
 app.controller('HowToController', ['$scope', '$location', function ($scope, $location) {
