@@ -44,9 +44,15 @@ app.controller('SignupController', ['$scope', '$location', 'UserService', 'User'
 }]);
 
 
+<<<<<<< HEAD
+app.controller('WelcomeController', ['$scope', '$location', function ($scope, $location) {
+
+}])
+=======
 app.controller('WelcomeController', ['$scope', '$location', function($scope, $location){
     
-}])
+}]);
+>>>>>>> cabf367ce26936e211f0a4225f685e53c2c5bec4
 
 
 app.controller('HomeController', ['$scope', '$location', 'Cat', function ($scope, $location, Cat) {
@@ -79,7 +85,7 @@ app.controller('badgesCtrl', ['$scope', '$location', '$ionicUser', function ($sc
 
 app.controller('cameraController', ['$scope', '$location', function ($scope, $location) {
 
-}])
+}]);
 
 app.controller('PlayController', ['$scope', '$location', 'Play', function ($scope, $location, Play) {
 
@@ -153,29 +159,51 @@ app.controller('locationController', ['$scope', '$location', function ($scope, $
 
 app.controller('UploadController', ['$scope', '$location', 'fileUploadService', function ($scope, $location, fileUploadService) {
 
-        // var config = {
-        //     projectId: 'api-project-346993894176',
-        //     keyFilename: '/server/config/config.json'
-        // };
+    // var config = {
+    //     projectId: 'api-project-346993894176',
+    //     keyFilename: '/server/config/config.json'
+    // };
 
-  
-        var uploadUrl = "https://vision.googleapis.com/v1/images:annotate"; //Url of webservice/api/server
-        var myfile = $scope.file;
-
-        var dataFile = function () {
-            fs.readFile(myfile, function read(err, data) {
-                if (err) {
-                    console.log(error + file)
-                } else {
-                    content= data;
-                    console.log(content) 
+    var uploadUrl = {
+        url: "https://vision.googleapis.com/v1/images:annotate?key=" + AIzaSyBxA6mwZvgZArDg - JocXNFf5x09TLTqA7s,
+        dataType: 'json',
+        json: {
+            "requests":
+            [
+                {
+                    "features":
+                    [
+                        {
+                            "type": "TEXT_DETECTION"
+                        }
+                    ],
+                    "image":
+                    {
+                        "source":
+                        {
+                        }
+                    }
                 }
-            })
+            ]
         }
+    }
 
-        var promise = fileUploadService.uploadFileToUrl(myfile, uploadUrl);
+    var myfile = $scope.file;
 
-            return promise;
+    var dataFile = function () {
+        fs.readFile(myfile, function read(err, data) {
+            if (err) {
+                console.log(error + file)
+            } else {
+                content = data;
+                console.log(content)
+            }
+        })
+    }
+
+    var promise = fileUploadService.uploadFileToUrl(myfile, uploadUrl);
+
+    return promise;
 
     //     promise.then(function (response) {
     //         serverResponse = response;
@@ -186,37 +214,7 @@ app.controller('UploadController', ['$scope', '$location', 'fileUploadService', 
     //     })
     // };
 
-
-
-
-        promise.then(function (response) {
-            serverResponse = response;
-        }.then(function () {
-            serverResponse.read(15)
-        }), function () {
-            $scope.serverResponse = 'An error has occurred';
-        })
-    };
-
-    var content;
-    // First I want to read the file
-    fs.readFile('./Index.html', function read(err, data) {
-        if (err) {
-            throw err;
-        }
-        content = data;
-
-        // Invoke the next step here however you like
-        console.log(content);   // Put all of the code here (not the best solution)
-        processFile();          // Or put the next step in a function and invoke it
-    });
-
-    function processFile() {
-        console.log(content);
-
-
-    }
-
+}]);
 
 app.controller('HowToController', ['$scope', '$location', function ($scope, $location) {
 
