@@ -39,7 +39,7 @@ app.factory('Play', ['$resource', function ($resource) {
 }]);
 
 app.factory('Shop', ['$resource', function ($resource) {
-    return $resource('/api/shop/:id', { id: '@id' }, 
+    return $resource('/api/shop/:id', { id: "@id" }, 
         {
             "update": { method: "PUT" },
             "get": { method: "GET", isArray: false }
@@ -50,8 +50,8 @@ app.factory('Badge', ['$resource', function($resource) {
     return $resource('/api/badges/:id', { id: "@id" })
 }]);
 
-app.factory('Objective', ['$resource', function ($resource) {
-    return $resource('/api/objectives/:id', { id: '@id' }, 
+app.factory('Obj', ['$resource', function ($resource) {
+    return $resource('/api/objectives/:id', { id: "@id" }, 
         {
             "update": { method: "PUT" },
             "get": { method: "GET", isArray: false }

@@ -76,6 +76,9 @@ app.controller('cameraController', ['$scope', '$location', function ($scope, $lo
 }])
 
 app.controller('PlayController', ['$scope', '$location', 'Play', function ($scope, $location, Play) {
+
+    $scope.plays = Play.query();
+
     $scope.goToSpots = function () {
         $path.location = ('/')
     }
@@ -89,12 +92,19 @@ app.controller('DrinkController', ['$scope', '$location', 'Loc', 'Objective', 'D
 }]);
 
 app.controller('EatController', ['$scope', '$location', 'Eat', function ($scope, $location, Eat) {
+
+    $scope.eats = Eat.query();
+
     $scope.goToRes = function () {
         $path.location = ('/')
     }
 }]);
 
 app.controller('ShopController', ['$scope', '$location', 'Shop', function ($scope, $location, Shop) {
+
+   $scope.shops = Shop.query();
+
+
     $scope.goToStores = function () {
         $path.location = ('/')
     }
@@ -129,7 +139,13 @@ app.controller('AboutController', ['$scope', '$location', function ($scope, $loc
 
 }]);
 
-app.controller('ObjectiveController', ['$scope', '$location', function ($scope, $location) {
+app.controller('ObjectiveController', ['$scope', '$routeParams', '$location', 'Obj', 'Loc', function ($scope, $routeParams, $location, Obj, Loc) {
+
+    $scope.locs = Loc.query();
+
+    $scope.objs = Obj.get({ id: id }, function (success) {
+        $scope.obj = success;
+    });
 
 }]);
 
