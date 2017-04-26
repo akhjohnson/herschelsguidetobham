@@ -13,6 +13,16 @@ router.route('/')
         })
     });
 
+router.route('/drink')
+    .get(function (req, res) {
+        procedures.drink().then(function (success) {
+            res.send(success);
+        }, function (err) {
+            console.log(err);
+            res.status(500).send(err);
+        })
+    });
+
 router.route('/:id')
     .get(function (req, res) {
         procedures.read(req.params.id).then(function (success) {

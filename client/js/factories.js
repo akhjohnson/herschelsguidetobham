@@ -14,6 +14,11 @@ app.factory('Cat', ['$resource', function ($resource) {
     return $resource('/api/categories/:id');
 }]);
 
+app.factory('Drink', ['$resource', function($resource) {
+    return $resource('/api/drink/:id', { id: "@id" })
+}]);
+
+
 app.factory('Badge', ['$resource', function($resource) {
     return $resource('/api/badges/:id', { id: "@id" })
 }]);

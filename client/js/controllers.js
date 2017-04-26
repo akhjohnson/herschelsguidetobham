@@ -82,9 +82,10 @@ app.controller('PlayController', ['$scope', '$location', function ($scope, $loca
 
 }]);
 
-app.controller('DrinkController', ['$scope', '$location', 'Loc', 'Objective', function ($scope, $location, Loc, Objective) {
+app.controller('DrinkController', ['$scope', '$location', 'Loc', 'Objective', 'Drink', function ($scope, $location, Loc, Objective, Drink) {
     $scope.locs = Loc.query();
-    $scope.objectives = Objective.query(); 
+    $scope.drinks = Drink.query();
+    // $scope.objectives = Objective.query(); 
 }]);
 
 app.controller('EatController', ['$scope', '$location', function ($scope, $location) {

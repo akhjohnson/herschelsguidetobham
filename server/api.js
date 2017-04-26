@@ -14,6 +14,7 @@ router.use('/objectives', objectives);
 router.use('/locations', locations);
 router.use('/categories', categories);
 router.use('/badges', badges);
+router.use('/drink', objectives);
 // router.use('/purchases', purchases);
 
 module.exports = router;
