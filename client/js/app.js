@@ -51,5 +51,14 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         templateUrl: 'views/map.html',
         controller: 'MapController'
     })
+    .when('/map', {
+        templateUrl: 'views/map.html',
+        controller: 'MapController'
+    })
+    .when('/:id', {
+       templateUrl: 'views/objective.html',
+       controller: 'ObjectiveController'
+   })
+
 }]);
 

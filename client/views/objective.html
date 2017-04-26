@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-lg-12" id="misc">
+<img src="images/covalence-store-misc-hero.jpg" class="img-responsive center-block" alt="Welcome to the Covalence Store!">
+    </div>
+  </div>
+
+<!-- MISC ITEMS -->
+<div class="container">
+<div class="row">
+  <div class="col-sm-6 col-md-4" ng-repeat="misc in miscs">
+    <div class="thumbnail">
+            <a ng-href="/{{objective.obj_id}}">
+      <img ng-src="{{misc.imageurl}}" alt="Test">
+      </a>
+      <div class="caption">
+        <h4 id="title">{{location.title}}</h4>
+        <h4 id="price">{{objective.obj_name}}</h4>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+

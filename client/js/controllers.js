@@ -117,3 +117,7 @@ app.controller('AboutController', ['$scope', '$location', function () {
 
 }]);
 
+app.controller('ObjectiveController', ['$scope', '$location', function () {
+
+}]);
+
