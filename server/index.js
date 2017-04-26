@@ -31,7 +31,7 @@ app.get("*", function(req, res, next) {
 });
 
 
-const __ = require('underscore')
+const __ = require('underscore');
 module.exports = {
   
   Request: require('./lib/models/Request'),
