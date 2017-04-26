@@ -1,10 +1,8 @@
 var app = angular.module('myApp.controllers', []);
 
-app.controller('LoginController', ['$scope', '$location', 'UserService', 'User', 'Cat', 'Obj', 'Loc', 'Badge', function ($scope, $location, UserService, User, Cat, Obj, Loc, Badge) {
+app.controller('LoginController', ['$scope', '$location', 'UserService', 'User', 'Cat', 'Loc', 'Badge', function ($scope, $location, UserService, User, Cat, Loc, Badge) {
 
     $scope.cats = Cat.query();
-
-    $scope.objs = Objective.query();
 
     $scope.locs= Loc.query();
 
