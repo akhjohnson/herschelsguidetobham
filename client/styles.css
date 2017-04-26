@@ -115,37 +115,6 @@ body {
   color: white;
 }
 
-#ourheader {
-    background-color: #DEDEDE;
-    color: #3F5765;
-    /*line-height: 2em;*/
-    font-size: 1.5em;
-    font-weight: bold;
-    letter-spacing: 1.75px;
-}
-
-#ourheader li {
-    padding-right: 25px;
-
-}
-
-#ourheader li a {
-    color: black;
-}
-
-#ourheader li a:hover {
-    color: #EF3B3A;
-}
-
-#ourheader li a:active {
-    color: #EF3B3A;
-    text-decoration: underline;
-}
-
-#ourlogo {
-  width: 30px;
-}
-
 .media-body {
   color: #FF530D;
 }
@@ -168,4 +137,49 @@ body {
 .navbar-fixed-bottom {
   background-color: #DEDEDE;
   color: #3F5765;
+}
+
+/* EXAMPLE 5 - Logo with Text*/
+.example5 .navbar-brand {
+  display: flex;
+  align-items: center;
+
+}
+.example5 .navbar-brand>img {
+  padding: 7px 14px;
+}
+
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 15px;
+  width: auto;
+}
+
+.navbar-fixed-top {
+  background-color: #DEDEDE;
+  color: #3F5765;
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: 1.75px;
+}
+
+#navtext li {
+    padding-right: 25px;
+
+}
+
+#navtext li a {
+    color: #3F5765;;
+}
+
+#navtext li a:hover {
+    color: #EF3B3A;
+}
+
+#navtext li a:active {
+    color: #EF3B3A;
+    text-decoration: underline;
 }
