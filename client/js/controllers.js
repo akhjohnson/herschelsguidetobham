@@ -46,7 +46,7 @@ app.controller('SignupController', ['$scope', '$location', 'UserService', 'User'
 
 app.controller('WelcomeController', ['$scope', '$location', function($scope, $location){
     
-}])
+}]);
 
 
 app.controller('HomeController', ['$scope', '$location', 'Cat', function ($scope, $location, Cat) {
@@ -79,7 +79,7 @@ app.controller('badgesCtrl', ['$scope', '$location', '$ionicUser', function ($sc
 
 app.controller('cameraController', ['$scope', '$location', function ($scope, $location) {
 
-}])
+}]);
 
 app.controller('PlayController', ['$scope', '$location', 'Play', function ($scope, $location, Play) {
 
@@ -196,7 +196,7 @@ app.controller('UploadController', ['$scope', '$location', 'fileUploadService', 
         }), function () {
             $scope.serverResponse = 'An error has occurred';
         })
-    };
+
 
     var content;
     // First I want to read the file
