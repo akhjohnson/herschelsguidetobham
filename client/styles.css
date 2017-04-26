@@ -155,19 +155,19 @@ body {
 .example5 .navbar-brand {
   display: flex;
   align-items: center;
-
 }
-.example5 .navbar-brand>img {
-  padding: 7px 14px;
-}
+/*.example5 .navbar-brand>img {
+  padding: 7px 20px;
+}*/
 
 .navbar-brand {
   padding: 0px;
 }
+
 .navbar-brand>img {
-  height: 90%;
-  /*padding: 15px;*/
-  width: 90%;
+  height: auto;
+  padding: 15px;
+  width: auto;
 }
 
 .navbar-fixed-top {
