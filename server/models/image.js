@@ -1,7 +1,9 @@
 'use strict'
 const fs = require('fs'),
-  request = require('request'),
-  __ = require('underscore')
+ request = require('request'),
+   __ = require('underscore')
+
+
 class Image {
   constructor(path) {
     const options = __.isObject(path) ? path : {
