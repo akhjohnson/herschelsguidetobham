@@ -32,11 +32,19 @@ app.controller('LoginController', ['$scope', '$location', 'UserService', 'User',
     // }
 }]);
 
+
 app.controller('SignupController', ['$scope', '$location', 'UserService', 'User', 'Cat', 'Obj', 'Loc', 'Badge', function ($scope, $location, UserService, User, Cat, Objective, Loc, Badge) {
 
     $scope.cats = Cat.query();
 
     $scope.objs = Objective.query();
+
+app.controller('SignupController', ['$scope', '$location', 'UserService', 'User', 'Cat', 'Loc', 'Badge', function ($scope, $location, UserService, User, Cat, Loc, Badge) {
+
+    $scope.cats = Cat.query();
+
+    $scope.cats = Cat.query();
+
 
     $scope.locs = Loc.query();
 
@@ -55,21 +63,9 @@ app.controller('HomeController', ['$scope', '$location', 'Cat', function ($scope
 
     $scope.cats = Cat.query();
 
-    $scope.goToDrink = function () {
-        $location.path('/drink')
-    }
-    $scope.goToEat = function () {
-        $location.path('/eat')
-    }
-    $scope.goToPlay = function () {
-        $location.path('/play')
-    }
-    $scope.goToShop = function () {
-        $location.path('/shop')
-    }
 }]);
 
-app.controller('badgesCtrl', ['$scope', '$location', '$ionicUser', function ($scope, $location, $ionicUser) {
+app.controller('badgesCtrl', ['$scope', '$location', function ($scope, $location) {
     $scope.badges = Badges.query();
     $scope.goToBadges = function () {
         $location.path('/tabsController/yourBadges')
@@ -161,7 +157,7 @@ app.controller('UploadController', ['$scope', '$location', 'fileUploadService', 
     // };
 
     var uploadUrl = {
-        url: "https://vision.googleapis.com/v1/images:annotate?key=AIzaSyBxA6mwZvgZArDgJocXNFf5x09TLTqA7s",
+        url: "https://vision.googleapis.com/v1/images:annotate?key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s", 
         dataType: 'json',
         json: {
             "requests":
