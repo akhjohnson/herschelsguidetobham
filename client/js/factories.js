@@ -26,6 +26,6 @@ app.factory('Objective', ['$resource', function ($resource) {
     })
 }]);
 
-app.factory('Location', ['$resource', function($resource) {
+app.factory('Loc', ['$resource', function($resource) {
     return $resource('/api/locations/:id', { id: "@id" })
 }]);

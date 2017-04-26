@@ -32,13 +32,13 @@ app.controller('LoginController', ['$scope', '$location', 'UserService', 'User',
     // }
 }]);
 
-app.controller('SignupController', ['$scope', '$location', 'UserService', 'User', 'Cat', 'Objective', 'Location', 'Badge', function ($scope, $location, UserService, User, Cat, Objective, Location, Badge) {
+app.controller('SignupController', ['$scope', '$location', 'UserService', 'User', 'Cat', 'Objective', 'Loc', 'Badge', function ($scope, $location, UserService, User, Cat, Objective, Loc, Badge) {
 
     $scope.cats = Cat.query();
 
     $scope.objectives = Objective.query();
 
-    $scope.locations = Location.query();
+    $scope.locs = Loc.query();
 
     $scope.badges = Badge.query();
 }]);
@@ -82,24 +82,24 @@ app.controller('PlayController', ['$scope', '$location', function ($scope, $loca
 
 }]);
 
-app.controller('DrinkController', ['$scope', '$location', 'Location', 'Objective', function ($scope, $location) {
-    $scope.locations = Location.query();
+app.controller('DrinkController', ['$scope', '$location', 'Loc', 'Objective', function ($scope, $location, Loc, Objective) {
+    $scope.locs = Loc.query();
     $scope.objectives = Objective.query(); 
 }]);
 
-app.controller('EatController', ['$scope', '$location', function () {
+app.controller('EatController', ['$scope', '$location', function ($scope, $location) {
     $scope.goToRes = function () {
         $path.location = ('/')
     }
 }]);
 
-app.controller('ShopController', ['$scope', '$location', function () {
+app.controller('ShopController', ['$scope', '$location', function ($scope, $location) {
     $scope.goToStores = function () {
         $path.location = ('/')
     }
 }]);
 
-app.controller('locationController', ['$scope', '$location', function () {
+app.controller('locationController', ['$scope', '$location', function ($scope, $location) {
 
 }]);
 
@@ -120,15 +120,15 @@ app.controller('UploadController', ['$scope', '$location', 'fileUploadService', 
     };
 }]);
 
-app.controller('HowToController', ['$scope', '$location', function () {
+app.controller('HowToController', ['$scope', '$location', function ($scope, $location) {
 
 }]);
 
-app.controller('AboutController', ['$scope', '$location', function () {
+app.controller('AboutController', ['$scope', '$location', function ($scope, $location) {
 
 }]);
 
-app.controller('ObjectiveController', ['$scope', '$location', function () {
+app.controller('ObjectiveController', ['$scope', '$location', function ($scope, $location) {
 
 }]);
 
