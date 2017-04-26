@@ -103,6 +103,17 @@ body {
 .How-to-play-header {
     font-family: 'Roboto', sans-serif;
     color: #FF530D;
+    font-size: 5em;
+    margin-top: 5px;
+    margin-left: -100%;
+}
+.How-to-play-header-line {
+    font-family: 'Roboto', sans-serif;
+    color: #FF530D;
+    border-bottom: solid 2px #EFEFEF; 
+    font-size: 5em;
+    margin-top: 5px;
+    margin-left: -100%;
 }
 .How-to-play-content {
     font-family: 'Roboto', sans-serif;
@@ -178,11 +189,11 @@ body {
 }
 
 #navtext li a:hover {
-    color: #EF3B3A;
+    color: #FF530D;
 }
 
 #navtext li a:active {
-    color: #EF3B3A;
+    color: #FF530D;
     text-decoration: underline;
 }
 
@@ -191,8 +202,25 @@ body {
   height: 10em;
 }
 .team-header {
-  color: #EF3B3A;
+  font-family: 'Roboto', sans-serif;
+  color: #FF530D;
+  margin-left: -100%; 
+  font-size: 5em;
+  margin-top: 5px;
+}
+.team-header-bottom {
+  font-family: 'Roboto', sans-serif;
+  color: #FF530D;
+  border-bottom: solid 2px #EFEFEF;
+  margin-left: -100%; 
+  font-size: 5em;
+  margin-top: 5px;
 }
 .team-name {
   color: #BDD4DE;
+}
+
+.about-text {
+  font-family: 'Roboto', sans-serif;
+  color: #FF530D;
 }
