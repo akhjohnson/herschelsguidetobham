@@ -10,37 +10,13 @@
 
 
 <!--all of the Categories -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12 text-center">
-
-<div class="btn-group-vertical" role="group" aria-label="...">
-
-  <button type="button" class="btn btn-default btn-lg" id="cat-buttons">
-  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Drink
-</button>
- <button type="button" class="btn btn-default btn-lg" id="cat-buttons">
-  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Eat
-</button>
- <button type="button" class="btn btn-default btn-lg" id="cat-buttons">
-  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Shop
-</button>
- <button type="button" class="btn btn-default btn-lg" id="cat-buttons">
-  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Play
-</button>
-
-</div>
-
-        </div>
-    </div>
-</div>
 
 
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-md-4" ng-repeat="cat in cats">
       <div class="thumbnail">
-        <a ng-href="/{{apparel.id}}">
+        <a ng-href="/{{cat.id}}">
           <img ng-src="{{cat.imageurl}}" alt="Categories">
         </a>
         <div class="caption text-center">
@@ -69,21 +45,21 @@
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="btn-group btn-group-justified" role="group" aria-label="...">
-  <div class="btn-group text-center" role="group">
+  <div class="btn-group text-center" role="group"><a href="/home">
     <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_home-blue.png">
-      <br> Home </button>
+      <br> Home </button></a>
   </div>
-   <div class="btn-group text-center" role="group">
+   <div class="btn-group text-center" role="group"><a href="/map">
     <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_map-blue.png">
-      <br> Map </button>
+      <br> Map </button></a>
   </div>
-   <div class="btn-group text-center" role="group">
+   <div class="btn-group text-center" role="group"><a href="/camera">
     <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_camera-blue.png">
-      <br> Camera </button>
+      <br> Camera </button></a>
   </div>
-     <div class="btn-group text-center" role="group">
+     <div class="btn-group text-center" role="group"><a href="/badges">
     <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_badge-blue.png">
-      <br> Badges </button>
+      <br> Badges </button></a>
   </div>
   </div>
 </nav>

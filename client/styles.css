@@ -136,35 +136,36 @@ body {
 
 #test {
   background-color: #DEDEDE;
-  height: 90px;
+  height: 70px;
   color: #3F5765;
   
 }
 
 #tabicon {
-  width: 50px;
+  width: 40px;
 }
 
 .navbar-fixed-bottom {
   background-color: #DEDEDE;
   color: #3F5765;
+  /*font-size: 2em;*/
 }
 
 /* EXAMPLE 5 - Logo with Text*/
 .example5 .navbar-brand {
   display: flex;
   align-items: center;
-
 }
-.example5 .navbar-brand>img {
-  padding: 7px 14px;
-}
+/*.example5 .navbar-brand>img {
+  padding: 7px 20px;
+}*/
 
 .navbar-brand {
   padding: 0px;
 }
+
 .navbar-brand>img {
-  height: 100%;
+  height: auto;
   padding: 15px;
   width: auto;
 }

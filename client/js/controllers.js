@@ -1,12 +1,10 @@
 var app = angular.module('myApp.controllers', []);
 
-app.controller('LoginController', ['$scope', '$location', 'UserService', 'User', 'Cat', 'Objective', 'Location', 'Badge', function ($scope, $location, UserService, User, Cat, Objective, Location, Badge) {
+app.controller('LoginController', ['$scope', '$location', 'UserService', 'User', 'Cat', 'Loc', 'Badge', function ($scope, $location, UserService, User, Cat, Loc, Badge) {
 
     $scope.cats = Cat.query();
 
-    $scope.objectives = Objective.query();
-
-    $scope.locations = Location.query();
+    $scope.locs= Loc.query();
 
     $scope.badges = Badge.query();
 
@@ -32,11 +30,13 @@ app.controller('LoginController', ['$scope', '$location', 'UserService', 'User',
     // }
 }]);
 
+
 app.controller('SignupController', ['$scope', '$location', 'UserService', 'User', 'Cat', 'Loc', 'Badge', function ($scope, $location, UserService, User, Cat, Loc, Badge) {
 
     $scope.cats = Cat.query();
 
     $scope.cats = Cat.query();
+
 
     $scope.locs = Loc.query();
 
@@ -47,7 +47,7 @@ app.controller('SignupController', ['$scope', '$location', 'UserService', 'User'
 
 app.controller('WelcomeController', ['$scope', '$location', function ($scope, $location) {
 
-}])
+}]);
 
 
 
@@ -57,7 +57,7 @@ app.controller('HomeController', ['$scope', '$location', 'Cat', function ($scope
 
 }]);
 
-app.controller('badgesCtrl', ['$scope', '$location', '$ionicUser', function ($scope, $location, $ionicUser) {
+app.controller('badgesCtrl', ['$scope', '$location', function ($scope, $location) {
     $scope.badges = Badges.query();
     $scope.goToBadges = function () {
         $location.path('/tabsController/yourBadges')
@@ -215,9 +215,6 @@ app.controller('HowToController', ['$scope', '$location', function ($scope, $loc
 
 }]);
 
-app.controller('AboutController', ['$scope', '$location', function ($scope, $location) {
+// app.controller('AboutController', ['$scope', '$location', function ($scope, $location) {
 
-}]);
-
-
-
+// }])

@@ -13,7 +13,7 @@ var shop = require('./controllers/shop.ctrl');
 var router = express.Router();
 
 router.use('/users', users);
-router.use('/objectives', objectives);
+router.use('/obj', objectives);
 router.use('/locations', locations);
 router.use('/categories', categories);
 router.use('/badges', badges);
