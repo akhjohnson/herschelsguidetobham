@@ -102,9 +102,11 @@ body {
 
 .How-to-play-header {
     font-family: 'Roboto', sans-serif;
+    color: #FF530D;
 }
 .How-to-play-content {
     font-family: 'Roboto', sans-serif;
+    color: #BDD4DE;
 
 }
 
@@ -184,10 +186,13 @@ body {
     text-decoration: underline;
 }
 
-.How-to-play-header {
-  color: #FF530D;
+.img-circle {
+  border-radius: 50%;
+  height: 10em;
 }
-
-.How-to-play-content {
+.team-header {
+  color: #EF3B3A;
+}
+.team-name {
   color: #BDD4DE;
 }
