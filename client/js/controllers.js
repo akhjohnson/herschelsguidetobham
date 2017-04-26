@@ -87,19 +87,19 @@ app.controller('DrinkController', ['$scope', '$location', 'Loc', 'Objective', fu
     $scope.objectives = Objective.query(); 
 }]);
 
-app.controller('EatController', ['$scope', '$location', function () {
+app.controller('EatController', ['$scope', '$location', function ($scope, $location) {
     $scope.goToRes = function () {
         $path.location = ('/')
     }
 }]);
 
-app.controller('ShopController', ['$scope', '$location', function () {
+app.controller('ShopController', ['$scope', '$location', function ($scope, $location) {
     $scope.goToStores = function () {
         $path.location = ('/')
     }
 }]);
 
-app.controller('locationController', ['$scope', '$location', function () {
+app.controller('locationController', ['$scope', '$location', function ($scope, $location) {
 
 }]);
 
@@ -120,15 +120,15 @@ app.controller('UploadController', ['$scope', '$location', 'fileUploadService', 
     };
 }]);
 
-app.controller('HowToController', ['$scope', '$location', function () {
+app.controller('HowToController', ['$scope', '$location', function ($scope, $location) {
 
 }]);
 
-app.controller('AboutController', ['$scope', '$location', function () {
+app.controller('AboutController', ['$scope', '$location', function ($scope, $location) {
 
 }]);
 
-app.controller('ObjectiveController', ['$scope', '$location', function () {
+app.controller('ObjectiveController', ['$scope', '$location', function ($scope, $location) {
 
 }]);
 
