@@ -6,7 +6,7 @@ app.controller('LoginController', ['$scope', '$location', 'UserService', 'User',
 
     $scope.objs = Objective.query();
 
-    $scope.locs= Location.query();
+    $scope.locs= Loc.query();
 
     $scope.badges = Badge.query();
 
