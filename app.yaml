@@ -1,6 +1,8 @@
 runtime: nodejs
 env: flex
 env_variables:
-  SENDGRID_SENDER: your-sendgrid-sender-email
-  SENDGRID_API_KEY: your-sendgrid-api-key
+  SENDGRID_SENDER: majikcityradio@gmail.com
+  SENDGRID_API_KEY: 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
+
+
 
