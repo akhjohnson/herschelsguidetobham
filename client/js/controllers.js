@@ -32,11 +32,11 @@ app.controller('LoginController', ['$scope', '$location', 'UserService', 'User',
     // }
 }]);
 
-app.controller('SignupController', ['$scope', '$location', 'UserService', 'User', 'Cat', 'Objective', 'Loc', 'Badge', function ($scope, $location, UserService, User, Cat, Objective, Loc, Badge) {
+app.controller('SignupController', ['$scope', '$location', 'UserService', 'User', 'Cat', 'Loc', 'Badge', function ($scope, $location, UserService, User, Cat, Loc, Badge) {
 
     $scope.cats = Cat.query();
 
-    $scope.objectives = Objective.query();
+    $scope.cats = Cat.query();
 
     $scope.locs = Loc.query();
 
@@ -55,18 +55,6 @@ app.controller('HomeController', ['$scope', '$location', 'Cat', function ($scope
 
     $scope.cats = Cat.query();
 
-    $scope.goToDrink = function () {
-        $location.path('/drink')
-    }
-    $scope.goToEat = function () {
-        $location.path('/eat')
-    }
-    $scope.goToPlay = function () {
-        $location.path('/play')
-    }
-    $scope.goToShop = function () {
-        $location.path('/shop')
-    }
 }]);
 
 app.controller('badgesCtrl', ['$scope', '$location', '$ionicUser', function ($scope, $location, $ionicUser) {
