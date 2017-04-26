@@ -51,11 +51,19 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         templateUrl: 'views/map.html',
         controller: 'MapController'
     })
-    .when('/map', {
-        templateUrl: 'views/map.html',
-        controller: 'MapController'
-    })
-    .when('/:id', {
+    .when('/drink/:id', {
+       templateUrl: 'views/objective.html',
+       controller: 'ObjectiveController'
+   })
+    .when('/eat/:id', {
+       templateUrl: 'views/objective.html',
+       controller: 'ObjectiveController'
+   })
+    .when('/shop/:id', {
+       templateUrl: 'views/objective.html',
+       controller: 'ObjectiveController'
+   })
+    .when('/play/:id', {
        templateUrl: 'views/objective.html',
        controller: 'ObjectiveController'
    })
