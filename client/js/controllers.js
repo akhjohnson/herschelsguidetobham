@@ -82,6 +82,13 @@ app.controller('PlayController', ['$scope', '$location', 'Play', function ($scop
     $scope.goToSpots = function () {
         $path.location = ('/')
     }
+}]);
+
+app.controller('PlayDetailsController', ['$scope', '$routeParams', '$location', 'Loc', 'Play', function ($scope, $routeParams, $location, Loc, Play) {
+
+ $scope.plays = Play.get({ id: $routeParams.id }, function (success) {
+        $scope.play = success;
+    });
 
 }]);
 
@@ -89,6 +96,14 @@ app.controller('DrinkController', ['$scope', '$location', 'Loc', 'Objective', 'D
     $scope.locs = Loc.query();
     $scope.drinks = Drink.query();
     // $scope.objectives = Objective.query(); 
+}]);
+
+app.controller('DrinkDetailsController', ['$scope', '$routeParams', '$location', 'Loc', 'Drink', function ($scope, $routeParams, $location, Loc, Drink) {
+
+ $scope.drinks = Drink.get({ id: $routeParams.id }, function (success) {
+        $scope.drink = success;
+    });
+
 }]);
 
 app.controller('EatController', ['$scope', '$location', 'Eat', function ($scope, $location, Eat) {
@@ -100,6 +115,14 @@ app.controller('EatController', ['$scope', '$location', 'Eat', function ($scope,
     }
 }]);
 
+app.controller('EatDetailsController', ['$scope', '$routeParams', '$location', 'Obj', 'Loc', 'Drink', 'Eat', function ($scope, $routeParams, $location, Obj, Loc, Drink, Eat) {
+
+ $scope.eats = Eat.get({ id: $routeParams.id }, function (success) {
+        $scope.eat = success;
+    });
+
+}]);
+
 app.controller('ShopController', ['$scope', '$location', 'Shop', function ($scope, $location, Shop) {
 
    $scope.shops = Shop.query();
@@ -108,6 +131,14 @@ app.controller('ShopController', ['$scope', '$location', 'Shop', function ($scop
     $scope.goToStores = function () {
         $path.location = ('/')
     }
+}]);
+
+app.controller('ShopDetailsController', ['$scope', '$routeParams', '$location', 'Loc', 'Shop', function ($scope, $routeParams, $location, Loc, Shop) {
+
+ $scope.shops = Shop.get({ id: $routeParams.id }, function (success) {
+        $scope.shop = success;
+    });
+
 }]);
 
 app.controller('locationController', ['$scope', '$location', function ($scope, $location) {
@@ -139,13 +170,5 @@ app.controller('AboutController', ['$scope', '$location', function ($scope, $loc
 
 }]);
 
-app.controller('ObjectiveController', ['$scope', '$routeParams', '$location', 'Obj', 'Loc', function ($scope, $routeParams, $location, Obj, Loc) {
 
-    $scope.locs = Loc.query();
-
-    $scope.objs = Obj.get({ id: id }, function (success) {
-        $scope.obj = success;
-    });
-
-}]);
 
