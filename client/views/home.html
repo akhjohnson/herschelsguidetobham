@@ -1,25 +1,3 @@
-<!-- MOBILE RESPONSIVE NAV BAR WITH LOGO -->
-  <!--<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar5">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/#!/home"><img style="width: 64px;" src="images/badge_coaster-cool.png" alt="Herschel's Guide">
-        </a>
-      </div>
-      <div id="navbar5" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right" id="navtext">
-          <li><a href="/#!/about">About</a></li>
-          <li><a href="/#!/how">How to Play</a></li>
-          <li><a href="/#!/myprofile">My Profile</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>-->
 
 
 <!--all of the Categories -->
@@ -41,14 +19,27 @@
  <button type="button" class="btn btn-default btn-lg" id="cat-buttons">
   <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Play
 </button>
- <!--<button type="button" class="btn btn-default btn-lg" id="cat-buttons">
-  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Play
-</button>-->
 
 </div>
 
         </div>
     </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-md-4" ng-repeat="cat in cats">
+      <div class="thumbnail">
+        <a ng-href="/{{apparel.id}}">
+          <img ng-src="{{cat.imageurl}}" alt="Categories">
+        </a>
+        <div class="caption text-center">
+          <h4 id="title">{{cat.name}}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!--
@@ -85,9 +76,5 @@
     <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_badge-blue.png">
       <br> Badges </button>
   </div>
-   <!--<div class="btn-group text-center" role="group">
-    <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_about-blue.png">
-      <br> About </button>
-  </div>-->
   </div>
 </nav>
