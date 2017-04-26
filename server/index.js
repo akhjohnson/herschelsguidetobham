@@ -35,9 +35,9 @@ app.get("*", function(req, res, next) {
 const __ = require('underscore');
 module.exports = {
   
-  Request: require('./lib/models/Request'),
-  Feature: require('./lib/models/Feature'),
-  Image: require('./lib/models/Image'),
+  Request: require('./models/Request'),
+  Feature: require('./models/Feature'),
+  Image: require('./models/Image'),
   _client: null,
   init(options) {
     this._options = __.defaults(options, {version: 'v1'})
