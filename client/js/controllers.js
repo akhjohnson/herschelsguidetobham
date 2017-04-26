@@ -32,6 +32,17 @@ app.controller('LoginController', ['$scope', '$location', 'UserService', 'User',
     // }
 }]);
 
+app.controller('SignupController', ['$scope', '$location', 'UserService', 'User', 'Cat', 'Objective', 'Location', 'Badge', function ($scope, $location, UserService, User, Cat, Objective, Location, Badge) {
+
+    $scope.cats = Cat.query();
+
+    $scope.objectives = Objective.query();
+
+    $scope.locations = Location.query();
+
+    $scope.badges = Badge.query();
+}]);
+
 app.controller('HomeController', ['$scope', '$location', 'Cat', function ($scope, $location, Cat) {
 
     $scope.cats = Cat.query();
