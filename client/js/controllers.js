@@ -216,9 +216,7 @@ app.controller('UploadController', ['$scope', '$location', 'fileUploadService', 
 
 
     }
-=======
-    }]);
->>>>>>> 1783a3392ab48a7080cd0825fed8d89760c021f5
+
 
 app.controller('HowToController', ['$scope', '$location', function ($scope, $location) {
 
