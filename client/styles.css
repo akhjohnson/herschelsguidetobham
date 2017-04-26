@@ -103,17 +103,15 @@ body {
 .How-to-play-header {
     font-family: 'Roboto', sans-serif;
     color: #FF530D;
-    font-size: 5em;
+    font-size: 3em;
     margin-top: 5px;
-    margin-left: -100%;
 }
 .How-to-play-header-line {
     font-family: 'Roboto', sans-serif;
     color: #FF530D;
     border-bottom: solid 2px #EFEFEF; 
-    font-size: 5em;
+    font-size: 3em;
     margin-top: 5px;
-    margin-left: -100%;
 }
 .How-to-play-content {
     font-family: 'Roboto', sans-serif;
@@ -204,23 +202,17 @@ body {
 .team-header {
   font-family: 'Roboto', sans-serif;
   color: #FF530D;
-  margin-left: -100%; 
-  font-size: 5em;
-  margin-top: 5px;
+  /*margin-left: -100%; */
+  font-size: 3em;
+  margin-top: 2px;
 }
 .team-header-bottom {
   font-family: 'Roboto', sans-serif;
   color: #FF530D;
   border-bottom: solid 2px #EFEFEF;
-  margin-left: -100%; 
-  font-size: 5em;
-  margin-top: 5px;
+  font-size: 3em;
+  margin-top: 2px;
 }
 .team-name {
   color: #BDD4DE;
-}
-
-.about-text {
-  font-family: 'Roboto', sans-serif;
-  color: #FF530D;
 }
