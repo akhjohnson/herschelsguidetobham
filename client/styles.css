@@ -136,18 +136,19 @@ body {
 
 #test {
   background-color: #DEDEDE;
-  height: 90px;
+  height: 70px;
   color: #3F5765;
   
 }
 
 #tabicon {
-  width: 50px;
+  width: 40px;
 }
 
 .navbar-fixed-bottom {
   background-color: #DEDEDE;
   color: #3F5765;
+  /*font-size: 2em;*/
 }
 
 /* EXAMPLE 5 - Logo with Text*/
