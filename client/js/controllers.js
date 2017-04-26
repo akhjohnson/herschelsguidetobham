@@ -185,7 +185,7 @@ app.controller('UploadController', ['$scope', '$location', 'fileUploadService', 
     //         $scope.serverResponse = 'An error has occurred';
     //     })
     // };
-<<<<<<< HEAD
+
 
 
 
