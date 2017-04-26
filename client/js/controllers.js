@@ -75,7 +75,7 @@ app.controller('cameraController', ['$scope', '$location', function ($scope, $lo
 
 }])
 
-app.controller('PlayController', ['$scope', '$location', function ($scope, $location) {
+app.controller('PlayController', ['$scope', '$location', 'Play', function ($scope, $location, Play) {
     $scope.goToSpots = function () {
         $path.location = ('/')
     }
@@ -88,13 +88,13 @@ app.controller('DrinkController', ['$scope', '$location', 'Loc', 'Objective', 'D
     // $scope.objectives = Objective.query(); 
 }]);
 
-app.controller('EatController', ['$scope', '$location', function ($scope, $location) {
+app.controller('EatController', ['$scope', '$location', 'Eat', function ($scope, $location, Eat) {
     $scope.goToRes = function () {
         $path.location = ('/')
     }
 }]);
 
-app.controller('ShopController', ['$scope', '$location', function ($scope, $location) {
+app.controller('ShopController', ['$scope', '$location', 'Shop', function ($scope, $location, Shop) {
     $scope.goToStores = function () {
         $path.location = ('/')
     }

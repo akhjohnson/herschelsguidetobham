@@ -14,10 +14,37 @@ app.factory('Cat', ['$resource', function ($resource) {
     return $resource('/api/categories/:id');
 }]);
 
-app.factory('Drink', ['$resource', function($resource) {
-    return $resource('/api/drink/:id', { id: "@id" })
+app.factory('Drink', ['$resource', function ($resource) {
+    return $resource('/api/drink/:id', { id: '@id' }, 
+        {
+            "update": { method: "PUT" },
+            "get": { method: "GET", isArray: false }
+    })
 }]);
 
+app.factory('Eat', ['$resource', function ($resource) {
+    return $resource('/api/eat/:id', { id: '@id' }, 
+        {
+            "update": { method: "PUT" },
+            "get": { method: "GET", isArray: false }
+    })
+}]);
+
+app.factory('Play', ['$resource', function ($resource) {
+    return $resource('/api/play/:id', { id: '@id' }, 
+        {
+            "update": { method: "PUT" },
+            "get": { method: "GET", isArray: false }
+    })
+}]);
+
+app.factory('Shop', ['$resource', function ($resource) {
+    return $resource('/api/shop/:id', { id: '@id' }, 
+        {
+            "update": { method: "PUT" },
+            "get": { method: "GET", isArray: false }
+    })
+}]);
 
 app.factory('Badge', ['$resource', function($resource) {
     return $resource('/api/badges/:id', { id: "@id" })
