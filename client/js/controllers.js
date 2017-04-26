@@ -161,7 +161,7 @@ app.controller('UploadController', ['$scope', '$location', 'fileUploadService', 
     // };
 
     var uploadUrl = {
-        url: "https://vision.googleapis.com/v1/images:annotate?key=AIzaSyBxA6mwZvgZArDgJocXNFf5x09TLTqA7s",
+        url: "https://vision.googleapis.com/v1/images:annotate?key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s", 
         dataType: 'json',
         json: {
             "requests":
