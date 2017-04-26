@@ -1,7 +1,7 @@
-<ul class="media-list">
+<!--<ul class="media-list">
   <li class="media">
     <div class="media-left">
-      <a href="/objective">
+      <a ng-href="/loca>
         <img class="media-object" src="Images/good-people-logo.png" alt="Good People">
       </a>
     </div>
@@ -10,4 +10,20 @@
       <h3 class="objective-heading">{{objective.obj_name}}</h3>
     </div>
   </li>
-</ul>
+</ul>-->
+
+<div class="container">
+<div class="row">
+  <div class="col-sm-6 col-md-4" ng-repeat="objective in objectives">
+    <div class="thumbnail">
+            <a ng-href="/objectives/{{objective.obj_id}}">
+      <img ng-src="{{objective.imageurl}}" alt="Logo">
+      </a>
+      <div class="caption">
+        <h4 id="title">{{objective.locationname}}</h4>
+        <h4 id="price">{{objective.obj_description}}</h4>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
