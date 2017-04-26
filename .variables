@@ -1,0 +1,2 @@
+export SENDGRID_SENDER=majikcityradio@gmail.com
+export SENDGRID_API_KEY="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"
