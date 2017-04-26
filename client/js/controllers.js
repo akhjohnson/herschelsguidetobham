@@ -86,7 +86,7 @@ app.controller('PlayController', ['$scope', '$location', 'Play', function ($scop
 
 app.controller('PlayDetailsController', ['$scope', '$routeParams', '$location', 'Loc', 'Play', function ($scope, $routeParams, $location, Loc, Play) {
 
- $scope.plays = Play.get({ id: $routeParams.id }, function (success) {
+    $scope.plays = Play.get({ id: $routeParams.id }, function (success) {
         $scope.play = success;
     });
 
@@ -100,7 +100,7 @@ app.controller('DrinkController', ['$scope', '$location', 'Loc', 'Drink', functi
 
 app.controller('DrinkDetailsController', ['$scope', '$routeParams', '$location', 'Loc', 'Drink', function ($scope, $routeParams, $location, Loc, Drink) {
 
- $scope.drinks = Drink.get({ id: $routeParams.id }, function (success) {
+    $scope.drinks = Drink.get({ id: $routeParams.id }, function (success) {
         $scope.drink = success;
     });
 
@@ -117,7 +117,7 @@ app.controller('EatController', ['$scope', '$location', 'Eat', function ($scope,
 
 app.controller('EatDetailsController', ['$scope', '$routeParams', '$location', 'Obj', 'Loc', 'Drink', 'Eat', function ($scope, $routeParams, $location, Obj, Loc, Drink, Eat) {
 
- $scope.eats = Eat.get({ id: $routeParams.id }, function (success) {
+    $scope.eats = Eat.get({ id: $routeParams.id }, function (success) {
         $scope.eat = success;
     });
 
@@ -125,7 +125,7 @@ app.controller('EatDetailsController', ['$scope', '$routeParams', '$location', '
 
 app.controller('ShopController', ['$scope', '$location', 'Shop', function ($scope, $location, Shop) {
 
-   $scope.shops = Shop.query();
+    $scope.shops = Shop.query();
 
 
     $scope.goToStores = function () {
@@ -135,7 +135,7 @@ app.controller('ShopController', ['$scope', '$location', 'Shop', function ($scop
 
 app.controller('ShopDetailsController', ['$scope', '$routeParams', '$location', 'Loc', 'Shop', function ($scope, $routeParams, $location, Loc, Shop) {
 
- $scope.shops = Shop.get({ id: $routeParams.id }, function (success) {
+    $scope.shops = Shop.get({ id: $routeParams.id }, function (success) {
         $scope.shop = success;
     });
 
@@ -149,18 +149,55 @@ app.controller('UploadController', ['$scope', '$location', 'fileUploadService', 
 
 
     $scope.uploadFile = function () {
-        var file = $scope.myFile;
-        var uploadUrl = "../server/service.php"; //Url of webservice/api/server
-        
-        var promise = fileUploadService.uploadFileToUrl(file, uploadUrl);
+        var myfile = $scope.file;
+
+        var dataFile = function () {
+            fs.readFile(myfile, function read(err, data) {
+                if (err) {
+                    console.log(error + file)
+                } else {
+                    content = data
+                }
+            })
+        }
+
+        var config = {
+            projectId: 'api-project-346993894176',
+            keyFilename: '/server/config/config.json'
+        };
+
+        var uploadUrl = "https://vision.googleapis.com/v1/images:annotate"; //Url of webservice/api/server
+        var promise = fileUploadService.uploadFileToUrl(myfile, uploadUrl);
+
 
         promise.then(function (response) {
-            $scope.serverResponse = response;
-        }, function () {
+            serverResponse = response;
+        }.then(function () {
+            serverResponse.read(15)
+        }), function () {
             $scope.serverResponse = 'An error has occurred';
         })
     };
-}]);
+
+    var content;
+    // First I want to read the file
+    fs.readFile('./Index.html', function read(err, data) {
+        if (err) {
+            throw err;
+        }
+        content = data;
+
+        // Invoke the next step here however you like
+        console.log(content);   // Put all of the code here (not the best solution)
+        processFile();          // Or put the next step in a function and invoke it
+    });
+
+    function processFile() {
+        console.log(content);
+
+
+
+    }]);
 
 app.controller('HowToController', ['$scope', '$location', function ($scope, $location) {
 
