@@ -215,6 +215,6 @@ app.controller('HowToController', ['$scope', '$location', function ($scope, $loc
 
 }]);
 
-// app.controller('AboutController', ['$scope', '$location', function ($scope, $location) {
+app.controller('AboutController', ['$scope', '$location', function ($scope, $location) {
 
-// }])
+}])
