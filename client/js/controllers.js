@@ -33,12 +33,6 @@ app.controller('LoginController', ['$scope', '$location', 'UserService', 'User',
 }]);
 
 
-app.controller('SignupController', ['$scope', '$location', 'UserService', 'User', 'Cat', 'Obj', 'Loc', 'Badge', function ($scope, $location, UserService, User, Cat, Obj, Loc, Badge) {
-
-    $scope.cats = Cat.query();
-
-    $scope.objs = Objective.query();
-
 app.controller('SignupController', ['$scope', '$location', 'UserService', 'User', 'Cat', 'Loc', 'Badge', function ($scope, $location, UserService, User, Cat, Loc, Badge) {
 
     $scope.cats = Cat.query();
