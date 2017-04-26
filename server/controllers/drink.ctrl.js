@@ -1,5 +1,5 @@
 var express = require('express');
-var procedures = require("../procedures/objectives.proc");
+var procedures = require("../procedures/drink.proc");
 var router = express.Router();
 
 

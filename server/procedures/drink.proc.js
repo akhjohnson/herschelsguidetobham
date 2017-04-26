@@ -1,7 +1,7 @@
 var db = require("../config/db");
 
 exports.all = function() {
-    return db.rows("GetAllObjectives()", []);
+    return db.rows("GetDrink()", []);
 };
 
 exports.read = function(id) {
