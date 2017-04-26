@@ -48,13 +48,13 @@ app.controller('HomeController', ['$scope', '$location', 'Cat', function ($scope
     $scope.cats = Cat.query();
 
     $scope.goToDrink = function () {
-        $location.path('/tabsController/dRINK')
+        $location.path('/drink')
     }
     $scope.goToEat = function () {
-        $location.path('/tabsController/eAT')
+        $location.path('/eat')
     }
     $scope.goToPlay = function () {
-        $location.path('/tabsController/pLAY')
+        $location.path('/play')
     }
     $scope.goToShop = function () {
         $location.path('/shop')
