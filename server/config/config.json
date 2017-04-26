@@ -1,5 +1,6 @@
 {
   "GCLOUD_PROJECT": "api-project-346993894176",
+  "GCLOUD_BUCKET": "herschelsbucket",
   "DATA_BACKEND": "cloudsql",
   "MYSQL_USER": "team2",
   "MYSQL_PASSWORD": "teamfnawesome",

@@ -12,6 +12,9 @@ var googleApis = require('googleApis');
 
 
 
+
+
+
 var app = express();
 
 app.use(express.static(path.join(__dirname, "../client")));
@@ -22,6 +25,9 @@ configurePassport(app);
 
 app.use('/api', api);
 
+app.get('/', (req, res) => {
+ res.send('Hello World!');
+});
 
 app.get("*", function(req, res, next) {
     if(routeMw.isAsset(req.url)) {
@@ -111,4 +117,10 @@ module.exports = {
 //   res.send('Hello<br><a href="/auth">Log in with Github</a>');
 // });
 
-app.listen(process.env.PORT || 3000);
+const server = app.listen(8080, () => {
+ const host = server.address().address;
+ const port = server.address().port;
+
+ console.log(`Example app listening at http://${host}:${port}`);
+});
+// app.listen(process.env.PORT || 3000);
