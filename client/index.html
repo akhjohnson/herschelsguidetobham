@@ -29,6 +29,29 @@
 </head>
 
 <body>
+    <!-- MOBILE RESPONSIVE NAV BAR WITH LOGO -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar5">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/#!/home"><img style="width: 64px;" src="images/badge_coaster-cool.png" alt="Herschel's Guide">
+        </a>
+      </div>
+      <div id="navbar5" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right" id="navtext">
+          <li><a href="/#!/about">About</a></li>
+          <li><a href="/#!/how">How to Play</a></li>
+          <li><a href="/#!/myprofile">My Profile</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
     <div ng-view></div>
 </body>
 
