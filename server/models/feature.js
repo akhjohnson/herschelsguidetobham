@@ -10,8 +10,8 @@ class Feature {
   }
   build() {
     return {
-      type: this._type,
-      maxResults: this._maxResults
+      type: this.__type,
+      maxResults: this.__maxResults
     }
   }
 }

@@ -1,7 +1,12 @@
 'use strict'
+
 const __ = require('underscore'),
   createAPIRequest = require('googleapis/lib/apirequest')
 const API_ANNOTATE = 'https://vision.googleapis.com/v1/images:annotate'
+
+
+
+
 class Client {
   constructor(options) {
     this._options = options || {}
