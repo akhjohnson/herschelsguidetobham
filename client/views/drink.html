@@ -12,18 +12,12 @@
   </li>
 </ul>-->
 
-<div class="container">
-<div class="row">
-  <div class="col-sm-6 col-md-4" ng-repeat="objective in objectives">
+<!--<div class="container">
+<div class="row">-->
+<div ng-repeat="objective in objectives" class="col-sm-6 col-md-4">
     <div class="thumbnail">
-            <a ng-href="/objectives/{{objective.obj_id}}">
-      <img ng-src="{{objective.imageurl}}" alt="Logo">
-      </a>
-      <div class="caption">
-        <h4 id="title">{{objective.locationname}}</h4>
-        <h4 id="price">{{objective.obj_description}}</h4>
+    <img ng-src="{{ objective.imageurl }}" alt="Logo">
+    <h4 class="title">{{ objective.locationname }}</h4>
+    <h4 id="price">{{ objective.obj_description }}</h4>
       </div>
     </div>
-  </div>
-</div>
-</div>
