@@ -44,9 +44,15 @@ app.controller('SignupController', ['$scope', '$location', 'UserService', 'User'
 }]);
 
 
+<<<<<<< HEAD
 app.controller('WelcomeController', ['$scope', '$location', function ($scope, $location) {
 
 }])
+=======
+app.controller('WelcomeController', ['$scope', '$location', function($scope, $location){
+    
+}]);
+>>>>>>> cabf367ce26936e211f0a4225f685e53c2c5bec4
 
 
 app.controller('HomeController', ['$scope', '$location', 'Cat', function ($scope, $location, Cat) {
@@ -79,7 +85,7 @@ app.controller('badgesCtrl', ['$scope', '$location', '$ionicUser', function ($sc
 
 app.controller('cameraController', ['$scope', '$location', function ($scope, $location) {
 
-}])
+}]);
 
 app.controller('PlayController', ['$scope', '$location', 'Play', function ($scope, $location, Play) {
 
@@ -207,7 +213,42 @@ app.controller('UploadController', ['$scope', '$location', 'fileUploadService', 
     //         $scope.serverResponse = 'An error has occurred';
     //     })
     // };
+<<<<<<< HEAD
 }]);
+=======
+
+
+
+
+        promise.then(function (response) {
+            serverResponse = response;
+        }.then(function () {
+            serverResponse.read(15)
+        }), function () {
+            $scope.serverResponse = 'An error has occurred';
+        })
+
+
+    var content;
+    // First I want to read the file
+    fs.readFile('./Index.html', function read(err, data) {
+        if (err) {
+            throw err;
+        }
+        content = data;
+
+        // Invoke the next step here however you like
+        console.log(content);   // Put all of the code here (not the best solution)
+        processFile();          // Or put the next step in a function and invoke it
+    });
+
+    function processFile() {
+        console.log(content);
+
+
+    }
+
+>>>>>>> cabf367ce26936e211f0a4225f685e53c2c5bec4
 
 app.controller('HowToController', ['$scope', '$location', function ($scope, $location) {
 
