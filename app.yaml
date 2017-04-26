@@ -1,2 +1,6 @@
 runtime: nodejs
 env: flex
+env_variables:
+  SENDGRID_SENDER: your-sendgrid-sender-email
+  SENDGRID_API_KEY: your-sendgrid-api-key
+
