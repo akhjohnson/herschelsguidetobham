@@ -1,13 +1,7 @@
-<ul class="media-list">
-  <li class="media">
-    <div class="media-left">
-      <a href="#">
-        <img class="media-object" src="..." alt="...">
-      </a>
+<div ng-repeat="eat in eats" class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+    <img ng-src="{{ eat.locationimg }}" alt="Logo">
+    <h4 class="title">{{ eat.locationname }}</h4>
+    <h4 id="price">{{ eat.badgename }}</h4>
+      </div>
     </div>
-    <div class="media-body">
-      <h4 class="media-heading">Media heading</h4>
-      ...
-    </div>
-  </li>
-</ul>
