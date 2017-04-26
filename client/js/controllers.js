@@ -92,7 +92,7 @@ app.controller('PlayDetailsController', ['$scope', '$routeParams', '$location', 
 
 }]);
 
-app.controller('DrinkController', ['$scope', '$location', 'Loc', 'Objective', 'Drink', function ($scope, $location, Loc, Objective, Drink) {
+app.controller('DrinkController', ['$scope', '$location', 'Loc', 'Drink', function ($scope, $location, Loc, Drink) {
     $scope.locs = Loc.query();
     $scope.drinks = Drink.query();
     // $scope.objectives = Objective.query(); 
