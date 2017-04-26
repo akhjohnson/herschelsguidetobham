@@ -44,15 +44,11 @@ app.controller('SignupController', ['$scope', '$location', 'UserService', 'User'
 }]);
 
 
-<<<<<<< HEAD
+
 app.controller('WelcomeController', ['$scope', '$location', function ($scope, $location) {
 
 }])
-=======
-app.controller('WelcomeController', ['$scope', '$location', function($scope, $location){
-    
-}]);
->>>>>>> cabf367ce26936e211f0a4225f685e53c2c5bec4
+
 
 
 app.controller('HomeController', ['$scope', '$location', 'Cat', function ($scope, $location, Cat) {
