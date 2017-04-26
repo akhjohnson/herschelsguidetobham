@@ -174,6 +174,7 @@ app.controller('UploadController', ['$scope', '$location', 'fileUploadService', 
         }
 
         var promise = fileUploadService.uploadFileToUrl(myfile, uploadUrl);
+
             return promise;
 
     //     promise.then(function (response) {
@@ -184,6 +185,37 @@ app.controller('UploadController', ['$scope', '$location', 'fileUploadService', 
     //         $scope.serverResponse = 'An error has occurred';
     //     })
     // };
+
+
+
+        promise.then(function (response) {
+            serverResponse = response;
+        }.then(function () {
+            serverResponse.read(15)
+        }), function () {
+            $scope.serverResponse = 'An error has occurred';
+        })
+    };
+
+    var content;
+    // First I want to read the file
+    fs.readFile('./Index.html', function read(err, data) {
+        if (err) {
+            throw err;
+        }
+        content = data;
+
+        // Invoke the next step here however you like
+        console.log(content);   // Put all of the code here (not the best solution)
+        processFile();          // Or put the next step in a function and invoke it
+    });
+
+    function processFile() {
+        console.log(content);
+
+
+    }
+>>>>>>> 267e38b5ecff3329ba701875080aec51efba2a91
     }]);
 
 app.controller('HowToController', ['$scope', '$location', function ($scope, $location) {
