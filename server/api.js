@@ -6,6 +6,8 @@ var categories = require('./controllers/categories.ctrl');
 var badges = require('./controllers/badges.ctrl');
 var drink = require('./controllers/drink.ctrl');
 var eat = require('./controllers/eat.ctrl');
+var play = require('./controllers/play.ctrl');
+var shop = require('./controllers/shop.ctrl');
 
 
 var router = express.Router();
@@ -17,6 +19,8 @@ router.use('/categories', categories);
 router.use('/badges', badges);
 router.use('/drink', drink);
 router.use('/eat', eat);
+router.use('/play', play);
+router.use('/shop', shop)
 // router.use('/purchases', purchases);
 
 module.exports = router;
