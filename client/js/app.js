@@ -53,19 +53,19 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     })
     .when('/drink/:id', {
        templateUrl: 'views/objective.html',
-       controller: 'ObjectiveController'
+       controller: 'DrinkDetailsController'
    })
     .when('/eat/:id', {
-       templateUrl: 'views/objective.html',
-       controller: 'ObjectiveController'
+       templateUrl: 'views/eat-details.html',
+       controller: 'EatDetailsController'
    })
     .when('/shop/:id', {
        templateUrl: 'views/objective.html',
-       controller: 'ObjectiveController'
+       controller: 'ShopDetailsController'
    })
     .when('/play/:id', {
        templateUrl: 'views/objective.html',
-       controller: 'ObjectiveController'
+       controller: 'PlayDetailsController'
    })
 
 }]);
