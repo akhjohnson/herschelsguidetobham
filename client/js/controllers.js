@@ -55,7 +55,7 @@ app.controller('SignupController', ['$scope', '$location', 'UserService', 'User'
 
 app.controller('WelcomeController', ['$scope', '$location', function ($scope, $location) {
 
-}])
+}]);
 
 
 
@@ -212,9 +212,9 @@ app.controller('HowToController', ['$scope', '$location', function ($scope, $loc
 
 }]);
 
-app.controller('AboutController', ['$scope', '$location', function ($scope, $location) {
+// app.controller('AboutController', ['$scope', '$location', function ($scope, $location) {
 
-}]);
+// }]);
 
 
 
