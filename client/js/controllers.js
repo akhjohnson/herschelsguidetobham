@@ -71,11 +71,11 @@ app.controller('badgesCtrl', ['$scope', '$location', '$ionicUser', function ($sc
     }
 }]);
 
-app.controller('cameraController', ['$scope', '$location', function () {
+app.controller('cameraController', ['$scope', '$location', function ($scope, $location) {
 
 }])
 
-app.controller('PlayController', ['$scope', '$location', function () {
+app.controller('PlayController', ['$scope', '$location', function ($scope, $location) {
     $scope.goToSpots = function () {
         $path.location = ('/')
     }
