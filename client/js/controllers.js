@@ -44,8 +44,8 @@ app.controller('SignupController', ['$scope', '$location', 'UserService', 'User'
 }]);
 
 
-app.controller('WelcomeController', ['$scope', '$location', function($scope, $location){
-    
+app.controller('WelcomeController', ['$scope', '$location', function ($scope, $location) {
+
 }])
 
 
@@ -153,29 +153,51 @@ app.controller('locationController', ['$scope', '$location', function ($scope, $
 
 app.controller('UploadController', ['$scope', '$location', 'fileUploadService', function ($scope, $location, fileUploadService) {
 
-        // var config = {
-        //     projectId: 'api-project-346993894176',
-        //     keyFilename: '/server/config/config.json'
-        // };
+    // var config = {
+    //     projectId: 'api-project-346993894176',
+    //     keyFilename: '/server/config/config.json'
+    // };
 
-  
-        var uploadUrl = "https://vision.googleapis.com/v1/images:annotate"; //Url of webservice/api/server
-        var myfile = $scope.file;
-
-        var dataFile = function () {
-            fs.readFile(myfile, function read(err, data) {
-                if (err) {
-                    console.log(error + file)
-                } else {
-                    content= data;
-                    console.log(content) 
+    var uploadUrl = {
+        url: "https://vision.googleapis.com/v1/images:annotate?key=" + AIzaSyBxA6mwZvgZArDg - JocXNFf5x09TLTqA7s,
+        dataType: 'json',
+        json: {
+            "requests":
+            [
+                {
+                    "features":
+                    [
+                        {
+                            "type": "TEXT_DETECTION"
+                        }
+                    ],
+                    "image":
+                    {
+                        "source":
+                        {
+                        }
+                    }
                 }
-            })
+            ]
         }
+    }
 
-        var promise = fileUploadService.uploadFileToUrl(myfile, uploadUrl);
+    var myfile = $scope.file;
 
-            return promise;
+    var dataFile = function () {
+        fs.readFile(myfile, function read(err, data) {
+            if (err) {
+                console.log(error + file)
+            } else {
+                content = data;
+                console.log(content)
+            }
+        })
+    }
+
+    var promise = fileUploadService.uploadFileToUrl(myfile, uploadUrl);
+
+    return promise;
 
     //     promise.then(function (response) {
     //         serverResponse = response;
@@ -185,7 +207,7 @@ app.controller('UploadController', ['$scope', '$location', 'fileUploadService', 
     //         $scope.serverResponse = 'An error has occurred';
     //     })
     // };
-    }]);
+}]);
 
 app.controller('HowToController', ['$scope', '$location', function ($scope, $location) {
 
