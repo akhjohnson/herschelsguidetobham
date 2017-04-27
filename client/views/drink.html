@@ -1,17 +1,15 @@
-<!-- SHOW ALL THE OBJECTIVES UNDER THE DRINK CATEGORY -->
-
-<!--<div class="container">
-<div class="row">-->
-<div ng-repeat="drink in drinks" class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-    <a ng-href="/drink/{{drink.obj_id}}">
+<!--SHOW ALL OBJECTIVES & LOCATIONS IN THE DRINK CATEGORY-->
+<div class="row">
+  <div ng-repeat="drink in drinks" class="col-sm-6 col-md-4">
+    <div class="thumbnail how-to-img">
+      <a ng-href="/drink/{{drink.obj_id}}">
     <img ng-src="{{drink.locationimg}}" alt="Logo">
     <h4 class="title">{{ drink.locationname }}</h4>
     <h4 id="price">{{ drink.badgename }}</h4>
-      </div>
     </div>
-
-
+  </div>
+</div>
+      
 
 
 <!-- TABS FOOTER -->
