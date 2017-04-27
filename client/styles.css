@@ -137,6 +137,7 @@ body {
   height: 20em;
 }
 
+/* TAB ICONS (AKA THE FOOTER) */
 #test {
   background-color: #DEDEDE;
   height: 60px;
@@ -153,9 +154,10 @@ body {
   color: #3F5765;
   /*font-size: 2em;*/
 }
+/* END OF TABS OR FOOTER STYLES */
 
-/* EXAMPLE 5 - Logo with Text*/
 
+/* TOP NAVBAR AND BOWTIE IMG - GOT THIS FROM CODEPEN */
 .navbar-brand {
   padding: 0px;
 }
@@ -175,8 +177,6 @@ body {
   padding: 7px 14px;
 }
 
-
-
 .navbar-fixed-top {
   background-color: #DEDEDE;
   color: #3F5765;
@@ -187,7 +187,6 @@ body {
 
 #navtext li {
     padding-right: 25px;
-
 }
 
 #navtext li a {
@@ -202,6 +201,8 @@ body {
     color: #FF530D;
     text-decoration: underline;
 }
+/* END OF TOP NAVBAR STYLES */
+
 
 .img-circle {
   border-radius: 50%;
@@ -231,7 +232,7 @@ body {
 }
 
 
-/* HERSCHEL LOGO IMG IDS AND CLASSES ACROSS PGS */
+/* HERSCHEL LOGO IMG STYLES ACROSS PGS */
 #hersch-home {
   width: 80%;
   height: auto;
@@ -243,6 +244,7 @@ body {
   height: auto;
   margin-bottom: 20px;
 }
+/* END OF HERSCHEL LOGO STYLES */
 
 
 .jumbotron {
