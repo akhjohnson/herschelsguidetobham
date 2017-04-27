@@ -1,43 +1,47 @@
 <!-- HEADER WITH BADGE NAME FROM DATABASE -->
 <div class="container">
-    <h2 class="team-header"><span>{{badge.badge_name}}</span></h2>
+  <h2 class="team-header"><span>{{badge.badge_name}}</span></h2>
 </div>
 
 <!-- SINGLE BADGE INFO -->
 <div class="row">
   <div class="col-sm-6 col-md-4">
     <div class="text-center">
-    <div class="thumbnail how-to-img">
-      <img src="Images/icon_home-reverse-dullorange.png" alt="home">
-      <div class="caption">
-        <h3>Step 1:</h3>
-        <p>Get out of your house! Netflix and chill can wait...</p>
+      <div class="thumbnail how-to-img">
+        <img ng-src="{{badge.badge_imgurl}}" alt="Badges">
+        <div class="caption">
+          <h4><strong>{{badge.badge_name}}</strong></h4>
+          <p>{{badge.badge_description}}
+        </div>
       </div>
     </div>
   </div>
 </div>
-</div> 
 
 
 <!-- TABS FOOTER -->
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
-    <div class="btn-group btn-group-justified" role="group" aria-label="...">
-  <div class="btn-group text-center" role="group"><a href="/home">
-    <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_home-blue.png">
+  <div class="btn-group btn-group-justified" role="group" aria-label="...">
+    <div class="btn-group text-center" role="group">
+      <a href="/home">
+        <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_home-blue.png">
       <br> Home </button></a>
-  </div>
-   <div class="btn-group text-center" role="group"><a href="/map">
-    <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_map-blue.png">
+    </div>
+    <div class="btn-group text-center" role="group">
+      <a href="/map">
+        <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_map-blue.png">
       <br> Map </button></a>
-  </div>
-   <div class="btn-group text-center" role="group"><a href="/upload-image">
-    <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_camera-blue.png">
+    </div>
+    <div class="btn-group text-center" role="group">
+      <a href="/upload-image">
+        <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_camera-blue.png">
       <br> Camera </button></a>
-  </div>
-     <div class="btn-group text-center" role="group"><a href="/badges">
-    <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_badge-blue.png">
+    </div>
+    <div class="btn-group text-center" role="group">
+      <a href="/badges">
+        <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_badge-blue.png">
       <br> Badges </button></a>
-  </div>
+    </div>
   </div>
 </nav>

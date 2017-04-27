@@ -330,8 +330,16 @@ body {
   margin-left: 10%;
 }
 
+<<<<<<< HEAD
 .glyphicon-arrow-left {
   color: #F68A46;
   font-size: 30px;
   padding: 13px;
+=======
+#break {
+  border: 1px solid #F68A46;
+  width: 75%;
+  /*padding: 0px;
+  margin: 0px;*/
+>>>>>>> a06777e0fefa53dabeabc096465e57f2fe7da19c
 }
