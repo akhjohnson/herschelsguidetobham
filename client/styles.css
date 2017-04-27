@@ -331,9 +331,9 @@ body {
 }
 
 .glyphicon-arrow-left {
-  color: #F68A46;
+  /*color: #F68A46;*/
   font-size: 30px;
-  padding: 13px;
+  padding: 10px;
 }
 
 #break {
