@@ -134,7 +134,6 @@ app.controller('ShopDetailsController', ['$scope', '$routeParams', '$location', 
     $scope.shops = Shop.get({ id: $routeParams.id }, function (success) {
         $scope.shop = success;
     });
-
 }]);
 
 app.controller('locationController', ['$scope', '$location', function ($scope, $location) {
@@ -143,20 +142,20 @@ app.controller('locationController', ['$scope', '$location', function ($scope, $
 
 app.controller('UploadController', ['$scope', '$location', 'fileUploadService', function ($scope, $location, fileUploadService) {
 
-
-
     // var config = {
     //     projectId: 'api-project-346993894176',
     //     keyFilename: '/server/config/config.json'
     // };
+
 var uploadUrl= [
     $.ajax({
         method: "POST",
         url: "https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s",
-        contentType: "image",
-        data: "JSON.stringify()"
+        contentType: "image.jpg",
+        data: "JSON()"
 })
 ]
+
     // var uploadUrl = {
     //     method: "POST",
     //     uri: "https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s", 
