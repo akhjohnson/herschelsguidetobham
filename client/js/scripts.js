@@ -8,7 +8,9 @@
 $("#myFileField").on('click', function(){
     var file = fs.readFileSync(filepath, encoding);
     return JSON.parse(file);
-
+ 
+    var files = [];
+    
 function readJsonFileSync(filepath, encoding){
 
     if (typeof (encoding) == 'undefined'){
@@ -23,4 +25,5 @@ function getConfig(file){
     var filepath = __dirname + '/' + file;
     return readJsonFileSync(filepath);
 }
+console.log(JSON.stringify(response, null, 2));
 })

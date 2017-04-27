@@ -209,6 +209,7 @@ app.controller('ContactController', ['$scope', '$location', 'Loc', 'Badge', '$ht
 // UPLOAD IMAGE PG CONTROLLER 
 app.controller('UploadController', ['$scope', '$location', '$http', 'fileUploadService', function($scope, $location, $http, fileUploadService) {
 
+    
 
     var vaules = [ ];
     $('#myFileField').val();
@@ -219,7 +220,7 @@ app.controller('UploadController', ['$scope', '$location', '$http', 'fileUploadS
         $http.post("https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s", {})
             .then(function(response, error) {
             var data = response.data;
-                console.log(response);
+                fs.readFile(data);
             }, function(error){
                 console.log(error);
             });

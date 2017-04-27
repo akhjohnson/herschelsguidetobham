@@ -9,7 +9,6 @@ var eat = require('./controllers/eat.ctrl');
 var play = require('./controllers/play.ctrl');
 var shop = require('./controllers/shop.ctrl');
 
-
 var router = express.Router();
 
 router.use('/users', users);
