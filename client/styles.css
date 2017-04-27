@@ -96,8 +96,8 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; 
-  padding-bottom: 90px; 
-  padding-top: 90px;    
+  padding-bottom: 60px; 
+  padding-top: 70px;    
 }
 
 .How-to-play-header {
@@ -230,6 +230,11 @@ body {
   color: #BDD4DE;
 }
 
+#hersch-home {
+  width: 90%;
+  height: auto;
+}
+
 
 .jumbotron {
     background-size: cover;
@@ -238,6 +243,7 @@ body {
     background-image: url("images/herschel-logo.png");
     /*margin-bottom:0px;*/
 }
+
 .herschel-login {
   height: 15em;
   margin-left: 25%;
