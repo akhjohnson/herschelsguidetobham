@@ -21,7 +21,7 @@ app.service('UserService', ['$http', '$location', function ($http, $location) {
     this.login = function (email, password) {
         return $http({
             method: "POST",
-            url: "http://localhost:3000/api/users/login",
+            url: "http://localhost:8080/api/users/login",
             data: { email, password }
         }).then(function (success) {
             user = success.data;
@@ -35,7 +35,7 @@ app.service('UserService', ['$http', '$location', function ($http, $location) {
     this.logout = function () {
         return $http({
             method: "GET",
-            url: "http://localhost:3000/api/users/logout"
+            url: "http://localhost:8080/api/users/logout"
         }).then(function (success) {
             user = undefined;
         })
@@ -47,7 +47,7 @@ app.service('UserService', ['$http', '$location', function ($http, $location) {
         } else {
             return $http({
                 method: "GET",
-                url: "http://localhost:3000/api/users/me"
+                url: "http://localhost:8080/api/users/me"
             }).then(function (success) {
                 user = success.data;
                 return success.data;

@@ -1,62 +1,63 @@
 var app = angular.module('myApp.controllers', []);
 
-app.controller('LoginController', ['$scope', '$location', 'UserService', 'User', 'Cat', 'Loc', 'Badge', function ($scope, $location, UserService, User, Cat, Loc, Badge) {
-
-    $scope.cats = Cat.query();
-
-    $scope.locs= Loc.query();
-
-    $scope.badges = Badge.query();
-
-    // UserService.me().then(function (success) {
-    //     $location.path('/home');
-    // });
-
-    // function redirect() {
-    //     var dest = $location.search().p;
-    //     if (!dest) {
-    //         dest = '/login';
-    //     }
-    //     $location.path(dest).search('p', null);
-    // }
-
-    // $scope.login = function () {
-    //     UserService.login($scope.email, $scope.password)
-    //         .then(function () {
-    //             $location.path('/');
-    //         }, function (err) {
-    //             console.log(err);
-    //         })
-    // }
-}]);
-
-
-app.controller('SignupController', ['$scope', '$location', 'UserService', 'User', 'Cat', 'Loc', 'Badge', function ($scope, $location, UserService, User, Cat, Loc, Badge) {
-
-    $scope.cats = Cat.query();
-
-    $scope.cats = Cat.query();
-
-
-    $scope.locs = Loc.query();
-
-    $scope.badges = Badge.query();
-}]);
-
-
-
+// WELCOME PAGE CONTROLLER
 app.controller('WelcomeController', ['$scope', '$location', function ($scope, $location) {
 
 }]);
 
+// LOGIN PAGE CONTROLLER
+app.controller('LoginController', ['$scope', '$location', 'UserService', 'User', function ($scope, $location, UserService, User) {
+    UserService.me().then(function (success) {
+        // $location.path('/home');
+        redirect();
+    });
+
+    function redirect() {
+        var dest = $location.search().p;
+        if (!dest) {
+            dest = '/login';
+        }
+        $location.path(dest).search('p', null);
+    }
+
+    $scope.login = function () {
+        UserService.login($scope.email, $scope.password)
+            .then(function () {
+                $location.path('/home');
+            }, function (err) {
+                console.log(err);
+            })
+    }
+}]);
 
 
-app.controller('HomeController', ['$scope', '$location', 'Cat', function ($scope, $location, Cat) {
+// SIGN UP PAGE CONTROLLER - CREATES NEW USERS
+app.controller('SignupController', ['$scope', '$location', 'UserService', 'User', function ($scope, $location, UserService, User) {
+    $scope.users = User.query();
+
+    $scope.signUp = function () {
+        var u = new User({
+            email: $scope.email,
+            password: $scope.password,
+            name: $scope.name
+        });
+        u.$save(function () {
+            $location.path('/home');
+        })
+    }
+}]);
+
+
+//  HOME / BEGIN GAME / SELECT CATEGORY CONTROLLER
+app.controller('HomeController', ['$scope', '$location', 'UserService', 'Cat', function ($scope, $location, UserService, Cat) {
+    UserService.requireLogin();
 
     $scope.cats = Cat.query();
 
 }]);
 
+
+// BADGES PAGE CONTROLLER
 app.controller('badgesCtrl', ['$scope', '$location', function ($scope, $location) {
     $scope.badges = Badges.query();
     $scope.goToBadges = function () {
@@ -67,10 +68,26 @@ app.controller('badgesCtrl', ['$scope', '$location', function ($scope, $location
     }
 }]);
 
+
+// HOW TO PLAY PG CONTROLLER
+app.controller('HowToController', ['$scope', '$location', function ($scope, $location) {
+
+}]);
+
+
+// ABOUT PG CONTROLLER
+app.controller('AboutController', ['$scope', '$location', function ($scope, $location) {
+
+}]);
+
+
+// CAMERA CONTROLLER
 app.controller('cameraController', ['$scope', '$location', function ($scope, $location) {
 
 }]);
 
+
+// PLAY PAGE CONTROLLER - LISTS ALL OBJECTIVES UNDER PLAY CATEGORY
 app.controller('PlayController', ['$scope', '$location', 'Play', function ($scope, $location, Play) {
 
     $scope.plays = Play.query();
@@ -80,6 +97,8 @@ app.controller('PlayController', ['$scope', '$location', 'Play', function ($scop
     }
 }]);
 
+
+// DETAILS PG CONTROLLER FOR SINGLE PLAY OBJECTIVE 
 app.controller('PlayDetailsController', ['$scope', '$routeParams', '$location', 'Loc', 'Play', function ($scope, $routeParams, $location, Loc, Play) {
 
     $scope.plays = Play.get({ id: $routeParams.id }, function (success) {
@@ -88,12 +107,16 @@ app.controller('PlayDetailsController', ['$scope', '$routeParams', '$location', 
 
 }]);
 
+
+// DRINK PAGE CONTROLLER - LISTS ALL OBJECTIVES UNDER DRINK CATEGORY
 app.controller('DrinkController', ['$scope', '$location', 'Loc', 'Drink', function ($scope, $location, Loc, Drink) {
     $scope.locs = Loc.query();
     $scope.drinks = Drink.query();
     // $scope.objectives = Objective.query(); 
 }]);
 
+
+// DETAILS PG CONTROLLER FOR SINGLE DRINK OBJECTIVE 
 app.controller('DrinkDetailsController', ['$scope', '$routeParams', '$location', 'Loc', 'Drink', function ($scope, $routeParams, $location, Loc, Drink) {
 
     $scope.drinks = Drink.get({ id: $routeParams.id }, function (success) {
@@ -102,6 +125,8 @@ app.controller('DrinkDetailsController', ['$scope', '$routeParams', '$location',
 
 }]);
 
+
+// EAT PAGE CONTROLLER - LISTS ALL OBJECTIVES UNDER EAT CATEGORY
 app.controller('EatController', ['$scope', '$location', 'Eat', function ($scope, $location, Eat) {
 
     $scope.eats = Eat.query();
@@ -111,6 +136,8 @@ app.controller('EatController', ['$scope', '$location', 'Eat', function ($scope,
     }
 }]);
 
+
+// DETAILS PG CONTROLLER FOR SINGLE EAT OBJECTIVE 
 app.controller('EatDetailsController', ['$scope', '$routeParams', '$location', 'Obj', 'Loc', 'Drink', 'Eat', function ($scope, $routeParams, $location, Obj, Loc, Drink, Eat) {
 
     $scope.eats = Eat.get({ id: $routeParams.id }, function (success) {
@@ -119,16 +146,19 @@ app.controller('EatDetailsController', ['$scope', '$routeParams', '$location', '
 
 }]);
 
+
+// SHOP PAGE CONTROLLER - LISTS ALL OBJECTIVES UNDER SHOP CATEGORY
 app.controller('ShopController', ['$scope', '$location', 'Shop', function ($scope, $location, Shop) {
 
     $scope.shops = Shop.query();
-
 
     $scope.goToStores = function () {
         $path.location = ('/')
     }
 }]);
 
+
+// DETAILS PG CONTROLLER FOR SINGLE SHOP OBJECTIVE 
 app.controller('ShopDetailsController', ['$scope', '$routeParams', '$location', 'Loc', 'Shop', function ($scope, $routeParams, $location, Loc, Shop) {
 
     $scope.shops = Shop.get({ id: $routeParams.id }, function (success) {
@@ -136,10 +166,16 @@ app.controller('ShopDetailsController', ['$scope', '$routeParams', '$location', 
     });
 }]);
 
+
+// LOCATIONS CONTROLLER - MAYBE WILL BE USED FOR MAP PAGE? 
 app.controller('locationController', ['$scope', '$location', function ($scope, $location) {
 
 }]);
 
+
+
+
+// UPLOAD IMAGE PG CONTROLLER 
 app.controller('UploadController', ['$scope', '$location', 'fileUploadService', function ($scope, $location, fileUploadService) {
 
     // var config = {
@@ -210,10 +246,3 @@ var uploadUrl= [
 
 }]);
 
-app.controller('HowToController', ['$scope', '$location', function ($scope, $location) {
-
-}]);
-
-app.controller('AboutController', ['$scope', '$location', function ($scope, $location) {
-
-}])
