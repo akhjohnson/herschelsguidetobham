@@ -59,6 +59,10 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
             templateUrl: 'views/upload-image.html',
             controller: 'UploadController'
         })
+        .when('/myprofile', {
+            templateUrl: 'views/myprofile.html',
+            controller: 'MyProfileController'
+        })
         .when('/badges/:id', {
             templateUrl: 'views/badge-details.html',
             controller: 'BadgeDetailsController'
@@ -78,10 +82,6 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
         .when('/play/:id', {
             templateUrl: 'views/play-details.html',
             controller: 'PlayDetailsController'
-        })
-        .when('/myprofile', {
-            templateUrl: 'views/myprofile.html',
-            controller: 'MyProfileController'
         })
 
 }]);
