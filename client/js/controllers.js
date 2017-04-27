@@ -216,6 +216,7 @@ app.controller('UploadController', ['$scope', '$location', 'fileUploadService', 
                 "type": TEXT_DETECTION
             }
         }
+    }
     $http.post("https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s", data, config).then(success, error);
     
     
