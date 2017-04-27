@@ -1,5 +1,6 @@
 <div ng-repeat="shop in shops" class="col-sm-6 col-md-4">
     <div class="thumbnail">
+      <a ng-href="/shop/{{shop.obj_id}}">
     <img ng-src="{{ shop.locationimg }}" alt="Logo">
     <h4 class="title">{{ shop.locationname }}</h4>
     <h4 id="price">{{ shop.badgename }}</h4>
