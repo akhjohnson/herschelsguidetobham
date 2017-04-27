@@ -8,13 +8,6 @@ var configurePassport = require("./config/passport");
 var googleApis = require('googleApis');
 // const express = require('express');
 // const simpleOauthModule = require('./../');
-
-
-
-
-
-
-
 var app = express();
 
 app.use(express.static(path.join(__dirname, "../client")));
