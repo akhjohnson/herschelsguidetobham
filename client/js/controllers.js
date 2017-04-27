@@ -200,16 +200,21 @@ app.controller('MapController', ['$scope', '$location', 'Loc', 'Badge', 'UserSer
 // UPLOAD IMAGE PG CONTROLLER 
 app.controller('UploadController', ['$scope', '$location', '$http', 'fileUploadService', function($scope, $location, $http, fileUploadService) {
 
-    $scope.sendData = function(fileUploadService) {
 
-        $http.post("https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s", fileUploadService)
+    var vaules = [ ];
+    $('#myFileField').val();
+
+    $scope.sendData = function() {
+
+              
+        $http.post("https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s", {})
             .then(function(response, error) {
             var data = response.data;
                 console.log(response);
             }, function(error){
                 console.log(error);
             });
-
+           
         // var requestBody = {
 
         //     "requests": [
