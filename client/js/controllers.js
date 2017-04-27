@@ -211,30 +211,30 @@ app.controller('MyProfileController', ['$scope', '$location', 'Loc', 'Badge', '$
 
     // $scope.user = User.get({ id: $routeParams.id });
 
-    User.get({ id: $routeParams.id }, function (success) {
+    User.get({ id: $routeParams.id }, function(success) {
         $scope.user = success;
     });
 
-    $scope.logMeOut = function () {
+    $scope.logMeOut = function() {
         UserService.logout();
     };
 
     // $scope.editUser = function(id) {
-        // $scope.showPopup = true;
+    // $scope.showPopup = true;
     //     User.get({id: id}, function(success){
     //         $scope.user = success;
     //     });
     // };
 
-    $scope.update = function () {
-        $scope.user.$update(function (success) {
+    $scope.update = function() {
+        $scope.user.$update(function(success) {
             $location.path('/myprofile');
         })
     };
-    
+
 
     $scope.saveUpdates = function(id) {
-        $scope.usr.$update(function(){
+        $scope.usr.$update(function() {
             $scope.usr = undefined;
             $scope.users = User.query();
         })
@@ -247,22 +247,30 @@ app.controller('MyProfileController', ['$scope', '$location', 'Loc', 'Badge', '$
 // UPLOAD IMAGE PG CONTROLLER 
 app.controller('UploadController', ['$scope', '$location', '$http', 'fileUploadService', function($scope, $location, $http, fileUploadService) {
 
-        
+    $scope.textCompare = function() {
+        for (var i = 0; i < $rootScope.items.length; i++) {
+            alert("Inside for loop");
+            if (name === $rootScope.items[i].names)
+            {
+                console.log(Success);
+            }
+        }
+    }
 
-    var vaules = [ ];
+    var vaules = [];
     $('#myFileField').val();
 
     $scope.sendData = function() {
 
-              
-        $http.post("https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s", {data: requestBody})
+
+        $http.post("https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s", { data: requestBody })
             .then(function(response, error) {
-            var data = response.data;
+                var data = response.data;
                 fs.readFile(data);
-            }, function(error){
+            }, function(error) {
                 console.log(error);
             });
-           
+
         var requestBody = {
 
             "requests": [
@@ -281,6 +289,6 @@ app.controller('UploadController', ['$scope', '$location', '$http', 'fileUploadS
                 }
             ]
         }
-        }
-    }]);
+    }
+}]);
 
