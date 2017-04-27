@@ -152,13 +152,6 @@ body {
 }
 
 /* EXAMPLE 5 - Logo with Text*/
-.example5 .navbar-brand {
-  display: flex;
-  align-items: center;
-}
-/*.example5 .navbar-brand>img {
-  padding: 7px 20px;
-}*/
 
 .navbar-brand {
   padding: 0px;
@@ -166,9 +159,20 @@ body {
 
 .navbar-brand>img {
   height: auto;
-  padding: 15px;
-  width: auto;
+  padding: 5px;
+  /*width: auto;*/
 }
+
+.example5 .navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.example5 .navbar-brand>img {
+  padding: 7px 34px;
+}
+
+
 
 .navbar-fixed-top {
   background-color: #DEDEDE;
@@ -216,4 +220,12 @@ body {
 }
 .team-name {
   color: #BDD4DE;
+}
+
+.jumbotron {
+    background-size: cover;
+    background-color: #3F5765;
+    background-repeat: no-repeat;
+    background-image: url("images/herschel-logo.png");
+    /*margin-bottom:0px;*/
 }
