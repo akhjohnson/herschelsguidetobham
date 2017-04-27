@@ -1,17 +1,20 @@
 <div class="container">
 <h2 class="How-to-play-header"><span>SHOP</span></h2>
+</div>
 <!--OBJECTIVE DETAIL AND LOCATION UNDER SHOPS-->
 <div class="row">
-  <div ng-repeat="shop in shops" class="col-sm-6 col-md-4">
-    <div class="thumbnail how-to-img">
-      <a ng-href="/shop/{{shop.obj_id}}">
-    <img ng-src="{{shop.locationimg}}" alt="Logo">
-    <h4 class="title" id="thumbnail-back">{{ shop.locationname }}</h4>
-    <h4 id="thumbnail-back">{{ shop.badgename }}</h4>
-      </a>
+  <div class="col-sm-6 col-md-4">
+    <div class="text-center">
+      <div class="thumbnail how-to-img" ng-repeat="shop in shops">
+        <a ng-href="/shop/{{shop.obj_id}}">
+          <img ng-src="{{shop.locationimg}}" alt="Logo">
+          <h4 class="title" id="thumbnail-back">{{ shop.locationname }}</h4>
+          <h4 id="thumbnail-back">{{ shop.badgename }}</h4>
+        </a>
+      </div>
     </div>
   </div>
-</div>
+</div>  
 
 
 <!-- TABS FOOTER -->
