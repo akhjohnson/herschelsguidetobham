@@ -1,11 +1,9 @@
 
-var express = require("express");
-var vision = gcloud.vision();
-var fs = require("fs"),
+// var express = require("express");
+// var vision = gcloud.vision();
+// var fs = require("fs"),
 
-
-
-    json;
+//     json;
 
 $("#myFileField").on('click', function(){
     var file = fs.readFileSync(filepath, encoding);
