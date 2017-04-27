@@ -2,7 +2,6 @@
 // var express = require("express");
 // var vision = gcloud.vision();
 // var fs = require("fs"),
-
 //     json;
 
 $("#myFileField").on('click', function(){
