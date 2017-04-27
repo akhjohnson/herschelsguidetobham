@@ -17,7 +17,7 @@ app.controller('LoginController', ['$scope', '$location', 'UserService', 'User',
     function redirect() {
         var dest = $location.search().p;
         if (!dest) {
-            dest = '/';
+            dest = '/login';
         }
         $location.path(dest).search('p', null);
     };
@@ -203,6 +203,44 @@ app.controller('ContactController', ['$scope', '$location', 'Loc', 'Badge', '$ht
 
 }]);
 
+
+// MY PROFILE PG CONTROLLER
+app.controller('MyProfileController', ['$scope', '$location', 'Loc', 'Badge', '$http', 'User', 'UserService', function($scope, $location, Loc, Badge, $http, User, UserService) {
+
+    UserService.requireLogin();
+
+    // $scope.user = User.get({ id: $routeParams.id });
+
+    User.get({ id: $routeParams.id }, function (success) {
+        $scope.user = success;
+    });
+
+    $scope.logMeOut = function () {
+        UserService.logout();
+    };
+
+    // $scope.editUser = function(id) {
+        // $scope.showPopup = true;
+    //     User.get({id: id}, function(success){
+    //         $scope.user = success;
+    //     });
+    // };
+
+    $scope.update = function () {
+        $scope.user.$update(function (success) {
+            $location.path('/myprofile');
+        })
+    };
+    
+
+    $scope.saveUpdates = function(id) {
+        $scope.usr.$update(function(){
+            $scope.usr = undefined;
+            $scope.users = User.query();
+        })
+    };
+
+}]);
 
 
 
