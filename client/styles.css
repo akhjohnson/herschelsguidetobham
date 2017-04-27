@@ -333,4 +333,6 @@ body {
 #break {
   border: 1px solid #F68A46;
   width: 75%;
+  /*padding: 0px;
+  margin: 0px;*/
 }
