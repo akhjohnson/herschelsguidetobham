@@ -316,5 +316,5 @@ app.controller('UploadController', ['$scope', '$location', 'fileUploadService', 
     //     })
     // };
 
-};
+}]);
 
