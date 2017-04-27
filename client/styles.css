@@ -205,6 +205,7 @@ body {
 
 #navtext li {
     padding-right: 25px;
+    text-align: right;
 }
 
 #navtext li a {
@@ -225,7 +226,7 @@ body {
 .img-circle {
   border-radius: 50%;
   height: 10em;
-  margin-left: 20%;
+  margin-left: 30%;
 }
 /*HEADER FOR ABOUT TEAM*/
 .team-header {
@@ -331,9 +332,9 @@ body {
 }
 
 .glyphicon-arrow-left {
-  color: #F68A46;
+  /*color: #F68A46;*/
   font-size: 30px;
-  padding: 13px;
+  padding: 10px;
 }
 
 #break {
