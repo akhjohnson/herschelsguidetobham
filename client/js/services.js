@@ -26,7 +26,10 @@ app.service('UserService', ['$http', '$location', function ($http, $location) {
         }).then(function (success) {
             user = success.data;
             return success.data;
-        })
+        }, function(err) {
+            console.log(err);
+            throw err;
+        });
     };
 
     this.logout = function () {
@@ -51,9 +54,9 @@ app.service('UserService', ['$http', '$location', function ($http, $location) {
             })
         }
     }
-}])
+}]);
 
-  app.service('fileUploadService', ['$http', '$q', function ($http, $q) {
+ app.service('fileUploadService', ['$http', '$q', function ($http, $q) {
  
         this.uploadFileToUrl = function (file, uploadUrl) {
             //FormData, object of key/value pair for form fields and values
@@ -105,3 +108,12 @@ app.service('UserService', ['$http', '$location', function ($http, $location) {
 //         // state: { foo: 'bar' }
 //     });
 // }])
+
+app.service('SEOService', ['$rootScope', function($rootScope) {
+		this.setSEO = function(data) {
+			$rootScope.seo = {};
+			for(var p in data) {
+				$rootScope.seo[p] = data[p];
+			}
+		}
+}]);

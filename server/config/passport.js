@@ -5,14 +5,15 @@ var MySQLStore = require("express-mysql-session")(session);
 var LocalStrategy = require("passport-local").Strategy;
 var userProc = require("../procedures/users.proc");
 var pool = require("./db").pool;
+var utils = require("./utils");
 
 function configurePassport(app) {
     passport.use(new LocalStrategy({
         usernameField: 'email',
         passwordField: 'password'
     }, function (email, password, done) {
-        userProc.readByEmail(email).then(function (user) {
-            if (!user) {
+        userProc.readByEmail(email).then(function(user) {
+            if(!user) {
                 return done(null, false);
             }
             utils.checkPassword(password, user.password)
