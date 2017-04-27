@@ -189,9 +189,56 @@ app.controller('ShopDetailsController', ['$scope', '$routeParams', '$location', 
 
 
 // MAP PG CONTROLLER  - WAS PREVIOUSLY CALLED 'locationController' BUT WE DON'T NEED THAT NOW
-app.controller('MapController', ['$scope', '$location', 'Loc', 'Badge', 'UserService', '$http', function($scope, $location, Loc, Badge, UserService) {
+app.controller('MapController', ['$scope', '$location', 'Loc', 'Badge', 'UserService', '$http', function($scope, $location, Loc, Badge, UserService, $http) {
 
     UserService.requireLogin();
+
+}]);
+
+
+// CONTACT US PG CONTROLLER
+app.controller('ContactController', ['$scope', '$location', 'Loc', 'Badge', '$http', function($scope, $location, Loc, Badge, $http) {
+
+    // UserService.requireLogin();
+
+}]);
+
+
+// MY PROFILE PG CONTROLLER
+app.controller('MyProfileController', ['$scope', '$location', 'Loc', 'Badge', '$http', 'User', 'UserService', function($scope, $location, Loc, Badge, $http, User, UserService) {
+
+    UserService.requireLogin();
+
+    // $scope.user = User.get({ id: $routeParams.id });
+
+    User.get({ id: $routeParams.id }, function (success) {
+        $scope.user = success;
+    });
+
+    $scope.logMeOut = function () {
+        UserService.logout();
+    };
+
+    // $scope.editUser = function(id) {
+        // $scope.showPopup = true;
+    //     User.get({id: id}, function(success){
+    //         $scope.user = success;
+    //     });
+    // };
+
+    $scope.update = function () {
+        $scope.user.$update(function (success) {
+            $location.path('/myprofile');
+        })
+    };
+    
+
+    $scope.saveUpdates = function(id) {
+        $scope.usr.$update(function(){
+            $scope.usr = undefined;
+            $scope.users = User.query();
+        })
+    };
 
 }]);
 
@@ -200,16 +247,21 @@ app.controller('MapController', ['$scope', '$location', 'Loc', 'Badge', 'UserSer
 // UPLOAD IMAGE PG CONTROLLER 
 app.controller('UploadController', ['$scope', '$location', '$http', 'fileUploadService', function($scope, $location, $http, fileUploadService) {
 
-    $scope.sendData = function(fileUploadService) {
 
-        $http.post("https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s", fileUploadService)
+    var vaules = [ ];
+    $('#myFileField').val();
+
+    $scope.sendData = function() {
+
+              
+        $http.post("https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s", {})
             .then(function(response, error) {
             var data = response.data;
                 console.log(response);
             }, function(error){
                 console.log(error);
             });
-
+           
         // var requestBody = {
 
         //     "requests": [

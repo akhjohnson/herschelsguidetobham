@@ -16,6 +16,6 @@ exports.create = function(u, hash) {
     return db.row('NewUser(?, ?, ?)', [u.email, hash, u.name]);   
 };
 
-// exports.update = function(usr) {
-//     return db.empty("UpdateUser(?, ?, ?, ?)", [usr.id, usr.firstname, usr.lastname, usr.email]);
-// };
+exports.update = function(usr) {
+    return db.empty("UpdateUser(?, ?, ?)", [usr.id, usr.name, usr.email]);
+};

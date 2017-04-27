@@ -35,10 +35,6 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
             templateUrl: 'views/shop.html',
             controller: 'ShopController'
         })
-        .when('/upload-image', {
-            templateUrl: 'views/upload-image.html',
-            controller: 'UploadController'
-        })
         .when('/about', {
             templateUrl: 'views/aboutCreators.html',
             controller: 'AboutController'
@@ -54,6 +50,14 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
         .when('/badges', {
             templateUrl: 'views/badges.html',
             controller: 'BadgesController'
+        })
+        .when('/contact', {
+            templateUrl: 'views/contact.html',
+            controller: 'ContactController'
+        })
+        .when('/upload-image', {
+            templateUrl: 'views/upload-image.html',
+            controller: 'UploadController'
         })
         .when('/badges/:id', {
             templateUrl: 'views/badge-details.html',
@@ -74,6 +78,10 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
         .when('/play/:id', {
             templateUrl: 'views/play-details.html',
             controller: 'PlayDetailsController'
+        })
+        .when('/myprofile', {
+            templateUrl: 'views/myprofile.html',
+            controller: 'MyProfileController'
         })
 
 }]);
