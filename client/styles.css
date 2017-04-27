@@ -343,3 +343,28 @@ body {
   margin: 0px;*/
 
 }
+
+.welcome-header {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: 3em;
+  text-align: center;
+  color: #BDD4DE;
+}
+.welcome-header span {
+  background-color: #BDD4DE;
+  color: #FF530D;
+  padding: 5px 20px;
+}
+
+.get-started {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  background-color: #FDCD0D;
+  margin-left: 25%;
+  color: white;
+  height: 3em;
+  width: 10em;
+  font-size: 19px;
+  letter-spacing: 1px;
+}
