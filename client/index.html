@@ -39,8 +39,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/home"><img style="width: 65px;" src="images/icon_about-orange.png" alt="Herschel's Guide">
-        </a>
+        <button onclick="goBack()">
+        <a class="navbar-brand glyphicon glyphicon-arrow-left" href="/home">
+        </a></button>
+        <script>
+          function goBack() {
+            window.history.back();
+          }
+          </script>
       </div>
       <div id="navbar5" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right" id="navtext">
