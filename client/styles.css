@@ -221,7 +221,7 @@ body {
 .team-name {
   color: #BDD4DE;
 }
-<<<<<<< HEAD
+
 
 .jumbotron {
     background-size: cover;
@@ -229,17 +229,13 @@ body {
     background-repeat: no-repeat;
     background-image: url("images/herschel-logo.png");
     /*margin-bottom:0px;*/
-=======
+}
 .herschel-login {
   height: 15em;
   margin-left: 25%;
-<<<<<<< HEAD
->>>>>>> 45913068f521330af58b7bc24ed04e123d255077
-=======
 }
 .how-to-img {
   width: 60%;
   background-color: #EFEFEF;
   margin-left: 20%;
->>>>>>> 4b2af0af5858ddc664ba847a1ca34ba77691f57d
 }
