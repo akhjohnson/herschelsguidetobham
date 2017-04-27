@@ -57,3 +57,7 @@ app.factory('Badge', ['$resource', function($resource) {
 app.factory('Loc', ['$resource', function($resource) {
     return $resource('/api/locations/:id', { id: "@id" })
 }]);
+
+// app.factory('Upload', ['$resource', function($resource){
+//     return $resource('')
+// }]

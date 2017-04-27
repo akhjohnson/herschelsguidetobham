@@ -200,34 +200,34 @@ app.controller('MapController', ['$scope', '$location', 'Loc', 'Badge', 'UserSer
 // UPLOAD IMAGE PG CONTROLLER 
 app.controller('UploadController', ['$scope', '$location', '$http', 'fileUploadService', function($scope, $location, $http, fileUploadService) {
 
-    $scope.sendData = function() {
+    $scope.sendData = function(fileUploadService) {
 
-// "https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s"
-        $http.post("https://vision.googleapis.com/v1/images:annotate?&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s", { data: requestBody })
-            .then(function(response) {
-                JSON.stringify(response);
-                var data = response.data;
+        $http.post("https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s", fileUploadService)
+            .then(function(response, error) {
+            var data = response.data;
                 console.log(response);
+            }, function(error){
+                console.log(error);
             });
 
-        var requestBody = {
+        // var requestBody = {
 
-            "requests": [
-                {
-                    "image": {
-                        "source": {
-                            "imageUri": "../images/good-people-logo.png"
-                        },
-                        "content": ""
-                    },
-                    "features": [
-                        {
-                            "type": "TEXT_DETECTION"
-                        }
-                    ]
-                }
-            ]
-        }
+        //     "requests": [
+        //         {
+        //             "image": {
+        //                 "source": {
+        //                     "imageUri": "/images/good-people-logo.png"
+        //                 },
+        //                 "content": ""
+        //             },
+        //             "features": [
+        //                 {
+        //                     "type": "TEXT_DETECTION"
+        //                 }
+        //             ]
+        //         }
+        //     ]
+        // }
         }
     }]);
 
