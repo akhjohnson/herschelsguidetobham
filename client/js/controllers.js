@@ -147,14 +147,14 @@ app.controller('UploadController', ['$scope', '$location', 'fileUploadService', 
     //     keyFilename: '/server/config/config.json'
     // };
 
-var uploadUrl= [
-    $.ajax({
+var uploadUrl= {
+    
         method: "POST",
-        url: "https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s",
+        uri: "https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s",
         contentType: "image.jpg",
         data: "JSON()"
-})
-]
+
+}
 
     // var uploadUrl = {
     //     method: "POST",
