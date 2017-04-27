@@ -281,9 +281,9 @@ body {
 .badge-info {
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
-  color: #EFEFEF;
+  color: #BDD4DE;
   text-align: center;
-  font-size: 3em;
+  font-size: 2em;
 }
 
 .badge-img {
