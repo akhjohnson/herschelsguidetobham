@@ -1,9 +1,11 @@
 var app = angular.module('myApp.controllers', []);
 
+
 // WELCOME PAGE CONTROLLER
 app.controller('WelcomeController', ['$scope', '$location', function($scope, $location) {
 
 }]);
+
 
 // LOGIN PAGE CONTROLLER
 app.controller('LoginController', ['$scope', '$location', 'UserService', 'User', function($scope, $location, UserService, User) {
@@ -18,7 +20,7 @@ app.controller('LoginController', ['$scope', '$location', 'UserService', 'User',
             dest = '/';
         }
         $location.path(dest).search('p', null);
-    }
+    };
 
     $scope.login = function() {
         UserService.login($scope.email, $scope.password)
@@ -26,8 +28,8 @@ app.controller('LoginController', ['$scope', '$location', 'UserService', 'User',
                 $location.path('/home');
             }, function(err) {
                 console.log(err);
-            })
-    }
+            });
+    };
 }]);
 
 
@@ -42,8 +44,8 @@ app.controller('SignupController', ['$scope', '$location', 'UserService', 'User'
         });
         u.$save(function() {
             $location.path('/home');
-        })
-    }
+        });
+    };
 }]);
 
 
@@ -65,6 +67,7 @@ app.controller('BadgesController', ['$scope', '$location', 'Badge', 'UserService
     $scope.badges = Badge.query();
 
 }]);
+
 
 // BADGE DETAILS PG CONTROLLER FOR SINGLE BADGE
 app.controller('BadgeDetailsController', ['$scope', '$routeParams', '$location', 'Badge', 'UserService', function($scope, $routeParams, $location, Badge, UserService) {
@@ -191,7 +194,6 @@ app.controller('MapController', ['$scope', '$location', 'Loc', 'Badge', 'UserSer
     UserService.requireLogin();
 
 }]);
-
 
 
 
