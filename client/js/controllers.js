@@ -189,11 +189,20 @@ app.controller('ShopDetailsController', ['$scope', '$routeParams', '$location', 
 
 
 // MAP PG CONTROLLER  - WAS PREVIOUSLY CALLED 'locationController' BUT WE DON'T NEED THAT NOW
-app.controller('MapController', ['$scope', '$location', 'Loc', 'Badge', 'UserService', '$http', function($scope, $location, Loc, Badge, UserService) {
+app.controller('MapController', ['$scope', '$location', 'Loc', 'Badge', 'UserService', '$http', function($scope, $location, Loc, Badge, UserService, $http) {
 
     UserService.requireLogin();
 
 }]);
+
+
+// CONTACT US PG CONTROLLER
+app.controller('ContactController', ['$scope', '$location', 'Loc', 'Badge', '$http', function($scope, $location, Loc, Badge, $http) {
+
+    // UserService.requireLogin();
+
+}]);
+
 
 
 
