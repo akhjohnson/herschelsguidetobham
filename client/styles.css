@@ -109,7 +109,6 @@ body {
 .How-to-play-header-line {
     font-family: 'Roboto', sans-serif;
     color: #FF530D;
-    border-bottom: solid 2px #EFEFEF; 
     font-size: 3em;
     margin-top: 5px;
 }
@@ -169,7 +168,7 @@ body {
 }
 
 .example5 .navbar-brand>img {
-  padding: 7px 34px;
+  padding: 7px 14px;
 }
 
 
@@ -221,6 +220,7 @@ body {
 .team-name {
   color: #BDD4DE;
 }
+<<<<<<< HEAD
 
 .jumbotron {
     background-size: cover;
@@ -228,4 +228,9 @@ body {
     background-repeat: no-repeat;
     background-image: url("images/herschel-logo.png");
     /*margin-bottom:0px;*/
+=======
+.herschel-login {
+  height: 15em;
+  margin-left: 25%;
+>>>>>>> 45913068f521330af58b7bc24ed04e123d255077
 }

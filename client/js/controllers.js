@@ -143,34 +143,45 @@ app.controller('locationController', ['$scope', '$location', function ($scope, $
 
 app.controller('UploadController', ['$scope', '$location', 'fileUploadService', function ($scope, $location, fileUploadService) {
 
+
+
     // var config = {
     //     projectId: 'api-project-346993894176',
     //     keyFilename: '/server/config/config.json'
     // };
-
-    var uploadUrl = {
-        url: "https://vision.googleapis.com/v1/images:annotate?key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s", 
-        dataType: 'json',
-        json: {
-            "requests":
-            [
-                {
-                    "features":
-                    [
-                        {
-                            "type": "TEXT_DETECTION"
-                        }
-                    ],
-                    "image":
-                    {
-                        "source":
-                        {
-                        }
-                    }
-                }
-            ]
-        }
-    }
+var uploadUrl= [
+    $.ajax({
+        method: "POST",
+        url: "https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s",
+        contentType: "image",
+        data: "JSON.stringify()"
+})
+]
+    // var uploadUrl = {
+    //     method: "POST",
+    //     uri: "https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s", 
+    //     dataType: 'json',
+    //     json: {
+    //         "requests":
+    //         [
+    //             {
+    //                 "features":
+    //                 [
+    //                     {
+    //                         "type": "TEXT_DETECTION"
+    //                     }
+    //                 ],
+    //                 "image":
+    //                 {
+    //                     "source":
+    //                     {
+    //                         // "gcsImageUri": "gcs://herschelsbucket/file"
+    //                     }
+    //                 }
+    //             }
+    //         ]
+    //     }
+    // })
 
     var myfile = $scope.file;
 
@@ -204,6 +215,6 @@ app.controller('HowToController', ['$scope', '$location', function ($scope, $loc
 
 }]);
 
-// app.controller('AboutController', ['$scope', '$location', function ($scope, $location) {
+app.controller('AboutController', ['$scope', '$location', function ($scope, $location) {
 
-// }])
+}])

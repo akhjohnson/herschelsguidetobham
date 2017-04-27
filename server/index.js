@@ -2,7 +2,7 @@ var path = require('path');
 var express = require('express');
 var bodyParser = require('body-parser');
 var cookieParser = require("cookie-parser");
-var api = require('./api')
+var api = require('./api');
 var routeMw = require("./middleware/routing.mw");
 var configurePassport = require("./config/passport");
 var googleApis = require('googleApis');
@@ -52,7 +52,7 @@ module.exports = {
     ep.google = this
     this._client = ep
   },
-  
+
   annotate(requests) {
     return new Promise((resolve, reject) => {
       if (!requests) { return reject() }
@@ -65,6 +65,7 @@ module.exports = {
  var config = {
             projectId: 'api-project-346993894176',
             keyFilename: '/server/config/config.json'
+            
         };
 
 
