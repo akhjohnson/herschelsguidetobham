@@ -5,7 +5,7 @@
       
 .login-page {
   width: 360px;
-  padding: 8% 0 0;
+  /*padding: 8% 0 0;*/
   margin: auto;
 }
 .form {
@@ -231,7 +231,7 @@ body {
 }
 
 #hersch-home {
-  width: 90%;
+  width: 80%;
   height: auto;
   margin-bottom: 20px;
 }
