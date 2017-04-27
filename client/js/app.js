@@ -79,6 +79,10 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
             templateUrl: 'views/play-details.html',
             controller: 'PlayDetailsController'
         })
+        .when('/myprofile', {
+            templateUrl: 'views/myprofile.html',
+            controller: 'MyProfileController'
+        })
 
 }]);
 
