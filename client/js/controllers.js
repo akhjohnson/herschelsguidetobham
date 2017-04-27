@@ -1,9 +1,11 @@
 var app = angular.module('myApp.controllers', []);
 
+
 // WELCOME PAGE CONTROLLER
 app.controller('WelcomeController', ['$scope', '$location', function($scope, $location) {
 
 }]);
+
 
 // LOGIN PAGE CONTROLLER
 app.controller('LoginController', ['$scope', '$location', 'UserService', 'User', function($scope, $location, UserService, User) {
@@ -18,7 +20,7 @@ app.controller('LoginController', ['$scope', '$location', 'UserService', 'User',
             dest = '/';
         }
         $location.path(dest).search('p', null);
-    }
+    };
 
     $scope.login = function() {
         UserService.login($scope.email, $scope.password)
@@ -26,8 +28,8 @@ app.controller('LoginController', ['$scope', '$location', 'UserService', 'User',
                 $location.path('/home');
             }, function(err) {
                 console.log(err);
-            })
-    }
+            });
+    };
 }]);
 
 
@@ -42,8 +44,8 @@ app.controller('SignupController', ['$scope', '$location', 'UserService', 'User'
         });
         u.$save(function() {
             $location.path('/home');
-        })
-    }
+        });
+    };
 }]);
 
 
@@ -65,6 +67,7 @@ app.controller('BadgesController', ['$scope', '$location', 'Badge', 'UserService
     $scope.badges = Badge.query();
 
 }]);
+
 
 // BADGE DETAILS PG CONTROLLER FOR SINGLE BADGE
 app.controller('BadgeDetailsController', ['$scope', '$routeParams', '$location', 'Badge', 'UserService', function($scope, $routeParams, $location, Badge, UserService) {
@@ -194,164 +197,70 @@ app.controller('MapController', ['$scope', '$location', 'Loc', 'Badge', 'UserSer
 
 
 
-
 // UPLOAD IMAGE PG CONTROLLER 
 app.controller('UploadController', ['$scope', '$location', '$http', 'fileUploadService', function($scope, $location, $http, fileUploadService) {
 
-    // $scope.success = function() {
-    //     $scope.data = data
-    //     return data;
+    // var req = {
+    //     method: 'POST',
+    //     url: "https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s",
+    //     headers: { 'Content-Type': "application/json"
+    //     },
+    //     data: { test: 'test' },
+    //     json: {
+    //         "requests": [
+    //             {
+    //                 "features": [
+    //                     {
+    //                         "type": "TEXT_DETECTION",
+    //                         "maxResults": 30
+    //                     }
+    //                 ]
+    //             }
+    //         ]
+
+    //     }
     // }
 
-    // $scope.error = function() {
-    //     console.log(error);
-    // }
+    // $http(req).then(function(response) {
+    
+    // }, function(){
+        
+    // });
 
     $scope.sendData = function() {
+    
+    var api_json = {
+            "requests": [
+                {
+                    "features": [
+                        {
+                            "type": "TEXT_DETECTION",
+                            "maxResults": 1
+                        }
+                    ]
+                }
+            ]
+        }
 
-        const config = {
-            
-        };
-
-        const data = {
-            
-  
-        };
-// data: {test: "test"},
-// status: { number: 204 },
-// headers: { 'Content-Type': 'application/json' },
-// json: {
-// "requests": [
-//     {
-//         "image": {
-//             "source": {
-//                 "imageUri": "http://localhost:8080/upload-image"
-//             },
-//         },
-//         "features": [
-// {
-// "type": "TEXT_DETECTION"
-// }
-//     ]
-// },
-// {}
-// ]
-// json: {
-//     "image": {
-//         object(Image)
-//     },
-//     "features": [
-//         {
-//             object(Feature)
-//         }
-//     ],
-//     "imageContext": {
-//         object(ImageContext)
-//     },
-// }
-// }
-$http.post("https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s", data, config)
-    .then(function(response) {
-        var data = response.data;
-        console.log(data);
-    });
-    }
-
-        // $http({
-        //     method: 'POST',
-        //     url: "https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s"
-        // }).then(function successCallback(response, data) {
-        //     // this callback will be called asynchronously
-        //     // when the response is available
-        //         $scope.data = data;
-        // }, function errorCallback(response, status) {
-        //     // called asynchronously if an error occurs
-        //     // or server returns response with an error status.
-        //     $scope.status = status;
-        // });
-
-        // $scope.myfile = $scope.file;
-
-        // $scope.req = {
-        //     method: 'POST',
-        //     url: "https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s",
-        //     data: {test: 'test'},
-        //     status: {number: 204},
-        //     headers: {'Content-Type': 'json'},
-        // }
-
-        // $http(req).then(function (data, status) {
-        //     $scope.data = data;
-
-        // }, function (status) {
-        //     $scope.status = status;
-        // });
-
-
-        // $scope.dataFile = function () {
-        //     fs.readFile(myfile, function read(err, data) {
-        //         if (err) {
-        //             console.log(error + file)
-        //         } else {
-        //             content = data;
-        //             console.log(content)
-        //         }
-        //     })
-        // }
-        // var config = {
-        //     projectId: 'api-project-346993894176',
-        //     keyFilename: '/server/config/config.json'
-        // };
-
-        // $scope.promise = fileUploadService.uploadFileToUrl(myfile, uploadUrl);
-
-        // return promise;
-
-
-
-        // var uploadUrl= {
-        //      ("https:vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s",)
-        //         method: "POST",
-        //         uri: "https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s",
-        //         contentType: "image.jpg",
-        //         data: "JSON()"
-
-        // }
-
-        // var uploadUrl = {
-        //     method: "POST",
-        //     uri: "https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s", 
-        //     dataType: 'json',
-        //     json: {
-        //         "requests":
-        //         [
-        //             {
-        //                 "features":
-        //                 [
-        //                     {
-        //                         "type": "TEXT_DETECTION"
-        //                     }
-        //                 ],
-        //                 "image":
+        const data = "";
+        // const config = {
+        //     "requests": [
+        //         {
+        //             "features": [
         //                 {
-        //                     "source":
-        //                     {
-        //                         // "gcsImageUri": "gcs://herschelsbucket/file"
-        //                     }
+        //                     "type": "TEXT_DETECTION",
+        //                     "maxResults": 1
         //                 }
-        //             }
-        //         ]
-        //     }
-        // })
-
-        //     promise.then(function (response) {
-        //         serverResponse = response;
-        //     }.then(function () {
-        //         serverResponse.read(15)
-        //     }), function () {
-        //         $scope.serverResponse = 'An error has occurred';
-        //     })
-        // };
-
+        //             ]
+        //         }
+        //     ]
+        // }
+        
+        $http.post("https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s", data, api_json)
+                .then(function(response) {
+                    var data = response.data;
+                    console.log(response);
+            });
+        }
     }]);
 
