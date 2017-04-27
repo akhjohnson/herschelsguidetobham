@@ -229,15 +229,14 @@ body {
 }
 .team-header {
   font-family: 'Roboto', sans-serif;
-  color: #FF530D;
-  /*margin-left: -100%; */
-  font-size: 2em;
+  color: #3F5765;
+  font-size: 2.2em;
   font-weight: 900;
   text-align: center;
 }
 .team-header span {
-  background-color: #DEDEDE;
   padding: 5px 25px;
+  background-color: #BDD4DE;
 }
 /*.team-header-bottom {
   font-family: 'Roboto', sans-serif;
