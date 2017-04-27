@@ -49,7 +49,7 @@ app.controller('SignupController', ['$scope', '$location', 'UserService', 'User'
 
 //  HOME / BEGIN GAME / SELECT CATEGORY CONTROLLER
 app.controller('HomeController', ['$scope', '$location', 'UserService', 'Cat', function ($scope, $location, UserService, Cat) {
-    
+
     UserService.requireLogin();
 
     $scope.cats = Cat.query();
@@ -120,7 +120,7 @@ app.controller('PlayDetailsController', ['$scope', '$routeParams', '$location', 
 
 // DRINK PAGE CONTROLLER - LISTS ALL OBJECTIVES UNDER DRINK CATEGORY
 app.controller('DrinkController', ['$scope', '$location', 'Loc', 'Drink', 'UserService', function ($scope, $location, Loc, Drink, UserService) {
-    
+
     UserService.requireLogin();
 
     $scope.locs = Loc.query();
@@ -134,7 +134,7 @@ app.controller('DrinkController', ['$scope', '$location', 'Loc', 'Drink', 'UserS
 app.controller('DrinkDetailsController', ['$scope', '$routeParams', '$location', 'Loc', 'Drink', 'UserService', function ($scope, $routeParams, $location, Loc, Drink, UserService) {
 
     UserService.requireLogin();
-    
+
     $scope.drinks = Drink.get({ id: $routeParams.id }, function (success) {
         $scope.drink = success;
     });
@@ -156,7 +156,7 @@ app.controller('EatController', ['$scope', '$location', 'Loc', 'Eat', 'UserServi
 app.controller('EatDetailsController', ['$scope', '$routeParams', '$location', 'Loc', 'Eat', 'UserService', function ($scope, $routeParams, $location, Loc, Eat, UserService) {
 
     UserService.requireLogin();
-    
+
     $scope.eats = Eat.get({ id: $routeParams.id }, function (success) {
         $scope.eat = success;
     });
@@ -168,7 +168,7 @@ app.controller('EatDetailsController', ['$scope', '$routeParams', '$location', '
 app.controller('ShopController', ['$scope', '$location', 'Loc', 'Shop', 'UserService', function ($scope, $location, Loc, Shop, UserService) {
 
     UserService.requireLogin();
-    
+
     $scope.shops = Shop.query();
 
 }]);
@@ -186,7 +186,7 @@ app.controller('ShopDetailsController', ['$scope', '$routeParams', '$location', 
 
 
 // MAP PG CONTROLLER  - WAS PREVIOUSLY CALLED 'locationController' BUT WE DON'T NEED THAT NOW
-app.controller('MapController', ['$scope', '$location', 'Loc', 'Badge', 'UserService', function ($scope, $location, Loc, Badge, UserService) {
+app.controller('MapController', ['$scope', '$location', 'Loc', 'Badge', 'UserService', '$http', function ($scope, $location, Loc, Badge, UserService) {
 
     UserService.requireLogin();
 
@@ -196,21 +196,89 @@ app.controller('MapController', ['$scope', '$location', 'Loc', 'Badge', 'UserSer
 
 
 // UPLOAD IMAGE PG CONTROLLER 
-app.controller('UploadController', ['$scope', '$location', 'fileUploadService', function ($scope, $location, fileUploadService) {
+app.controller('UploadController', ['$scope', '$location', 'fileUploadService', '$http', function ($scope, $location, $http, fileUploadService) {
 
+    $scope.success = function() {
+        $scope.data =data
+        return data;
+    }
+
+    $scope.error = function() {
+        console.log(error);
+    }
+
+    $scope.sendData = function () {
+        $scope.data = {
+            data: { test: 'test' },
+            status: { number: 204 },
+            headers: { 'Content-Type': 'json' },
+            json: {
+                "type": TEXT_DETECTION
+            }
+        }
+    $http.post("https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s", data, config).then(success, error);
+    
+    
+    // $http({
+    //     method: 'POST',
+    //     url: "https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s"
+    // }).then(function successCallback(response, data) {
+    //     // this callback will be called asynchronously
+    //     // when the response is available
+    //         $scope.data = data;
+    // }, function errorCallback(response, status) {
+    //     // called asynchronously if an error occurs
+    //     // or server returns response with an error status.
+    //     $scope.status = status;
+    // });
+
+    // $scope.myfile = $scope.file;
+
+    // $scope.req = {
+    //     method: 'POST',
+    //     url: "https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s",
+    //     data: {test: 'test'},
+    //     status: {number: 204},
+    //     headers: {'Content-Type': 'json'},
+    // }
+
+    // $http(req).then(function (data, status) {
+    //     $scope.data = data;
+
+    // }, function (status) {
+    //     $scope.status = status;
+    // });
+
+
+    // $scope.dataFile = function () {
+    //     fs.readFile(myfile, function read(err, data) {
+    //         if (err) {
+    //             console.log(error + file)
+    //         } else {
+    //             content = data;
+    //             console.log(content)
+    //         }
+    //     })
+    // }
     // var config = {
     //     projectId: 'api-project-346993894176',
     //     keyFilename: '/server/config/config.json'
     // };
 
-var uploadUrl= {
-    
-        method: "POST",
-        uri: "https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s",
-        contentType: "image.jpg",
-        data: "JSON()"
+    // $scope.promise = fileUploadService.uploadFileToUrl(myfile, uploadUrl);
 
-}
+    // return promise;
+
+
+
+    // var uploadUrl= {
+    //      ("https:vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s",)
+    //         method: "POST",
+    //         uri: "https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s",
+    //         contentType: "image.jpg",
+    //         data: "JSON()"
+
+    // }
 
     // var uploadUrl = {
     //     method: "POST",
@@ -237,23 +305,6 @@ var uploadUrl= {
     //         ]
     //     }
     // })
-
-    var myfile = $scope.file;
-
-    var dataFile = function () {
-        fs.readFile(myfile, function read(err, data) {
-            if (err) {
-                console.log(error + file)
-            } else {
-                content = data;
-                console.log(content)
-            }
-        })
-    }
-
-    var promise = fileUploadService.uploadFileToUrl(myfile, uploadUrl);
-
-    return promise;
 
     //     promise.then(function (response) {
     //         serverResponse = response;
