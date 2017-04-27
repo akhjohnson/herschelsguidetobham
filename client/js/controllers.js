@@ -196,8 +196,8 @@ app.controller('MapController', ['$scope', '$location', 'Loc', 'Badge', 'UserSer
 
 
 // UPLOAD IMAGE PG CONTROLLER 
-app.controller('UploadController', ['$scope', '$location', 'fileUploadService', '$http', function($scope, $location, $http, fileUploadService) {
-    
+app.controller('UploadController', ['$scope', '$location', '$http', 'fileUploadService', function($scope, $location, $http, fileUploadService) {
+
     // $scope.success = function() {
     //     $scope.data = data
     //     return data;
@@ -208,43 +208,54 @@ app.controller('UploadController', ['$scope', '$location', 'fileUploadService', 
     // }
 
     $scope.sendData = function() {
-        $scope.send = {
-            data: {"image": "image"},
-            status: { number: 204 },
-            headers: { 'Content-Type': 'application/json' },
-            json: {
-                "requests": [
-                    {
-                        "image": {
-                            "source": {
-                                "imageUri": "http://localhost:8080/upload-image?file="
-                            },
-                        },
-                        "features": [
-                            {
-                                "type": "TEXT_DETECTION"
-                            }
-                        ]
-                    },
-                    {}
-                ]
-                // json: {
-                //     "image": {
-                //         object(Image)
-                //     },
-                //     "features": [
-                //         {
-                //             object(Feature)
-                //         }
-                //     ],
-                //     "imageContext": {
-                //         object(ImageContext)
-                //     },
-                }
-            }
-        $http.post("https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s", send, config).then(success, error);
-        }
 
+        const config = {
+            
+        };
+
+        const data = {
+            
+  
+        };
+// data: {test: "test"},
+// status: { number: 204 },
+// headers: { 'Content-Type': 'application/json' },
+// json: {
+// "requests": [
+//     {
+//         "image": {
+//             "source": {
+//                 "imageUri": "http://localhost:8080/upload-image"
+//             },
+//         },
+//         "features": [
+// {
+// "type": "TEXT_DETECTION"
+// }
+//     ]
+// },
+// {}
+// ]
+// json: {
+//     "image": {
+//         object(Image)
+//     },
+//     "features": [
+//         {
+//             object(Feature)
+//         }
+//     ],
+//     "imageContext": {
+//         object(ImageContext)
+//     },
+// }
+// }
+$http.post("https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s", data, config)
+    .then(function(response) {
+        var data = response.data;
+        console.log(data);
+    });
+    }
 
         // $http({
         //     method: 'POST',
