@@ -11,6 +11,7 @@ var shop = require('./controllers/shop.ctrl');
 
 var router = express.Router();
 
+router.use('/coupon', coupon)
 router.use('/users', users);
 router.use('/obj', objectives);
 router.use('/locations', locations);
