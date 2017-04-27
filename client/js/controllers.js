@@ -198,11 +198,10 @@ app.controller('MapController', ['$scope', '$location', 'Loc', 'Badge', 'UserSer
 // UPLOAD IMAGE PG CONTROLLER 
 app.controller('UploadController', ['$scope', '$location', 'fileUploadService', '$http', function ($scope, $location, $http, fileUploadService) {
 
-$scope.detectText('image.jpg', function(err, text, apiResponse) {
-  text = [
-    'This was text found in the image'
-  ]
-});
+    $scope.success = function() {
+        $scope.data = data
+        return data;
+    }
 
     $scope.error = function() {
         console.log(error);
@@ -316,5 +315,5 @@ $scope.detectText('image.jpg', function(err, text, apiResponse) {
     //     })
     // };
 
-}]);
+};
 
