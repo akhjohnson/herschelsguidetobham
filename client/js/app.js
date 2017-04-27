@@ -57,7 +57,7 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
         })
         .when('/badges/:id', {
             templateUrl: 'views/badge-details.html',
-            controller: 'BadgesController'
+            controller: 'BadgeDetailsController'
         })
         .when('/drink/:id', {
             templateUrl: 'views/drink-details.html',
