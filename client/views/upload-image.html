@@ -1,13 +1,20 @@
+<!-- HEADER / PAGE TITLE -->
+<div class="container">
+<h2 class="How-to-play-header"><span>DRINK</span></h2>
+</div> 
 
-    <h2>Upload your Image!</h2>
 
-    <div class="panel panel-default">
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="text-center">
+      <div class="thumbnail how-to-img">
+            <div class="panel panel-default">
     
         <div class="panel-body">
             <form>
                 <div class="form-group">
                     <label for="myFileField">Select a file: </label>
-                    <input type="file" id="file" name="file" />
+                    <input type="file" id="myFileField" name="file">
                     <button ng-click="sendData()">Upload</button>
                     <!--<input type="file" demo-file-model="myFile"  class="form-control" id ="myFileField"/>-->
                     </div>
@@ -16,7 +23,10 @@
         </div>
     <div>{{serverResponse}}</div>
 
-
+      </div>
+    </div>
+  </div>
+</div>  
 
 
 
