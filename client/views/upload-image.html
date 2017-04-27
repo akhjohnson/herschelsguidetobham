@@ -1,14 +1,20 @@
-<body ng-controller="UploadController">
+<!-- HEADER / PAGE TITLE -->
+<div class="container">
+<h2 class="How-to-play-header"><span>UPLOAD</span></h2>
+</div> 
 
-    <h2>Upload your Image!</h2>
 
-    <div class="panel panel-default">
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="text-center">
+      <div class="thumbnail how-to-img">
+            <div class="panel panel-default">
     
         <div class="panel-body">
             <form>
                 <div class="form-group">
                     <label for="myFileField">Select a file: </label>
-                    <input type="file" id="file" name="file" />
+                    <input type="file" id="myFileField" name="file">
                     <button ng-click="sendData()">Upload</button>
                     <!--<input type="file" demo-file-model="myFile"  class="form-control" id ="myFileField"/>-->
                     </div>
@@ -16,4 +22,33 @@
             </div>
         </div>
     <div>{{serverResponse}}</div>
-</body>
+
+      </div>
+    </div>
+  </div>
+</div>  
+
+
+
+
+<!-- TABS FOOTER -->
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+  <div class="btn-group text-center" role="group"><a href="/home">
+    <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_home-blue.png">
+      <br> Home </button></a>
+  </div>
+   <div class="btn-group text-center" role="group"><a href="/map">
+    <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_map-blue.png">
+      <br> Map </button></a>
+  </div>
+   <div class="btn-group text-center" role="group"><a href="/upload-image">
+    <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_camera-blue.png">
+      <br> Upload </button></a>
+  </div>
+     <div class="btn-group text-center" role="group"><a href="/badges">
+    <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_badge-blue.png">
+      <br> Badges </button></a>
+  </div>
+  </div>
+</nav>

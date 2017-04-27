@@ -286,6 +286,7 @@ body {
 /* BADGES PG STYLES */
 .thumbnail {
   border-radius: 0px;
+
 }
 
 .badge-size {
@@ -327,4 +328,9 @@ body {
 
 #map-img {
   margin-left: 10%;
+}
+
+#break {
+  border: 1px solid #F68A46;
+  width: 75%;
 }
