@@ -15,7 +15,7 @@ app.controller('LoginController', ['$scope', '$location', 'UserService', 'User',
     function redirect() {
         var dest = $location.search().p;
         if (!dest) {
-            dest = '/login';
+            dest = '/';
         }
         $location.path(dest).search('p', null);
     }

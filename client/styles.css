@@ -139,13 +139,13 @@ body {
 
 #test {
   background-color: #DEDEDE;
-  height: 70px;
+  height: 60px;
   color: #3F5765;
-  
+  font-size: 0.75em;
 }
 
 #tabicon {
-  width: 40px;
+  width: 30px;
 }
 
 .navbar-fixed-bottom {
@@ -230,8 +230,16 @@ body {
   color: #BDD4DE;
 }
 
+
+/* HERSCHEL LOGO IMG IDS AND CLASSES ACROSS PGS */
 #hersch-home {
   width: 80%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+#hersch-inner {
+  width: 40%;
   height: auto;
   margin-bottom: 20px;
 }
