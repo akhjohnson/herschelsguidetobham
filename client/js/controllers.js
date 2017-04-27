@@ -205,9 +205,13 @@ app.controller('ContactController', ['$scope', '$location', 'Loc', 'Badge', '$ht
 
 
 // MY PROFILE PG CONTROLLER
-app.controller('MyProfileController', ['$scope', '$location', 'Loc', 'Badge', '$http', 'User', 'UserService', function($scope, $location, Loc, Badge, $http, User, UserService) {
+app.controller('MyProfileController', ['$scope', '$location', '$routeParams', 'Loc', 'Badge', '$http', 'User', 'UserService', function($scope, $location, $routeParams, Loc, Badge, $http, User, UserService) {
 
     UserService.requireLogin();
+
+    // $scope.users = User.query();
+
+    $scope.badges = Badge.query();
 
     // $scope.user = User.get({ id: $routeParams.id });
 
