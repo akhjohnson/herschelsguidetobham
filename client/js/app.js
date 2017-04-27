@@ -35,7 +35,6 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
             templateUrl: 'views/shop.html',
             controller: 'ShopController'
         })
-
         .when('/about', {
             templateUrl: 'views/aboutCreators.html',
             controller: 'AboutController'
