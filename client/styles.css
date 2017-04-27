@@ -104,13 +104,14 @@ body {
     font-family: 'Roboto', sans-serif;
     color: #FF530D;
     font-size: 3em;
-    margin-top: 5px;
+    margin-top: 2px;
 }
 .How-to-play-header-line {
     font-family: 'Roboto', sans-serif;
     color: #FF530D;
+    border-bottom: solid 2px #EFEFEF;
     font-size: 3em;
-    margin-top: 5px;
+    margin-top: 2px;
 }
 .How-to-play-content {
     font-family: 'Roboto', sans-serif;
@@ -232,5 +233,13 @@ body {
 .herschel-login {
   height: 15em;
   margin-left: 25%;
+<<<<<<< HEAD
 >>>>>>> 45913068f521330af58b7bc24ed04e123d255077
+=======
+}
+.how-to-img {
+  width: 60%;
+  background-color: #EFEFEF;
+  margin-left: 20%;
+>>>>>>> 4b2af0af5858ddc664ba847a1ca34ba77691f57d
 }
