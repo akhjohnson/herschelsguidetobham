@@ -1,19 +1,33 @@
-<div>
+<!--<div>
   <img class="herschel-login" src="/Images/herschel-logo.png" alt="poodle">
+</div>-->
+
+<!-- HERSCHEL LOGO - SAME SIZE/STYLE AS HOME AND SIGNUP -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="text-center" >
+        <img id="hersch-home" src="/images/herschel-logo.png">
+      </div>
+    </div>
+  </div>
 </div>
+
+
+<!-- LOGIN AREA -->
 <div class="login-page">
   <div class="form">
     <form class="register-form">
-      <input type="text" placeholder="name"/>
-      <input type="password" placeholder="password"/>
-      <input type="text" placeholder="email address"/>
+      <input type="text" placeholder="name" ng-model="name">
+      <input type="email" placeholder="email" ng-model="email">
+      <input type="password" placeholder="password" ng-model="password">
       <button>create</button>
       <p class="message">Already registered? <a href="/home">Sign In</a></p>
     </form>
     <form class="login-form">
-      <input type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
-      <a href="/home"><button>login</button></a>
+      <input type="email" placeholder="email" ng-model="email">
+      <input type="password" placeholder="password" ng-model="password">
+      <button ng-click="login()">login</button>
       <p class="message">Not registered? <a href="/signup">Create an account</a></p>
     </form>
   </div>

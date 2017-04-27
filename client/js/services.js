@@ -21,18 +21,21 @@ app.service('UserService', ['$http', '$location', function ($http, $location) {
     this.login = function (email, password) {
         return $http({
             method: "POST",
-            url: "http://localhost:3000/api/users/login",
+            url: "http://localhost:8080/api/users/login",
             data: { email, password }
         }).then(function (success) {
             user = success.data;
             return success.data;
-        })
+        }, function(err) {
+            console.log(err);
+            throw err;
+        });
     };
 
     this.logout = function () {
         return $http({
             method: "GET",
-            url: "http://localhost:3000/api/users/logout"
+            url: "http://localhost:8080/api/users/logout"
         }).then(function (success) {
             user = undefined;
         })
@@ -44,16 +47,16 @@ app.service('UserService', ['$http', '$location', function ($http, $location) {
         } else {
             return $http({
                 method: "GET",
-                url: "http://localhost:3000/api/users/me"
+                url: "http://localhost:8080/api/users/me"
             }).then(function (success) {
                 user = success.data;
                 return success.data;
             })
         }
     }
-}])
+}]);
 
-  app.service('fileUploadService', ['$http', '$q', function ($http, $q) {
+ app.service('fileUploadService', ['$http', '$q', function ($http, $q) {
  
         this.uploadFileToUrl = function (file, uploadUrl) {
             //FormData, object of key/value pair for form fields and values
@@ -105,3 +108,12 @@ app.service('UserService', ['$http', '$location', function ($http, $location) {
 //         // state: { foo: 'bar' }
 //     });
 // }])
+
+app.service('SEOService', ['$rootScope', function($rootScope) {
+		this.setSEO = function(data) {
+			$rootScope.seo = {};
+			for(var p in data) {
+				$rootScope.seo[p] = data[p];
+			}
+		}
+}]);

@@ -32,14 +32,14 @@ router.get("*", auth.isLoggedIn);
 
 // IF THE URL IS LOCALHOST:3000/API/USERS/
 router.route('/')
-    .get(auth.isLoggedIn, function (req, res) {
+    .get(function (req, res) {
         procedures.all().then(function (users) {
             res.send(users);
         }, function (err) {
             res.status(500).send(err);
         })
     })
-    .post(auth.isLoggedIn, function (req, res) {
+    .post(function (req, res) {
         var u = req.body;
         utils.encryptPassword(u.password).then(function (hash) {
             console.log(hash);
@@ -55,5 +55,24 @@ router.route('/')
 router.get("/me", function (req, res) {
     res.send(req.user);
 });
+
+router.route('/:id')
+    .get(auth.isLoggedIn, function (req, res) {
+        procedures.read(req.params.id).then(function (user) {
+            // res.sendStatus(204);
+            res.send(user);
+        }, function (err) {
+            console.log(err);
+            res.status(500).send(err);
+        })
+    })
+    .put(auth.isLoggedIn, function (req, res) {
+        procedures.update(req.body).then(function (success) {
+            res.sendStatus(204);
+        }, function (err) {
+            console.log(err);
+            res.status(204).send(err);
+        })
+    });
 
 module.exports = router;
