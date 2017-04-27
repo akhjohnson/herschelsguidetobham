@@ -16,7 +16,7 @@
 * {
     font-family: 'Roboto', sans-serif;
 }
-      
+
 .login-page {
   width: 360px;
   /*padding: 8% 0 0;*/
@@ -160,6 +160,7 @@ body {
   height: 60px;
   color: #3F5765;
   font-size: 0.75em;
+  font-weight: lighter;
 }
 
 #tabicon {
