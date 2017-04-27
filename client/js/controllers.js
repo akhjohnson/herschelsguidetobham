@@ -50,6 +50,7 @@ app.controller('SignupController', ['$scope', '$location', 'UserService', 'User'
 
 //  HOME / BEGIN GAME / SELECT CATEGORY CONTROLLER
 app.controller('HomeController', ['$scope', '$location', 'UserService', 'Cat', function ($scope, $location, UserService, Cat) {
+    
     UserService.requireLogin();
 
     $scope.cats = Cat.query();
