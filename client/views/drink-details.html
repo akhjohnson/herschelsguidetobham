@@ -1,23 +1,40 @@
+<div class="container">
+<h2 class="How-to-play-header"><span>YOUR TASK</span></h2>
+</div>
 <!-- ALL THE DETAILS FROM ONE DRINK OBJECTIVE -->
 <!-- MISC ITEMS -->
-<div class="container">
 <div class="row">
   <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-            
-      <img ng-src="{{drink.locationimg}}" alt="Test">
-      
+    <div class="text-center">
+    <div class="thumbnail how-to-img">
+      <img ng-src="{{drink.badgeimg}}" alt="Go to this Location">
       <div class="caption">
-        <h4 id="title">{{drink.obj_name}}</h4>
-        <h4 id="price">{{drink.locationname}}</h4>
+        <h3>"{{drink.obj_name}}"</h3>
+        <h5>{{drink.obj_description}}</h5>
       </div>
     </div>
   </div>
-</div>
+  </div>
 </div>
 
-<img ng-src="{{drink.badgeimg}}" alt="Test">
+<div class="container">
+<h2 class="How-to-play-header"><span>WHERE</span></h2>
+</div>
 
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="text-center">
+    <div class="thumbnail how-to-img">
+      <img ng-src="{{drink.locationimg}}" alt="Go to this Location">
+      <div class="caption">
+        <h3>"{{drink.locationname}}"</h3>
+       <h5>{{drink.obj_description}}</h5>
+        <p>{{drink.obj_description}}</p>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
 
 <!-- TABS FOOTER -->
 
