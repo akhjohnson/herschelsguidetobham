@@ -329,3 +329,9 @@ body {
 #map-img {
   margin-left: 10%;
 }
+
+.glyphicon-arrow-left {
+  color: #F68A46;
+  font-size: 30px;
+  padding: 13px;
+}
