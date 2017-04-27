@@ -33,7 +33,6 @@ app.controller('LoginController', ['$scope', '$location', 'UserService', 'User',
 
 // SIGN UP PAGE CONTROLLER - CREATES NEW USERS
 app.controller('SignupController', ['$scope', '$location', 'UserService', 'User', function ($scope, $location, UserService, User) {
-    $scope.users = User.query();
 
     $scope.signUp = function () {
         var u = new User({
@@ -59,14 +58,23 @@ app.controller('HomeController', ['$scope', '$location', 'UserService', 'Cat', f
 
 
 // BADGES PAGE CONTROLLER
-app.controller('badgesCtrl', ['$scope', '$location', function ($scope, $location) {
-    $scope.badges = Badges.query();
-    $scope.goToBadges = function () {
-        $location.path('/tabsController/yourBadges')
-    }
-    $scope.badgeById = function (id) {
-        return $scope.badges[id]
-    }
+app.controller('BadgesController', ['$scope', '$location', 'Badge', 'UserService', function ($scope, $location, Badge, UserService) {
+
+    UserService.requireLogin();
+
+    $scope.badges = Badge.query();
+
+}]);
+
+// BADGE DETAILS PG CONTROLLER FOR SINGLE BADGE
+app.controller('BadgeDetailsController', ['$scope', '$routeParams', '$location', 'Badge', 'UserService', function ($scope, $routeParams, $location, Badge, UserService) {
+
+    UserService.requireLogin();
+
+    $scope.badges = Badge.get({ id: $routeParams.id }, function (success) {
+        $scope.badge = success;
+    });
+
 }]);
 
 
@@ -89,18 +97,19 @@ app.controller('cameraController', ['$scope', '$location', function ($scope, $lo
 
 
 // PLAY PAGE CONTROLLER - LISTS ALL OBJECTIVES UNDER PLAY CATEGORY
-app.controller('PlayController', ['$scope', '$location', 'Play', function ($scope, $location, Play) {
+app.controller('PlayController', ['$scope', '$location', 'Play', 'UserService', function ($scope, $location, Play, UserService) {
+
+    UserService.requireLogin();
 
     $scope.plays = Play.query();
 
-    $scope.goToSpots = function () {
-        $path.location = ('/')
-    }
 }]);
 
 
 // DETAILS PG CONTROLLER FOR SINGLE PLAY OBJECTIVE 
-app.controller('PlayDetailsController', ['$scope', '$routeParams', '$location', 'Loc', 'Play', function ($scope, $routeParams, $location, Loc, Play) {
+app.controller('PlayDetailsController', ['$scope', '$routeParams', '$location', 'Loc', 'Play', 'UserService', function ($scope, $routeParams, $location, Loc, Play, UserService) {
+
+    UserService.requireLogin();
 
     $scope.plays = Play.get({ id: $routeParams.id }, function (success) {
         $scope.play = success;
@@ -110,16 +119,22 @@ app.controller('PlayDetailsController', ['$scope', '$routeParams', '$location', 
 
 
 // DRINK PAGE CONTROLLER - LISTS ALL OBJECTIVES UNDER DRINK CATEGORY
-app.controller('DrinkController', ['$scope', '$location', 'Loc', 'Drink', function ($scope, $location, Loc, Drink) {
+app.controller('DrinkController', ['$scope', '$location', 'Loc', 'Drink', 'UserService', function ($scope, $location, Loc, Drink, UserService) {
+    
+    UserService.requireLogin();
+
     $scope.locs = Loc.query();
+
     $scope.drinks = Drink.query();
-    // $scope.objectives = Objective.query(); 
+
 }]);
 
 
 // DETAILS PG CONTROLLER FOR SINGLE DRINK OBJECTIVE 
-app.controller('DrinkDetailsController', ['$scope', '$routeParams', '$location', 'Loc', 'Drink', function ($scope, $routeParams, $location, Loc, Drink) {
+app.controller('DrinkDetailsController', ['$scope', '$routeParams', '$location', 'Loc', 'Drink', 'UserService', function ($scope, $routeParams, $location, Loc, Drink, UserService) {
 
+    UserService.requireLogin();
+    
     $scope.drinks = Drink.get({ id: $routeParams.id }, function (success) {
         $scope.drink = success;
     });
@@ -128,19 +143,20 @@ app.controller('DrinkDetailsController', ['$scope', '$routeParams', '$location',
 
 
 // EAT PAGE CONTROLLER - LISTS ALL OBJECTIVES UNDER EAT CATEGORY
-app.controller('EatController', ['$scope', '$location', 'Eat', function ($scope, $location, Eat) {
+app.controller('EatController', ['$scope', '$location', 'Loc', 'Eat', 'UserService', function ($scope, $location, Loc, Eat, UserService) {
+
+    UserService.requireLogin();
 
     $scope.eats = Eat.query();
 
-    $scope.goToRes = function () {
-        $path.location = ('/')
-    }
 }]);
 
 
 // DETAILS PG CONTROLLER FOR SINGLE EAT OBJECTIVE 
-app.controller('EatDetailsController', ['$scope', '$routeParams', '$location', 'Obj', 'Loc', 'Drink', 'Eat', function ($scope, $routeParams, $location, Obj, Loc, Drink, Eat) {
+app.controller('EatDetailsController', ['$scope', '$routeParams', '$location', 'Loc', 'Eat', 'UserService', function ($scope, $routeParams, $location, Loc, Eat, UserService) {
 
+    UserService.requireLogin();
+    
     $scope.eats = Eat.get({ id: $routeParams.id }, function (success) {
         $scope.eat = success;
     });
@@ -148,19 +164,20 @@ app.controller('EatDetailsController', ['$scope', '$routeParams', '$location', '
 }]);
 
 
-// SHOP PAGE CONTROLLER - LISTS ALL OBJECTIVES UNDER SHOP CATEGORY
-app.controller('ShopController', ['$scope', '$location', 'Shop', function ($scope, $location, Shop) {
+// SHOP PG CONTROLLER - LISTS ALL OBJECTIVES UNDER SHOP CATEGORY
+app.controller('ShopController', ['$scope', '$location', 'Loc', 'Shop', 'UserService', function ($scope, $location, Loc, Shop, UserService) {
 
+    UserService.requireLogin();
+    
     $scope.shops = Shop.query();
 
-    $scope.goToStores = function () {
-        $path.location = ('/')
-    }
 }]);
 
 
 // DETAILS PG CONTROLLER FOR SINGLE SHOP OBJECTIVE 
-app.controller('ShopDetailsController', ['$scope', '$routeParams', '$location', 'Loc', 'Shop', function ($scope, $routeParams, $location, Loc, Shop) {
+app.controller('ShopDetailsController', ['$scope', '$routeParams', '$location', 'Loc', 'Shop', 'UserService', function ($scope, $routeParams, $location, Loc, Shop, UserService) {
+
+    UserService.requireLogin();
 
     $scope.shops = Shop.get({ id: $routeParams.id }, function (success) {
         $scope.shop = success;
@@ -168,8 +185,10 @@ app.controller('ShopDetailsController', ['$scope', '$routeParams', '$location', 
 }]);
 
 
-// LOCATIONS CONTROLLER - MAYBE WILL BE USED FOR MAP PAGE? 
-app.controller('locationController', ['$scope', '$location', function ($scope, $location) {
+// MAP PG CONTROLLER  - WAS PREVIOUSLY CALLED 'locationController' BUT WE DON'T NEED THAT NOW
+app.controller('MapController', ['$scope', '$location', 'Loc', 'Badge', 'UserService', function ($scope, $location, Loc, Badge, UserService) {
+
+    UserService.requireLogin();
 
 }]);
 
