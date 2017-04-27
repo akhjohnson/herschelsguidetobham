@@ -1,16 +1,32 @@
 <!-- HERSCHEL LOGO - SAME SIZE/STYLE AS LOGIN AND SIGNUP -->
 <div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="text-center" >
-        <img id="hersch-inner" src="/images/herschel-logo.png">
-      </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="text-center">
+                <img id="hersch-inner" src="/images/herschel-logo.png">
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
+<!-- SHOW ALL BADGES -->
 
 
+<ul class="media-list" ng-repeat="badge in badges">
+    <li class="media">
+        <div class="media-left media-middle">
+            <a href="/badges/{{badge.badge_id}}">
+                <img class="media-object" src="{{cart.imageurl}}" alt="test">
+            </a>
+        </div>
+        <div class="media-body media-middle">
+            <h5 class="media-heading" id="checkout-title">{{cart.title}}</h5>
+            <h5 class="media-heading" id="checkout-price">{{cart.price | currency}}</h5>
+            <br>
+            <button type="button" id="button-remove" class="btn btn-default" ng-click="removeItem(cart.id)">Remove</button>
+        </div>
+    </li>
+</ul>
 
 
 
@@ -19,21 +35,25 @@
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="btn-group btn-group-justified" role="group" aria-label="...">
-  <div class="btn-group text-center" role="group"><a href="/home">
-    <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_home-blue.png">
+        <div class="btn-group text-center" role="group">
+            <a href="/home">
+                <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_home-blue.png">
       <br> Home </button></a>
-  </div>
-   <div class="btn-group text-center" role="group"><a href="/map">
-    <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_map-blue.png">
+        </div>
+        <div class="btn-group text-center" role="group">
+            <a href="/map">
+                <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_map-blue.png">
       <br> Map </button></a>
-  </div>
-   <div class="btn-group text-center" role="group"><a href="/camera">
-    <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_camera-blue.png">
+        </div>
+        <div class="btn-group text-center" role="group">
+            <a href="/camera">
+                <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_camera-blue.png">
       <br> Camera </button></a>
-  </div>
-     <div class="btn-group text-center" role="group"><a href="/badges">
-    <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_badge-blue.png">
+        </div>
+        <div class="btn-group text-center" role="group">
+            <a href="/badges">
+                <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_badge-blue.png">
       <br> Badges </button></a>
-  </div>
-  </div>
+        </div>
+    </div>
 </nav>
