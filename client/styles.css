@@ -1,8 +1,22 @@
+/*@font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/montserrat-light.woff') format('woff'),
+    url('fonts/montserrat-light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: bold;
+    src: url('fonts/montserrat-bold.woff') format('woff'),
+    url('fonts/montserrat-bold.otf') format('opentype');
+}*/
+
+/*<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">*/
+
 * {
     font-family: 'Roboto', sans-serif;
-    
 }
-      
+
 .login-page {
   width: 360px;
   /*padding: 8% 0 0;*/
@@ -146,6 +160,7 @@ body {
   height: 60px;
   color: #3F5765;
   font-size: 0.75em;
+  font-weight: lighter;
 }
 
 #tabicon {
@@ -193,7 +208,7 @@ body {
 }
 
 #navtext li a {
-    color: #3F5765;;
+    color: #3F5765;
 }
 
 #navtext li a:hover {
@@ -214,15 +229,14 @@ body {
 }
 .team-header {
   font-family: 'Roboto', sans-serif;
-  color: #FF530D;
-  /*margin-left: -100%; */
-  font-size: 2em;
+  color: #3F5765;
+  font-size: 2.2em;
   font-weight: 900;
   text-align: center;
 }
 .team-header span {
-  background-color: #DEDEDE;
   padding: 5px 25px;
+  background-color: #BDD4DE;
 }
 /*.team-header-bottom {
   font-family: 'Roboto', sans-serif;
@@ -266,11 +280,18 @@ body {
   height: 15em;
   margin-left: 25%;
 }
+
 .how-to-img {
   width: 70%;
   background-color: #EFEFEF;
   margin-left: 15%;
   text-align: center;
+}
+
+
+/* BADGES PG STYLES */
+.thumbnail {
+  border-radius: 0px;
 }
 
 .badge-size {
@@ -292,6 +313,13 @@ body {
   margin-right: auto;
   height: 15em;
 }
+
+#badges-back {
+   background-color: #F68A46;
+   color: white;
+   letter-spacing: 1px;
+}
+/* END OF BADGES STYLES */
 
 #shop-img {
   border-radius: 50%;
