@@ -238,7 +238,7 @@ app.controller('MyProfileController', ['$scope', '$location', '$routeParams', 'L
 
 app.controller('UploadController', ['$scope', '$location', '$routeParams', '$http', 'Badge', 'User', 'UserService', 'Loc', 'Drink', 'Eat', 'Play', 'Shop', function($scope, $location, $routeParams, $http, Badge, User, UserService, Loc, Drink, Eat, Play, Shop) {
 
-
+    
 
 
 

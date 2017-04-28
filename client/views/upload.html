@@ -8,13 +8,21 @@
     <div class="container">
       <div class="caption text-center">
         <form>
+                    <div class="form-group">
+            <label for="badge" style="color: white; font-size: 1.5em;">Objective Name</label>
+            <input type="text" class="form-control" id="badge" placeholder="Badge Name">
+          </div>
+
+          <!--<p>Objectvie Name: <select ng-model="post.categoryid" id="cat-list" >
+                <option ng-repeat="cat in cats" value="{{cat.id}}">{{ cat.name }}</option>
+                    </select></p>-->
+          
           <div class="form-group">
             <label for="coupon" style="color: white; font-size: 1.5em;">Coupon Code</label>
             <input type="text" class="form-control" id="coupon" placeholder="######" ng-model="coupon">
-          </div>
-          <div class="form-group">
-            <label for="badge" style="color: white; font-size: 1.5em;">Badge Name</label>
-            <input type="text" class="form-control" id="badge" placeholder="Badge Name">
+
+            <!--<input type="textarea" ng-model="post.title" class="form-control">-->
+
           </div>
           <button type="submit" id="button-contact" class="btn btn-default" ng-click="submitCoup()">SUBMIT COUPON</button>
         </form>
