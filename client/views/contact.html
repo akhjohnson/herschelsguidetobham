@@ -7,19 +7,27 @@
 <!-- SHOW ALL BADGES -->
     <div class="row">
         <div class="col-sm-6 col-md-4">
-            <div class="text-center">
-                <div class="thumbnail how-to-img" ng-repeat="badge in badges">
-                     <a href="/badges/{{badge.badge_id}}">
-                    <img src="{{badge.badge_imgurl}}" alt="Badges">
-                    <div class="caption" id="badges-back">
-                        <h4><strong>{{badge.badge_name}}</strong></h4>
-                    </div>
-                    </a>
+            <div class="container">
+                <div class="caption">
+<form>
+                                <div class="form-group">
+                                        <label for="email">Your Email</label>
+                                        <input type="email" class="form-control" id="email" placeholder="you@example.com" ng-model="from">
+                                </div>
+                                <div class="form-group">
+                                        <label for="subject">Your Subject</label>
+                                        <input type="text" class="form-control" id="subject" placeholder="Subject" ng-model="subject">
+                                </div>
+                                <div class="form-group">
+                                        <label for="content">Your Message</label>
+                                        <textarea class="form-control" rows="5" id="comment" placeholder="Your Message" ng-model="content"></textarea>
+                                </div>
+                                <button type="submit" id="button-contact" class="btn btn-default" ng-click="sendEmail()">Send Message</button>
+                        </form>
                 </div>
-            </div>
         </div>
     </div>
-
+    </div>
 
 
 <!-- TABS FOOTER -->
