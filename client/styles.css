@@ -377,3 +377,11 @@ body {
   text-align: center;
   padding: 10px;
 }
+
+#button-contact {
+  color: white;
+  background-color: #F68A46;
+  font-weight: bold;
+  padding-left: 15px;
+  padding-right: 15px;
+}
