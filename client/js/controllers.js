@@ -9,22 +9,24 @@ app.controller('WelcomeController', ['$scope', '$location', function ($scope, $l
 
 // LOGIN PAGE CONTROLLER
 app.controller('LoginController', ['$scope', '$location', 'UserService', 'User', function ($scope, $location, UserService, User) {
+    
     UserService.me().then(function (success) {
         redirect();
     });
+
     function redirect() {
         var dest = $location.search().p;
         if (!dest) { dest = '/'; }
-        $location.path(dest).search('p', null);
-    }
+            $location.path(dest).search('p', null);
+    };
 
     $scope.login = function () {
         UserService.login($scope.email, $scope.password).then(function () {
-            redirect();
-        }, function (err) {
-            console.log(err);
-        })
-    }
+                redirect();
+            }, function (err) {
+                console.log(err);
+            })
+     };
 }]);
 
 
@@ -254,8 +256,8 @@ app.controller('UploadController', ['$scope', '$location', '$routeParams', '$htt
     var test = "1234";
 
     
-    $scope.update = function () {
-        if ($scope.coupon != test) {
+    $scope.checkCoup = function () {
+        if ($scope.coupon !== test) {
             console.log("nope");
         } else {
             $scope.drink.$update(function (success) {
