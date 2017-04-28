@@ -369,3 +369,11 @@ body {
   font-size: 19px;
   letter-spacing: 1px;
 }
+
+#navbar-name {
+  color: #F68A46;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+}
