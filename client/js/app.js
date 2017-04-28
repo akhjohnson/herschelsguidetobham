@@ -55,8 +55,8 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
             templateUrl: 'views/contact.html',
             controller: 'ContactController'
         })
-        .when('/upload-image', {
-            templateUrl: 'views/upload-image.html',
+        .when('/upload', {
+            templateUrl: 'views/upload.html',
             controller: 'UploadController'
         })
         .when('/myprofile', {
