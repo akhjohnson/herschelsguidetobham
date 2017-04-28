@@ -228,24 +228,9 @@ app.controller('MyProfileController', ['$scope', '$location', '$routeParams', 'L
         UserService.logout();
     };
 
-    // $scope.editUser = function(id) {
-    // $scope.showPopup = true;
-    //     User.get({id: id}, function(success){
-    //         $scope.user = success;
-    //     });
-    // };
-
     $scope.update = function() {
         $scope.user.$update(function(success) {
-            $location.path('/myprofile');
-        })
-    };
-
-
-    $scope.saveUpdates = function(id) {
-        $scope.usr.$update(function() {
-            $scope.usr = undefined;
-            $scope.users = User.query();
+            $location.path('/me');
         })
     };
 
