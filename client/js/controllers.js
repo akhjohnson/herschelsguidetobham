@@ -2,14 +2,14 @@ var app = angular.module('myApp.controllers', []);
 
 
 // WELCOME PAGE CONTROLLER
-app.controller('WelcomeController', ['$scope', '$location', function($scope, $location) {
+app.controller('WelcomeController', ['$scope', '$location', function ($scope, $location) {
 
 }]);
 
 
 // LOGIN PAGE CONTROLLER
-app.controller('LoginController', ['$scope', '$location', 'UserService', 'User', function($scope, $location, UserService, User) {
-        UserService.me().then(function (success) {
+app.controller('LoginController', ['$scope', '$location', 'UserService', 'User', function ($scope, $location, UserService, User) {
+    UserService.me().then(function (success) {
         redirect();
     });
     function redirect() {
@@ -18,10 +18,10 @@ app.controller('LoginController', ['$scope', '$location', 'UserService', 'User',
         $location.path(dest).search('p', null);
     }
 
-    $scope.login = function() {
-        UserService.login($scope.email, $scope.password).then(function() {
+    $scope.login = function () {
+        UserService.login($scope.email, $scope.password).then(function () {
             redirect();
-        }, function(err) {
+        }, function (err) {
             console.log(err);
         })
     }
@@ -29,15 +29,15 @@ app.controller('LoginController', ['$scope', '$location', 'UserService', 'User',
 
 
 // SIGN UP PAGE CONTROLLER - CREATES NEW USERS
-app.controller('SignupController', ['$scope', '$location', 'UserService', 'User', function($scope, $location, UserService, User) {
+app.controller('SignupController', ['$scope', '$location', 'UserService', 'User', function ($scope, $location, UserService, User) {
 
-    $scope.signUp = function() {
+    $scope.signUp = function () {
         var u = new User({
             email: $scope.email,
             password: $scope.password,
             name: $scope.name
         });
-        u.$save(function() {
+        u.$save(function () {
             $location.path('/home');
         });
     };
@@ -45,7 +45,7 @@ app.controller('SignupController', ['$scope', '$location', 'UserService', 'User'
 
 
 //  HOME / BEGIN GAME / SELECT CATEGORY CONTROLLER
-app.controller('HomeController', ['$scope', '$location', 'UserService', 'Cat', function($scope, $location, UserService, Cat) {
+app.controller('HomeController', ['$scope', '$location', 'UserService', 'Cat', function ($scope, $location, UserService, Cat) {
 
     UserService.requireLogin();
 
@@ -55,7 +55,7 @@ app.controller('HomeController', ['$scope', '$location', 'UserService', 'Cat', f
 
 
 // BADGES PAGE CONTROLLER
-app.controller('BadgesController', ['$scope', '$location', 'Badge', 'UserService', function($scope, $location, Badge, UserService) {
+app.controller('BadgesController', ['$scope', '$location', 'Badge', 'UserService', function ($scope, $location, Badge, UserService) {
 
     UserService.requireLogin();
 
@@ -65,11 +65,11 @@ app.controller('BadgesController', ['$scope', '$location', 'Badge', 'UserService
 
 
 // BADGE DETAILS PG CONTROLLER FOR SINGLE BADGE
-app.controller('BadgeDetailsController', ['$scope', '$routeParams', '$location', 'Badge', 'UserService', function($scope, $routeParams, $location, Badge, UserService) {
+app.controller('BadgeDetailsController', ['$scope', '$routeParams', '$location', 'Badge', 'UserService', function ($scope, $routeParams, $location, Badge, UserService) {
 
     UserService.requireLogin();
 
-    $scope.badges = Badge.get({ id: $routeParams.id }, function(success) {
+    $scope.badges = Badge.get({ id: $routeParams.id }, function (success) {
         $scope.badge = success;
     });
 
@@ -77,25 +77,25 @@ app.controller('BadgeDetailsController', ['$scope', '$routeParams', '$location',
 
 
 // HOW TO PLAY PG CONTROLLER
-app.controller('HowToController', ['$scope', '$location', function($scope, $location) {
+app.controller('HowToController', ['$scope', '$location', function ($scope, $location) {
 
 }]);
 
 
 // ABOUT PG CONTROLLER
-app.controller('AboutController', ['$scope', '$location', function($scope, $location) {
+app.controller('AboutController', ['$scope', '$location', function ($scope, $location) {
 
 }]);
 
 
 // CAMERA CONTROLLER
-app.controller('cameraController', ['$scope', '$location', function($scope, $location) {
+app.controller('cameraController', ['$scope', '$location', function ($scope, $location) {
 
 }]);
 
 
 // PLAY PAGE CONTROLLER - LISTS ALL OBJECTIVES UNDER PLAY CATEGORY
-app.controller('PlayController', ['$scope', '$location', 'Play', 'UserService', function($scope, $location, Play, UserService) {
+app.controller('PlayController', ['$scope', '$location', 'Play', 'UserService', function ($scope, $location, Play, UserService) {
 
     UserService.requireLogin();
 
@@ -105,11 +105,11 @@ app.controller('PlayController', ['$scope', '$location', 'Play', 'UserService', 
 
 
 // DETAILS PG CONTROLLER FOR SINGLE PLAY OBJECTIVE 
-app.controller('PlayDetailsController', ['$scope', '$routeParams', '$location', 'Loc', 'Play', 'UserService', function($scope, $routeParams, $location, Loc, Play, UserService) {
+app.controller('PlayDetailsController', ['$scope', '$routeParams', '$location', 'Loc', 'Play', 'UserService', function ($scope, $routeParams, $location, Loc, Play, UserService) {
 
     UserService.requireLogin();
 
-    $scope.plays = Play.get({ id: $routeParams.id }, function(success) {
+    $scope.plays = Play.get({ id: $routeParams.id }, function (success) {
         $scope.play = success;
     });
 
@@ -117,7 +117,7 @@ app.controller('PlayDetailsController', ['$scope', '$routeParams', '$location', 
 
 
 // DRINK PAGE CONTROLLER - LISTS ALL OBJECTIVES UNDER DRINK CATEGORY
-app.controller('DrinkController', ['$scope', '$location', 'Loc', 'Drink', 'UserService', function($scope, $location, Loc, Drink, UserService) {
+app.controller('DrinkController', ['$scope', '$location', 'Loc', 'Drink', 'UserService', function ($scope, $location, Loc, Drink, UserService) {
 
     UserService.requireLogin();
 
@@ -129,11 +129,11 @@ app.controller('DrinkController', ['$scope', '$location', 'Loc', 'Drink', 'UserS
 
 
 // DETAILS PG CONTROLLER FOR SINGLE DRINK OBJECTIVE 
-app.controller('DrinkDetailsController', ['$scope', '$routeParams', '$location', 'Loc', 'Drink', 'UserService', function($scope, $routeParams, $location, Loc, Drink, UserService) {
+app.controller('DrinkDetailsController', ['$scope', '$routeParams', '$location', 'Loc', 'Drink', 'UserService', function ($scope, $routeParams, $location, Loc, Drink, UserService) {
 
     UserService.requireLogin();
 
-    $scope.drinks = Drink.get({ id: $routeParams.id }, function(success) {
+    $scope.drinks = Drink.get({ id: $routeParams.id }, function (success) {
         $scope.drink = success;
     });
 
@@ -141,7 +141,7 @@ app.controller('DrinkDetailsController', ['$scope', '$routeParams', '$location',
 
 
 // EAT PAGE CONTROLLER - LISTS ALL OBJECTIVES UNDER EAT CATEGORY
-app.controller('EatController', ['$scope', '$location', 'Loc', 'Eat', 'UserService', function($scope, $location, Loc, Eat, UserService) {
+app.controller('EatController', ['$scope', '$location', 'Loc', 'Eat', 'UserService', function ($scope, $location, Loc, Eat, UserService) {
 
     UserService.requireLogin();
 
@@ -151,11 +151,11 @@ app.controller('EatController', ['$scope', '$location', 'Loc', 'Eat', 'UserServi
 
 
 // DETAILS PG CONTROLLER FOR SINGLE EAT OBJECTIVE 
-app.controller('EatDetailsController', ['$scope', '$routeParams', '$location', 'Loc', 'Eat', 'UserService', function($scope, $routeParams, $location, Loc, Eat, UserService) {
+app.controller('EatDetailsController', ['$scope', '$routeParams', '$location', 'Loc', 'Eat', 'UserService', function ($scope, $routeParams, $location, Loc, Eat, UserService) {
 
     UserService.requireLogin();
 
-    $scope.eats = Eat.get({ id: $routeParams.id }, function(success) {
+    $scope.eats = Eat.get({ id: $routeParams.id }, function (success) {
         $scope.eat = success;
     });
 
@@ -163,7 +163,7 @@ app.controller('EatDetailsController', ['$scope', '$routeParams', '$location', '
 
 
 // SHOP PG CONTROLLER - LISTS ALL OBJECTIVES UNDER SHOP CATEGORY
-app.controller('ShopController', ['$scope', '$location', 'Loc', 'Shop', 'UserService', function($scope, $location, Loc, Shop, UserService) {
+app.controller('ShopController', ['$scope', '$location', 'Loc', 'Shop', 'UserService', function ($scope, $location, Loc, Shop, UserService) {
 
     UserService.requireLogin();
 
@@ -173,18 +173,18 @@ app.controller('ShopController', ['$scope', '$location', 'Loc', 'Shop', 'UserSer
 
 
 // DETAILS PG CONTROLLER FOR SINGLE SHOP OBJECTIVE 
-app.controller('ShopDetailsController', ['$scope', '$routeParams', '$location', 'Loc', 'Shop', 'UserService', function($scope, $routeParams, $location, Loc, Shop, UserService) {
+app.controller('ShopDetailsController', ['$scope', '$routeParams', '$location', 'Loc', 'Shop', 'UserService', function ($scope, $routeParams, $location, Loc, Shop, UserService) {
 
     UserService.requireLogin();
 
-    $scope.shops = Shop.get({ id: $routeParams.id }, function(success) {
+    $scope.shops = Shop.get({ id: $routeParams.id }, function (success) {
         $scope.shop = success;
     });
 }]);
 
 
 // MAP PG CONTROLLER  - WAS PREVIOUSLY CALLED 'locationController' BUT WE DON'T NEED THAT NOW
-app.controller('MapController', ['$scope', '$location', 'Loc', 'Badge', 'UserService', '$http', function($scope, $location, Loc, Badge, UserService, $http) {
+app.controller('MapController', ['$scope', '$location', 'Loc', 'Badge', 'UserService', '$http', function ($scope, $location, Loc, Badge, UserService, $http) {
 
     UserService.requireLogin();
 
@@ -192,9 +192,9 @@ app.controller('MapController', ['$scope', '$location', 'Loc', 'Badge', 'UserSer
 
 
 // CONTACT US PG CONTROLLER
-app.controller('ContactController', ['$scope', '$location', '$http', 'Message', function($scope, $location, $http, Message) {
+app.controller('ContactController', ['$scope', '$location', '$http', 'Message', function ($scope, $location, $http, Message) {
 
-   //SEND EMAIL - WORKING & SENDING TO KATIELYNNDECK@GMAIL.COM
+    //SEND EMAIL - WORKING & SENDING TO KATIELYNNDECK@GMAIL.COM
     $scope.sendEmail = function () {
         var newMessage = new Message({
             from: $scope.from,
@@ -210,36 +210,56 @@ app.controller('ContactController', ['$scope', '$location', '$http', 'Message', 
 
 
 // MY PROFILE PG CONTROLLER
-app.controller('MyProfileController', ['$scope', '$location', '$routeParams', 'Loc', 'Badge', '$http', 'User', 'UserService', function($scope, $location, $routeParams, Loc, Badge, $http, User, UserService) {
+app.controller('MyProfileController', ['$scope', '$location', '$routeParams', 'Loc', 'Badge', '$http', 'User', 'UserService', function ($scope, $location, $routeParams, Loc, Badge, $http, User, UserService) {
 
     UserService.requireLogin();
 
     $scope.users = User.query();
 
+
     $scope.badges = Badge.query();
 
     // $scope.user = User.get({ id: $routeParams.id });
 
-    User.get({ id: $routeParams.id }, function(success) {
+    User.get({ id: $routeParams.id }, function (success) {
         $scope.user = success;
     });
 
-    $scope.logMeOut = function() {
+    $scope.logMeOut = function () {
         UserService.logout();
     };
 
-    $scope.update = function() {
-        $scope.user.$update(function(success) {
+    $scope.update = function () {
+        $scope.user.$update(function (success) {
             $location.path('/me');
         })
     };
 
 }]);
 
-app.controller('UploadController', ['$scope', '$location', '$routeParams', '$http', 'Badge', 'User', 'UserService', 'Loc', 'Drink', 'Eat', 'Play', 'Shop', function($scope, $location, $routeParams, $http, Badge, User, UserService, Loc, Drink, Eat, Play, Shop) {
+app.controller('UploadController', ['$scope', '$location', '$routeParams', '$http', 'Badge', 'User', 'UserService', 'Loc', 'Drink', 'Eat', 'Play', 'Shop', function ($scope, $location, $routeParams, $http, Badge, User, UserService, Loc, Drink, Eat, Play, Shop) {
 
-    
+    UserService.requireLogin();
 
+    // $scope.drinks = Drink.query();
+
+    Drink.get({ id: 2 }, function (success) {
+        $scope.drink = success;
+    });
+
+    var test = "1234"
+
+    $scope.checkCoup = function () {
+        if ($scope.coupon !== test) {
+            console.log("nope");
+        } else {
+            $scope.drink.$update(function (success) {
+                $location.path('/home');
+            })
+        }
+    };
+
+    $scope.badges = Badge.query();
 
 
 }]);
@@ -248,7 +268,7 @@ app.controller('UploadController', ['$scope', '$location', '$routeParams', '$htt
 
 // UPLOAD IMAGE PG CONTROLLER 
 // app.controller('UploadController', ['$scope', '$location', '$http', '$rootScope', 'fileUploadService', function($scope, $location, $http, $rootScope, fileUploadService) {
-    
+
 //     $scope.textCompare = function() {
 //         for (var i = 0; i < $rootScope.coupon.length; i++) {
 //             alert("Inside for loop");
