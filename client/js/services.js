@@ -21,7 +21,7 @@ app.service('UserService', ['$http', '$location', function ($http, $location) {
     this.login = function (email, password) {
         return $http({
             method: "POST",
-            url: "/api/users/login",
+            url: "http://localhost:3000/api/users/login",
             data: { email, password }
         }).then(function (success) {
             user = success.data;
@@ -32,28 +32,37 @@ app.service('UserService', ['$http', '$location', function ($http, $location) {
         });
     };
 
-    this.logout = function () {
+    this.logout = function() {
         return $http({
-            method: "GET",
-            url: "/api/users/logout"
-        }).then(function (success) {
+            method: 'GET',
+            url: 'http://localhost:3000/api/users/logout'
+        }).then(function(success){
             user = undefined;
-        })
-    };
+        }, function(err) {
+            console.log(err);
+            throw err;
+        });
+    }
 
-    this.me = function () {
+
+    this.me = function() {
         if (user) {
             return Promise.resolve(user);
+            console.log(user);
         } else {
-            return $http({
+            return $http ({
                 method: "GET",
-                url: "/api/users/me"
-            }).then(function (success) {
+                url: 'http://localhost:3000/api/users/me'
+            }).then(function (success){
                 user = success.data;
                 return success.data;
-            })
+            }, function(err) {
+                console.log(err);
+                throw err;
+            });
         }
     }
+
 }]);
 
 //  app.service('fileUploadService', ['$http', '$q', function ($http, $q) {
