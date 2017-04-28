@@ -10,8 +10,12 @@ app.factory('User', ['$resource', function ($resource) {
     })
 }]);
 
-app.factory('Obj', ['$resource', function($resource) {
-    return $resource('/api/obj/:id', { id: "@id" })
+app.factory('Obj', ['$resource', function ($resource) {
+    return $resource('/api/objectives/:id', { id: '@id' }, 
+        {
+            "update": { method: "PUT" },
+            "get": { method: "GET", isArray: false }
+    })
 }]);
 
 app.factory('Cat', ['$resource', function ($resource) {
