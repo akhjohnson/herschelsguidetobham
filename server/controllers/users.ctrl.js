@@ -32,14 +32,14 @@ router.get("*", auth.isLoggedIn);
 
 // IF THE URL IS LOCALHOST:3000/API/USERS/
 router.route('/')
-    .get(function (req, res) {
+    .get(auth.isLoggedIn, function (req, res) {
         procedures.all().then(function (users) {
             res.send(users);
         }, function (err) {
             res.status(500).send(err);
         })
     })
-    .post(function (req, res) {
+    .post(auth.isLoggedIn, function (req, res) {
         var u = req.body;
         utils.encryptPassword(u.password).then(function (hash) {
             console.log(hash);

@@ -9,27 +9,22 @@ app.controller('WelcomeController', ['$scope', '$location', function($scope, $lo
 
 // LOGIN PAGE CONTROLLER
 app.controller('LoginController', ['$scope', '$location', 'UserService', 'User', function($scope, $location, UserService, User) {
-    UserService.me().then(function(success) {
-        // $location.path('/home');
+        UserService.me().then(function (success) {
         redirect();
     });
-
     function redirect() {
         var dest = $location.search().p;
-        if (!dest) {
-            dest = '/login';
-        }
+        if (!dest) { dest = '/'; }
         $location.path(dest).search('p', null);
-    };
+    }
 
     $scope.login = function() {
-        UserService.login($scope.email, $scope.password)
-            .then(function() {
-                $location.path('/home');
-            }, function(err) {
-                console.log(err);
-            });
-    };
+        UserService.login($scope.email, $scope.password).then(function() {
+            redirect();
+        }, function(err) {
+            console.log(err);
+        })
+    }
 }]);
 
 
@@ -219,7 +214,7 @@ app.controller('MyProfileController', ['$scope', '$location', '$routeParams', 'L
 
     UserService.requireLogin();
 
-    // $scope.users = User.query();
+    $scope.users = User.query();
 
     $scope.badges = Badge.query();
 

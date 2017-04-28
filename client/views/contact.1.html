@@ -1,27 +1,33 @@
 <!-- HEADER FOR BADGE PG -->
 <div class="container">
-    <h2 class="team-header"><span>MY PROFILE</span></h2>
+    <h2 class="How-to-play-header"><span>CONTACT</span></h2>
 </div>
 
 
 <!-- SHOW ALL BADGES -->
     <div class="row">
         <div class="col-sm-6 col-md-4">
-            <div class="text-center">
-                <div class="thumbnail how-to-img">
-                     
-                    <img src="images/icon_home-reverse-yellow.png" alt="Badges">
-                    <div class="caption" id="badges-back">
-                        <h4><strong>{{user.name}}</strong></h4>
-                    </div>
-                
+            <div class="container">
+                <div class="caption text-center">
+<form>
+                                <div class="form-group">
+                                        <label for="email" style="color: white; font-size: 1.5em;">Your Email</label>
+                                        <input type="email" class="form-control" id="email" placeholder="you@example.com" ng-model="from">
+                                </div>
+                                <div class="form-group">
+                                        <label for="subject" style="color: white; font-size: 1.5em;">Your Subject</label>
+                                        <input type="text" class="form-control" id="subject" placeholder="Subject" ng-model="subject">
+                                </div>
+                                <div class="form-group">
+                                        <label for="content" style="color: white; font-size: 1.5em;">Your Message</label>
+                                        <textarea class="form-control" rows="5" id="comment" placeholder="Your Message" ng-model="content"></textarea>
+                                </div>
+                                <button type="submit" id="button-contact" class="btn btn-default" ng-click="sendEmail()">Send Message</button>
+                        </form>
                 </div>
-            </div>
         </div>
     </div>
-
-    <button ng-click="logMeOut();"></button>
-
+    </div>
 
 
 <!-- TABS FOOTER -->

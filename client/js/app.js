@@ -59,7 +59,7 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
             templateUrl: 'views/upload.html',
             controller: 'UploadController'
         })
-        .when('/myprofile', {
+        .when('/users/:id', {
             templateUrl: 'views/myprofile.html',
             controller: 'MyProfileController'
         })
