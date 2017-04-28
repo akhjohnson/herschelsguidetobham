@@ -1,4 +1,1 @@
-export SENDGRID_SENDER=majikcityradio@gmail.com
-export SENDGRID_API_KEY="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"
-export GOOGLE_VISION_API="AIzaSyBxA6mwZvgZArDgJocXNFf5x09TLTqA7s"
-export
+export SENDGRID_SECRET_KEY="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"

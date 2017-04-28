@@ -197,10 +197,20 @@ app.controller('MapController', ['$scope', '$location', 'Loc', 'Badge', 'UserSer
 
 
 // CONTACT US PG CONTROLLER
-app.controller('ContactController', ['$scope', '$location', 'Loc', 'Badge', '$http', function($scope, $location, Loc, Badge, $http) {
+app.controller('ContactController', ['$scope', '$location', '$http', 'Message', function($scope, $location, $http, Message) {
 
-    // UserService.requireLogin();
+   //SEND EMAIL - WORKING & SENDING TO KATIELYNNDECK@GMAIL.COM
+    $scope.sendEmail = function () {
+        var newMessage = new Message({
+            from: $scope.from,
+            subject: $scope.subject,
+            content: $scope.content
+        });
 
+        newMessage.$save(function () {
+            $location.path('/');
+        });
+    };
 }]);
 
 

@@ -9,6 +9,7 @@ var eat = require('./controllers/eat.ctrl');
 var play = require('./controllers/play.ctrl');
 var shop = require('./controllers/shop.ctrl');
 var coupon = require('./controllers/coupon.ctrl')
+var contact = require('./controllers/contact.ctrl');
 
 var router = express.Router();
 
@@ -22,6 +23,7 @@ router.use('/drink', drink);
 router.use('/eat', eat);
 router.use('/play', play);
 router.use('/shop', shop)
+router.use('/contact', contact);
 // router.use('/purchases', purchases);
 
 module.exports = router;

@@ -58,6 +58,10 @@ app.factory('Loc', ['$resource', function($resource) {
     return $resource('/api/locations/:id', { id: "@id" })
 }]);
 
+app.factory('Message', ['$resource', function($resource) {
+       return $resource('/api/contact/:id');
+       
+}]);
 // app.factory('Coupon', ['$resource', function($resource){
 //     return $resource('/api/badge')
 // }]
