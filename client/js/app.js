@@ -55,10 +55,10 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
             templateUrl: 'views/contact.html',
             controller: 'ContactController'
         })
-        // .when('/upload', {
-        //     templateUrl: 'views/upload.html',
-        //     controller: 'UploadController'
-        // })
+        .when('/upload', {
+            templateUrl: 'views/upload.html',
+            controller: 'UploadController'
+        })
         .when('/users/:id', {
             templateUrl: 'views/myprofile.html',
             controller: 'MyProfileController'
@@ -83,7 +83,7 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
             templateUrl: 'views/play-details.html',
             controller: 'PlayDetailsController'
         })
-        .when('/drink/:id/update', {
+        .when('/:id/update', {
             templateUrl: 'views/upload.html',
             controller: 'UploadController'
         })
