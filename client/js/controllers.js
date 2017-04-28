@@ -252,9 +252,9 @@ app.controller('MyProfileController', ['$scope', '$location', '$routeParams', 'L
 app.controller('UploadController', ['$scope', '$location', '$http', 'fileUploadService', function($scope, $location, $http, fileUploadService) {
 
     $scope.textCompare = function() {
-        for (var i = 0; i < $rootScope.items.length; i++) {
+        for (var i = 0; i < items.length; i++) {
             alert("Inside for loop");
-            if (name === $rootScope.items[i].names)
+            if (name === items[i].names)
             {
                 console.log(Success);
             }
