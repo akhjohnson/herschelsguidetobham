@@ -64,7 +64,6 @@ app.factory('Loc', ['$resource', function($resource) {
 
 app.factory('Message', ['$resource', function($resource) {
        return $resource('/api/contact/:id');
-       
 }]);
 // app.factory('Coupon', ['$resource', function($resource){
 //     return $resource('/api/badge')

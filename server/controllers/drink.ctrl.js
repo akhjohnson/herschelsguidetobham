@@ -24,12 +24,12 @@ router.route('/:id')
     })
     .put(function (req, res) {
         procedures.update(req.body).then(function (success) {
-            res.status(201).send(success);
+            res.sendStatus(204);
         }, function (err) {
             console.log(err);
-            res.status(500).send(err);
+            res.status(204).send(err);
         })
-    });
+    })
 
 
 module.exports = router;

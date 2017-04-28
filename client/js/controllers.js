@@ -137,6 +137,10 @@ app.controller('DrinkDetailsController', ['$scope', '$routeParams', '$location',
         $scope.drink = success;
     });
 
+    $scope.uploadCoup = function () {
+        $location.path('/drink/' + $routeParams.id + "/update");
+    };
+
 }]);
 
 
@@ -241,23 +245,25 @@ app.controller('UploadController', ['$scope', '$location', '$routeParams', '$htt
 
     UserService.requireLogin();
 
-    // $scope.drinks = Drink.query();
+    $scope.drinks = Drink.query();
 
-    Obj.get({ id: 2 }, function (success) {
-        $scope.obj = success;
+    Drink.get({ id: $routeParams.id }, function (success) {
+        $scope.drink = success;
     });
 
     var test = "1234";
 
-    $scope.checkCoup = function () {
-        if ($scope.coupon !== test) {
+    
+    $scope.update = function () {
+        if ($scope.coupon != test) {
             console.log("nope");
         } else {
-            $scope.obj.$update(function (success) {
+            $scope.drink.$update(function (success) {
                 $location.path('/home');
-            })
-        }
+            });
+        };
     };
+ 
 
     $scope.badges = Badge.query();
 
