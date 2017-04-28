@@ -247,7 +247,7 @@ app.controller('UploadController', ['$scope', '$location', '$routeParams', '$htt
         $scope.drink = success;
     });
 
-    var test = "1234"
+    var test = "1234";
 
     $scope.checkCoup = function () {
         if ($scope.coupon !== test) {
