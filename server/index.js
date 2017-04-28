@@ -9,7 +9,6 @@ var googleApis = require('googleApis');
 // const express = require('express');
 // const simpleOauthModule = require('./../');
 var app = express();
-var SendGrid = require('sendgrid-nodejs').SendGrid;
 
 app.use(express.static(path.join(__dirname, "../client")));
 app.use(bodyParser.json());
