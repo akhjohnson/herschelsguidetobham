@@ -12,7 +12,7 @@ router.get('/', function(req, res){
     })
 });
 
-router.get('/', function(req, res){
+router.get('/wins', function(req, res){
     procedures.wins().then(function(success){
         res.send(success);
     }, function(err){
