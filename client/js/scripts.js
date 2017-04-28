@@ -4,9 +4,16 @@
 // // var fs = require("fs"),
 // //     json;
 
+<<<<<<< HEAD
 // $("#myFileField").on('click', function(){
 //     var file = fs.readFileSync(filepath, encoding);
 //     return JSON.parse(file);
+=======
+
+$("#myFileField").on('click', function(){
+    var file = fs.readFileSync(filepath, encoding);
+    return JSON.parse(file);
+>>>>>>> d8902c3859e630d1d367012b14ae2a4f3b08f84a
  
 //     var files = [];
     
