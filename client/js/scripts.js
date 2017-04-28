@@ -4,6 +4,7 @@
 // var fs = require("fs"),
 //     json;
 
+
 $("#myFileField").on('click', function(){
     var file = fs.readFileSync(filepath, encoding);
     return JSON.parse(file);
