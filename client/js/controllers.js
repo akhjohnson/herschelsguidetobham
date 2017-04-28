@@ -237,14 +237,14 @@ app.controller('MyProfileController', ['$scope', '$location', '$routeParams', 'L
 
 }]);
 
-app.controller('UploadController', ['$scope', '$location', '$routeParams', '$http', 'Badge', 'User', 'UserService', 'Loc', 'Drink', 'Eat', 'Play', 'Shop', function ($scope, $location, $routeParams, $http, Badge, User, UserService, Loc, Drink, Eat, Play, Shop) {
+app.controller('UploadController', ['$scope', '$location', '$routeParams', '$http', 'Badge', 'User', 'UserService', 'Loc', 'Drink', 'Eat', 'Play', 'Shop', 'Obj', function ($scope, $location, $routeParams, $http, Badge, User, UserService, Loc, Drink, Eat, Play, Shop, Obj) {
 
     UserService.requireLogin();
 
     // $scope.drinks = Drink.query();
 
-    Drink.get({ id: 2 }, function (success) {
-        $scope.drink = success;
+    Obj.get({ id: 2 }, function (success) {
+        $scope.obj = success;
     });
 
     var test = "1234";
@@ -253,7 +253,7 @@ app.controller('UploadController', ['$scope', '$location', '$routeParams', '$htt
         if ($scope.coupon !== test) {
             console.log("nope");
         } else {
-            $scope.drink.$update(function (success) {
+            $scope.obj.$update(function (success) {
                 $location.path('/home');
             })
         }
