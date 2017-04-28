@@ -30,36 +30,38 @@ app.get("*", function(req, res, next) {
     }
 });
 
+app.listen(process.env.PORT || 3000);
 
-const __ = require('underscore');
-module.exports = {
+
+// const __ = require('underscore');
+// module.exports = {
   
-  Request: require('./models/Request'),
-  Feature: require('./models/Feature'),
-  Image: require('./models/Image'),
-  _client: null,
-  init(options) {
-    this._options = __.defaults(options, {version: 'v1'})
-    const Endpoint = require('./lib/clients/' + options.version)
-    var ep = new Endpoint(options)
-    ep.google = this
-    this._client = ep
-  },
+//   Request: require('./models/Request'),
+//   Feature: require('./models/Feature'),
+//   Image: require('./models/Image'),
+//   _client: null,
+//   init(options) {
+//     this._options = __.defaults(options, {version: 'v1'})
+//     const Endpoint = require('./lib/clients/' + options.version)
+//     var ep = new Endpoint(options)
+//     ep.google = this
+//     this._client = ep
+//   },
 
-  annotate(requests) {
-    return new Promise((resolve, reject) => {
-      if (!requests) { return reject() }
-      if (!__.isArray(requests)) { requests = [requests] }    
-      this._client.annotate(requests).then(resolve, reject)
-    })
-  }
-}
+//   annotate(requests) {
+//     return new Promise((resolve, reject) => {
+//       if (!requests) { return reject() }
+//       if (!__.isArray(requests)) { requests = [requests] }    
+//       this._client.annotate(requests).then(resolve, reject)
+//     })
+//   }
+// }
 
- var config = {
-            projectId: 'api-project-346993894176',
-            keyFilename: '/server/config/config.json'
+//  var config = {
+//             projectId: 'api-project-346993894176',
+//             keyFilename: '/server/config/config.json'
             
-        };
+//         };
 
 
 // const oauth2 = simpleOauthModule.create({
@@ -117,10 +119,9 @@ module.exports = {
 //   res.send('Hello<br><a href="/auth">Log in with Github</a>');
 // });
 
-const server = app.listen(8080, () => {
- const host = server.address().address;
- const port = server.address().port;
+// const server = app.listen(8080, () => {
+//  const host = server.address().address;
+//  const port = server.address().port;
 
- console.log(`Example app listening at http://${host}:${port}`);
-});
-// app.listen(process.env.PORT || 3000);
+//  console.log(`Example app listening at http://${host}:${port}`);
+// });

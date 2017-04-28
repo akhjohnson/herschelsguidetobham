@@ -201,7 +201,7 @@ app.controller('ContactController', ['$scope', '$location', '$http', 'Message', 
     //SEND EMAIL - WORKING & SENDING TO KATIELYNNDECK@GMAIL.COM
     $scope.sendEmail = function () {
         var newMessage = new Message({
-            from: $scope.from,
+            email: $scope.from,
             subject: $scope.subject,
             content: $scope.content
         });
