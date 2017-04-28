@@ -11,3 +11,7 @@ exports.read = function(id) {
 exports.update = function(id) {
     return db.empty("UpdateObjSuccess(?)", [id]);
 };
+
+exports.wins = function() {
+    return db.rows("GetSuccess()", []);
+};

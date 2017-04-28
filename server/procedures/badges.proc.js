@@ -8,3 +8,6 @@ exports.read = function(id) {
     return db.row('GetBadgeById(?)', [id]);
 };
 
+exports.wins = function() {
+    return db.rows("GetSuccess()", []);
+};

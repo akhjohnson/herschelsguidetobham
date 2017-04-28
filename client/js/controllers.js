@@ -75,6 +75,10 @@ app.controller('BadgeDetailsController', ['$scope', '$routeParams', '$location',
         $scope.badge = success;
     });
 
+    $scope.uploadCoup = function () {
+        $location.path('/' + $routeParams.id + "/update");
+    };
+
 }]);
 
 
@@ -103,6 +107,10 @@ app.controller('PlayController', ['$scope', '$location', 'Play', 'UserService', 
 
     $scope.plays = Play.query();
 
+        $scope.uploadCoup = function () {
+        $location.path('/play/' + $routeParams.id + "/update");
+    };
+
 }]);
 
 
@@ -115,6 +123,10 @@ app.controller('PlayDetailsController', ['$scope', '$routeParams', '$location', 
         $scope.play = success;
     });
 
+        $scope.uploadCoup = function () {
+        $location.path('/drink/' + $routeParams.id + "/update");
+    };
+
 }]);
 
 
@@ -126,6 +138,10 @@ app.controller('DrinkController', ['$scope', '$location', 'Loc', 'Drink', 'UserS
     $scope.locs = Loc.query();
 
     $scope.drinks = Drink.query();
+
+        $scope.uploadCoup = function () {
+        $location.path('/drink/' + $routeParams.id + "/update");
+    };
 
 }]);
 
