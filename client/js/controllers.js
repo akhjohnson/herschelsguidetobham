@@ -236,53 +236,61 @@ app.controller('MyProfileController', ['$scope', '$location', '$routeParams', 'L
 
 }]);
 
+app.controller('UploadController', ['$scope', '$location', '$routeParams', '$http', 'Badge', 'User', 'UserService', 'Loc', 'Drink', 'Eat', 'Play', 'Shop', function($scope, $location, $routeParams, $http, Badge, User, UserService, Loc, Drink, Eat, Play, Shop) {
+
+
+
+
+
+}]);
+
 
 
 // UPLOAD IMAGE PG CONTROLLER 
-app.controller('UploadController', ['$scope', '$location', '$http', '$rootScope', 'fileUploadService', function($scope, $location, $http, $rootScope, fileUploadService) {
+// app.controller('UploadController', ['$scope', '$location', '$http', '$rootScope', 'fileUploadService', function($scope, $location, $http, $rootScope, fileUploadService) {
     
-    $scope.textCompare = function() {
-        for (var i = 0; i < $rootScope.coupon.length; i++) {
-            alert("Inside for loop");
-            if (name === $rootScope.coupon[i].names)
-            {
-              console.log(Success);
-            }
-        }
-    }
+//     $scope.textCompare = function() {
+//         for (var i = 0; i < $rootScope.coupon.length; i++) {
+//             alert("Inside for loop");
+//             if (name === $rootScope.coupon[i].names)
+//             {
+//               console.log(Success);
+//             }
+//         }
+//     }
 
-    var vaules = [];
-    $('#myFileField').val();
+//     var vaules = [];
+//     $('#myFileField').val();
 
-    $scope.sendData = function() {
+//     $scope.sendData = function() {
 
 
-        $http.post("https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s", { data: requestBody })
-            .then(function(response, error) {
-                var data = response.data;
-                fs.readFile(data);
-            }, function(error) {
-                console.log(error);
-            });
+//         $http.post("https://vision.googleapis.com/v1/images:annotate?fields=responses&key=AIzaSyBxA6mwZvgZArDg-JocXNFf5x09TLTqA7s", { data: requestBody })
+//             .then(function(response, error) {
+//                 var data = response.data;
+//                 fs.readFile(data);
+//             }, function(error) {
+//                 console.log(error);
+//             });
 
-        var requestBody = {
+//         var requestBody = {
 
-            "requests": [
-                {
-                    "image": {
-                        "source": {
-                            "imageUri": "/images/good-people-logo.png"
-                        },
-                        "content": ""
-                    },
-                    "features": [
-                        {
-                            "type": "TEXT_DETECTION"
-                        }
-                    ]
-                }
-            ]
-        }
-    }
-}]);
+//             "requests": [
+//                 {
+//                     "image": {
+//                         "source": {
+//                             "imageUri": "/images/good-people-logo.png"
+//                         },
+//                         "content": ""
+//                     },
+//                     "features": [
+//                         {
+//                             "type": "TEXT_DETECTION"
+//                         }
+//                     ]
+//                 }
+//             ]
+//         }
+//     }
+// }]);
 
