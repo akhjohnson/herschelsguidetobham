@@ -250,6 +250,9 @@ app.controller('MyProfileController', ['$scope', '$location', '$routeParams', 'L
 
 // UPLOAD IMAGE PG CONTROLLER 
 app.controller('UploadController', ['$scope', '$location', '$http', 'fileUploadService', function($scope, $location, $http, fileUploadService) {
+    $scope.items= {
+        
+    }
 
     $scope.textCompare = function() {
         for (var i = 0; i < items.length; i++) {
