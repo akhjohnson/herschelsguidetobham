@@ -55,6 +55,10 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
             templateUrl: 'views/contact.html',
             controller: 'ContactController'
         })
+        .when('/thanks', {
+            templateUrl: 'views/thanks/html',
+            controller: 'ThanksController'
+        })
         .when('/upload', {
             templateUrl: 'views/upload.html',
             controller: 'UploadController'
