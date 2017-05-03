@@ -1,4 +1,4 @@
-var sg = require('sendgrid')("SG.LYL6yJL4S-2IOC28OLGNoQ.4GcNpIEcHmZSqsXQQ_C3C_5N2gyTP1mJsNO25TydLbE");
+var sg = require('sendgrid')(process.env.SENDGRID_SECRET_KEY);
 
 function makeRequest(to, subject, content) {
     return sg.emptyRequest({
