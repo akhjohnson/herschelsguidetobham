@@ -1,6 +1,6 @@
-var sg = require('sendgrid')(process.env.SENDGRID_SECRET_KEY);
+var sg = require('sendgrid')("SG.LYL6yJL4S-2IOC28OLGNoQ.4GcNpIEcHmZSqsXQQ_C3C_5N2gyTP1mJsNO25TydLbE");
 
-function makeRequest(from, subject, content) {
+function makeRequest(to, subject, content) {
     return sg.emptyRequest({
         method: 'POST',
         path: '/v3/mail/send',
@@ -16,7 +16,7 @@ function makeRequest(from, subject, content) {
                 },
             ],
             from: {
-                email: from,
+                email: "akh.hall@gmail.com",
             },
             content: [
                 {
@@ -28,8 +28,8 @@ function makeRequest(from, subject, content) {
     });
 };
 
-exports.sendEmail = function (from, subject, content) {
-    var request = makeRequest(from, subject, content);
+exports.sendEmail = function (to, subject, content) {
+    var request = makeRequest(to, subject, content);
     //With promise
     sg.API(request)
         .then(response => {
@@ -40,6 +40,6 @@ exports.sendEmail = function (from, subject, content) {
         .catch(error => {
             //error is an instance of SendGridError
             //The full response is attached to error.response
-            console.log(error.response.body);
+            console.log(error.response.statusCode);
         });
 };
