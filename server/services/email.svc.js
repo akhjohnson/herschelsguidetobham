@@ -9,7 +9,7 @@ function makeRequest(to, subject, content) {
                 {
                     to: [
                         {
-                            email: "katielynndeck@gmail.com",
+                            email: to,
                         },
                     ],
                     subject: subject,
