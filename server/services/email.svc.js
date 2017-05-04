@@ -1,5 +1,4 @@
-
-var sg = require('sendgrid')(process.env.SENDGRID_SECRET_KEY);
+var sg = require("sendgrid")(process.env.SENDGRID_SECRET_KEY);
 
 function makeRequest(to, subject, content) {
     return sg.emptyRequest({
@@ -13,16 +12,16 @@ function makeRequest(to, subject, content) {
                             email: to,
                         },
                     ],
-                    subject: "Thank you for getting in touch",
+                    subject: 'Thank You',
                 },
             ],
             from: {
-                email: "akh.hall@gmail.com",
+                email: 'akh.hall@gmail.com',
             },
             content: [
                 {
                     type: 'text/plain',
-                    value: content,
+                    value: 'We will get to you shortly.',
                 },
             ],
         },
@@ -43,4 +42,4 @@ exports.sendEmail = function (to, subject, content) {
             //The full response is attached to error.response
             console.log(error.response.statusCode);
         });
-};
+}
