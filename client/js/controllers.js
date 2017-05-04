@@ -30,7 +30,7 @@ app.controller('LoginController', ['$scope', '$location', 'UserService', 'User',
             }, function (err) {
                 console.log(err);
             })
-     };
+        };
 }]);
 
 
@@ -54,7 +54,7 @@ app.controller('SignupController', ['$scope', '$location', 'UserService', 'User'
 app.controller('HomeController', ['$scope', '$location', 'UserService', 'Cat', function ($scope, $location, UserService, Cat) {
 
     UserService.requireLogin();
-
+    
     $scope.cats = Cat.query();
 
 }]);
@@ -98,12 +98,6 @@ app.controller('AboutController', ['$scope', '$location', function ($scope, $loc
 }]);
 
 
-// CAMERA CONTROLLER
-app.controller('cameraController', ['$scope', '$location', function ($scope, $location) {
-
-}]);
-
-
 // PLAY PAGE CONTROLLER - LISTS ALL OBJECTIVES UNDER PLAY CATEGORY
 app.controller('PlayController', ['$scope', '$location', 'Play', 'UserService', function ($scope, $location, Play, UserService) {
 
@@ -127,9 +121,7 @@ app.controller('PlayDetailsController', ['$scope', '$routeParams', '$location', 
         $scope.play = success;
     });
 
-    $scope.uploadCoup = function () {
-        $location.path('/play/' + $routeParams.id + "/update");
-    };
+
 
 }]);
 
@@ -139,13 +131,9 @@ app.controller('DrinkController', ['$scope', '$location', 'Loc', 'Drink', 'UserS
 
     UserService.requireLogin();
 
-    $scope.locs = Loc.query();
-
     $scope.drinks = Drink.query();
 
-        $scope.uploadCoup = function () {
-        $location.path('/drink/' + $routeParams.id + "/update");
-    };
+
 
 }]);
 
@@ -159,9 +147,6 @@ app.controller('DrinkDetailsController', ['$scope', '$routeParams', '$location',
         $scope.drink = success;
     });
 
-    $scope.uploadCoup = function () {
-        $location.path('/drink/' + $routeParams.id + "/update");
-    };
 
 }]);
 
@@ -176,7 +161,7 @@ app.controller('EatController', ['$scope', '$location', 'Loc', 'Eat', 'UserServi
 }]);
 
 
-// DETAILS PG CONTROLLER FOR SINGLE EAT OBJECTIVE 
+// EAT-DETAILS PG CONTROLLER FOR SINGLE EAT OBJECTIVE 
 app.controller('EatDetailsController', ['$scope', '$routeParams', '$location', 'Loc', 'Eat', 'UserService', function ($scope, $routeParams, $location, Loc, Eat, UserService) {
 
     UserService.requireLogin();
@@ -206,6 +191,7 @@ app.controller('ShopDetailsController', ['$scope', '$routeParams', '$location', 
     $scope.shops = Shop.get({ id: $routeParams.id }, function (success) {
         $scope.shop = success;
     });
+
 }]);
 
 
@@ -233,6 +219,8 @@ app.controller('ContactController', ['$scope', '$location', '$http', 'Message', 
         });
     };
 }]);
+
+
 // THANK YOU PG CONTROLLER
 app.controller('ThanksController', ['$scope', '$location', 'Loc', 'Badge', 'UserService', '$http', function ($scope, $location, Loc, Badge, UserService, $http) {
 
@@ -269,6 +257,8 @@ app.controller('MyProfileController', ['$scope', '$location', '$routeParams', 'L
 
 }]);
 
+
+// DRINK-UPLOAD PG CONTROLLER
 app.controller('DrinkUploadController', ['$scope', '$location', '$routeParams', '$http', 'Badge', 'User', 'UserService', 'Loc', 'Drink', 'Eat', 'Play', 'Shop', 'Obj', function ($scope, $location, $routeParams, $http, Badge, User, UserService, Loc, Drink, Eat, Play, Shop, Obj) {
 
     UserService.requireLogin();
@@ -330,36 +320,6 @@ app.controller('ShopUploadController', ['$scope', '$location', '$routeParams', '
         console.log(result);
         
     };
-        // if (!result) {
-        //     console.log(false);
-        // } else {
-            
-        // };
-    
-
-    //week 6 day 2 - notes
-
-    // ng-show results 
-    // ng-hide results
- 
-    // $scope.enterCode = function() {
-    //     if (angular.equals($scope.code1, $scope.code2)) {
-    //         document.getElementById('.goodmessage').innerHTML="Coupon applied!";
-    //         document.getElementById('.err').innerHTML="";
-    //         return true;
-    //     } else {
-    //         document.getElementById('err').innerHTML="Invalid coupon";
-    //         document.getElementById('goodmessage').innerHTML="";
-    //         return false;
-    //     }
-    // };
-
-// KATIE'S SNIPPET FOR TEST
-//   $scope.user1 = {};
-//   $scope.user2 = {};
-//   $scope.compare = function() {
-//     $scope.result = angular.equals($scope.user1, $scope.user2);
-//   };
 
 }]);
 
@@ -386,12 +346,6 @@ app.controller('EatUploadController', ['$scope', '$location', '$routeParams', '$
 
     $scope.badges = Badge.query();
 
-// KATIE'S SNIPPET FOR TEST
-//   $scope.user1 = {};
-//   $scope.user2 = {};
-//   $scope.compare = function() {
-//     $scope.result = angular.equals($scope.user1, $scope.user2);
-//   };
 
 }]);
 
