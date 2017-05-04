@@ -24,6 +24,5 @@ router.use('/eat', eat);
 router.use('/play', play);
 router.use('/shop', shop)
 router.use('/contact', contact);
-// router.use('/purchases', purchases);
 
 module.exports = router;

@@ -299,12 +299,6 @@ app.controller('DrinkUploadController', ['$scope', '$location', '$routeParams', 
 
     $scope.badges = Badge.query();
 
-// KATIE'S SNIPPET FOR TEST
-//   $scope.user1 = {};
-//   $scope.user2 = {};
-//   $scope.compare = function() {
-//     $scope.result = angular.equals($scope.user1, $scope.user2);
-//   };
 
 }]);
 
