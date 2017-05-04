@@ -91,6 +91,18 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
             templateUrl: 'views/upload.html',
             controller: 'UploadController'
         })
+        .when('/shop/:id/upload', {
+            templateUrl: 'views/upload.html',
+            controller: 'UploadController'
+        })
+        .when('/drink/:id/upload', {
+            templateUrl: 'views/upload.html',
+            controller: 'UploadController'
+        })
+        .when('/eat/:id/upload', {
+            templateUrl: 'views/upload.html',
+            controller: 'UploadController'
+        })
 
 }]);
 
