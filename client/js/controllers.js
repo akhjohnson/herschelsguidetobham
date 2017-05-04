@@ -236,7 +236,6 @@ app.controller('ContactController', ['$scope', '$location', '$http', 'Message', 
 // THANK YOU PG CONTROLLER
 app.controller('ThanksController', ['$scope', '$location', 'Loc', 'Badge', 'UserService', '$http', function ($scope, $location, Loc, Badge, UserService, $http) {
 
-    UserService.requireLogin();
 
 }]);
 

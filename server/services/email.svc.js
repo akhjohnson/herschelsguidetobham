@@ -1,6 +1,6 @@
 var sg = require("sendgrid")(process.env.SENDGRID_SECRET_KEY);
 
-function makeRequest(to, subject, content) {
+function makeRequest(from, subject, content) {
     return sg.emptyRequest({
         method: 'POST',
         path: '/v3/mail/send',
@@ -9,14 +9,14 @@ function makeRequest(to, subject, content) {
                 {
                     to: [
                         {
-                            email: to,
+                            email: 'akh.hall@gmail.com',
                         },
                     ],
-                    subject: 'Thank You',
+                    subject: subject,
                 },
             ],
             from: {
-                email: 'akh.hall@gmail.com',
+                email: from,
             },
             content: [
                 {
