@@ -223,7 +223,7 @@ app.controller('ContactController', ['$scope', '$location', '$http', 'Message', 
     //SEND EMAIL - WORKING & SENDING TO KATIELYNNDECK@GMAIL.COM
     $scope.sendEmail = function () {
         var newMessage = new Message({
-            email: $scope.from,
+            from: $scope.from,
             subject: $scope.subject,
             content: $scope.content
         });
