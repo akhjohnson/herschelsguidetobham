@@ -279,14 +279,23 @@ app.controller('DrinkUploadController', ['$scope', '$location', '$routeParams', 
         $scope.drink = success;
     });
 
-    $scope.code1 = {};
-    $scope.code2 = "1234";
-
-    $scope.enterCode = function() {
-        $scope.result = angular.equals($scope.code1, $scope.code2);
+   $scope.code1 = {};
+    $scope.code2 = {
+        name: "1234"
     };
 
+    $scope.results = false;
 
+    $scope.enterCode = function() {
+        var result = angular.equals($scope.code1, $scope.code2);
+        
+        $scope.results = result;
+
+        console.log($scope.results);
+
+        console.log(result);
+        
+    };
 
     $scope.badges = Badge.query();
 
@@ -301,7 +310,7 @@ app.controller('DrinkUploadController', ['$scope', '$location', '$routeParams', 
 
 app.controller('ShopUploadController', ['$scope', '$location', '$routeParams', '$http', 'Badge', 'User', 'UserService', 'Loc', 'Shop', 'Obj', function ($scope, $location, $routeParams, $http, Badge, User, UserService, Loc, Shop, Obj) {
 
-    // UserService.requireLogin();
+    UserService.requireLogin();
 
     $scope.shops = Shop.query();
 
@@ -309,27 +318,36 @@ app.controller('ShopUploadController', ['$scope', '$location', '$routeParams', '
         $scope.shop = success;
     });
 
-    // var test = "1234";
-
-    
-    // $scope.checkCoup = function () {
-    //     if ($scope.coupon !== test) {
-    //         console.log("nope");
-    //     } else {
-    //         $scope.drink.$update(function (success) {
-    //             $location.path('/home');
-    //         });
-    //     };
-    // };
- 
 
     $scope.code1 = {};
-    $scope.code2 = "1234";
-
-    $scope.enterCode = function() {
-        $scope.result = angular.equals($scope.code1, $scope.code2);
+    $scope.code2 = {
+        name: "1234"
     };
 
+    $scope.results = true;
+
+    $scope.enterCode = function() {
+        var result = angular.equals($scope.code1, $scope.code2);
+        
+        $scope.results = result;
+
+        console.log($scope.results);
+
+        console.log(result);
+        
+    };
+        // if (!result) {
+        //     console.log(false);
+        // } else {
+            
+        // };
+    
+
+    //week 6 day 2 - notes
+
+    // ng-show results 
+    // ng-hide results
+ 
     // $scope.enterCode = function() {
     //     if (angular.equals($scope.code1, $scope.code2)) {
     //         document.getElementById('.goodmessage').innerHTML="Coupon applied!";
