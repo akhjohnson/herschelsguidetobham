@@ -287,6 +287,7 @@ app.controller('DrinkUploadController', ['$scope', '$location', '$routeParams', 
     };
 
 
+
     $scope.badges = Badge.query();
 
 // KATIE'S SNIPPET FOR TEST
