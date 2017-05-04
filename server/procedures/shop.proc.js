@@ -8,6 +8,10 @@ exports.read = function(id) {
     return db.row('GetSingleObjective(?)', [id]);
 };
 
+// exports.read = function(id) {
+//     return db.row('GetSingleLocation(?)', [id]);
+// };
+
 exports.update = function(id) {
     return db.empty("UpdateObjSuccess(?)", [id]);
 };

@@ -280,19 +280,13 @@ app.controller('DrinkUploadController', ['$scope', '$location', '$routeParams', 
         $scope.drink = success;
     });
 
-    var test = "1234";
+    $scope.code1 = {};
+    $scope.code2 = "1234";
 
-    
-    $scope.checkCoup = function () {
-        if ($scope.coupon !== test) {
-            console.log("nope");
-        } else {
-            $scope.drink.$update(function (success) {
-                $location.path('/home');
-            });
-        };
+    $scope.enterCode = function() {
+        $scope.result = angular.equals($scope.code1, $scope.code2);
     };
- 
+
 
     $scope.badges = Badge.query();
 
@@ -330,7 +324,7 @@ app.controller('ShopUploadController', ['$scope', '$location', '$routeParams', '
  
 
     $scope.code1 = {};
-    $scope.code2 = "1234"
+    $scope.code2 = "1234";
 
     $scope.enterCode = function() {
         $scope.result = angular.equals($scope.code1, $scope.code2);
@@ -338,8 +332,8 @@ app.controller('ShopUploadController', ['$scope', '$location', '$routeParams', '
 
     // $scope.enterCode = function() {
     //     if (angular.equals($scope.code1, $scope.code2)) {
-    //         document.getElementById('goodmessage').innerHTML="Coupon applied!";
-    //         document.getElementById('err').innerHTML="";
+    //         document.getElementById('.goodmessage').innerHTML="Coupon applied!";
+    //         document.getElementById('.err').innerHTML="";
     //         return true;
     //     } else {
     //         document.getElementById('err').innerHTML="Invalid coupon";
@@ -362,25 +356,21 @@ app.controller('EatUploadController', ['$scope', '$location', '$routeParams', '$
 
     UserService.requireLogin();
 
-    $scope.drinks = Drink.query();
+    $scope.eats = Eat.query();
 
-    Drink.get({ id: $routeParams.id }, function (success) {
-        $scope.drink = success;
+    Eat.get({ id: $routeParams.id }, function (success) {
+        $scope.eat = success;
     });
 
     var test = "1234";
 
     
-    $scope.checkCoup = function () {
-        if ($scope.coupon !== test) {
-            console.log("nope");
-        } else {
-            $scope.drink.$update(function (success) {
-                $location.path('/home');
-            });
-        };
+    $scope.code1 = {};
+    $scope.code2 = "1234";
+
+    $scope.enterCode = function() {
+        $scope.result = angular.equals($scope.code1, $scope.code2);
     };
- 
 
     $scope.badges = Badge.query();
 
@@ -397,23 +387,17 @@ app.controller('PlayUploadController', ['$scope', '$location', '$routeParams', '
 
     UserService.requireLogin();
 
-    $scope.drinks = Drink.query();
+    $scope.plays = Play.query();
 
-    Drink.get({ id: $routeParams.id }, function (success) {
-        $scope.drink = success;
+    Play.get({ id: $routeParams.id }, function (success) {
+        $scope.play = success;
     });
 
-    var test = "1234";
+    $scope.code1 = {};
+    $scope.code2 = "1234";
 
-    
-    $scope.checkCoup = function () {
-        if ($scope.coupon !== test) {
-            console.log("nope");
-        } else {
-            $scope.drink.$update(function (success) {
-                $location.path('/home');
-            });
-        };
+    $scope.enterCode = function() {
+        $scope.result = angular.equals($scope.code1, $scope.code2);
     };
  
 
@@ -427,3 +411,18 @@ app.controller('PlayUploadController', ['$scope', '$location', '$routeParams', '
 //   };
 
 }]);
+
+
+
+
+    
+    // $scope.checkCoup = function () {
+    //     if ($scope.coupon !== test) {
+    //         console.log("nope");
+    //     } else {
+    //         $scope.drink.$update(function (success) {
+    //             $location.path('/home');
+    //         });
+    //     };
+    // };
+ 

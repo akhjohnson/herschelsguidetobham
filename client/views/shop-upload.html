@@ -10,7 +10,7 @@
         <form>
                     <div class="form-group">
             <label for="badge" style="color: white; font-size: 1.5em;">Objective Name</label>
-            <input type="text" class="form-control" id="badge" placeholder="{{shop.obj_objname}}" value="{{shop.obj_objname}}">
+            <input type="text" class="form-control" id="badge" placeholder="{{shop.obj_objname}}" value="{{shop.badgename}}">
           </div>
 
           <!--<p>Objectvie Name: <select ng-model="post.categoryid" id="cat-list" >
@@ -19,12 +19,12 @@
           
           <div class="form-group">
             <label for="coupon" style="color: white; font-size: 1.5em;">Enter Code</label>
-            <input type="text" class="form-control" id="coupon" placeholder="######" ng-model="code">
+            <input type="text" class="form-control" id="coupon" placeholder="####" ng-model="code">
 
             <!--<input type="textarea" ng-model="post.title" class="form-control">-->
 
           </div>
-          <button type="submit" id="button-contact" class="btn btn-default" ng-click="enterCode()">SUBMIT COUPON</button>
+          <button type="submit" id="button-contact" class="btn btn-default" ng-click="enterCode()">SUBMIT CODE</button>
         </form>
         <p>{{result}}</p>
       </div>
