@@ -19,7 +19,7 @@
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "request": "^2.81.0",
-    "sendgrid": "^5.0.1",
+    "sendgrid": "^5.1.0",
     "sendgrid-nodejs": "0.1.0-2",
     "simple-oauth2": "^1.1.0",
     "underscore": "^1.8.3"

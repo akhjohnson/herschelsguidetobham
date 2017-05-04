@@ -1,3 +1,4 @@
+
 var sg = require('sendgrid')(process.env.SENDGRID_SECRET_KEY);
 
 function makeRequest(to, subject, content) {
@@ -12,7 +13,7 @@ function makeRequest(to, subject, content) {
                             email: to,
                         },
                     ],
-                    subject: subject,
+                    subject: "Thank you for getting in touch",
                 },
             ],
             from: {
