@@ -270,7 +270,7 @@ app.controller('MyProfileController', ['$scope', '$location', '$routeParams', 'L
 
 }]);
 
-app.controller('UploadController', ['$scope', '$location', '$routeParams', '$http', 'Badge', 'User', 'UserService', 'Loc', 'Drink', 'Eat', 'Play', 'Shop', 'Obj', function ($scope, $location, $routeParams, $http, Badge, User, UserService, Loc, Drink, Eat, Play, Shop, Obj) {
+app.controller('DrinkUploadController', ['$scope', '$location', '$routeParams', '$http', 'Badge', 'User', 'UserService', 'Loc', 'Drink', 'Eat', 'Play', 'Shop', 'Obj', function ($scope, $location, $routeParams, $http, Badge, User, UserService, Loc, Drink, Eat, Play, Shop, Obj) {
 
     UserService.requireLogin();
 
@@ -305,4 +305,125 @@ app.controller('UploadController', ['$scope', '$location', '$routeParams', '$htt
 
 }]);
 
+app.controller('ShopUploadController', ['$scope', '$location', '$routeParams', '$http', 'Badge', 'User', 'UserService', 'Loc', 'Shop', 'Obj', function ($scope, $location, $routeParams, $http, Badge, User, UserService, Loc, Shop, Obj) {
 
+    // UserService.requireLogin();
+
+    $scope.shops = Shop.query();
+
+    Shop.get({ id: $routeParams.id }, function (success) {
+        $scope.shop = success;
+    });
+
+    // var test = "1234";
+
+    
+    // $scope.checkCoup = function () {
+    //     if ($scope.coupon !== test) {
+    //         console.log("nope");
+    //     } else {
+    //         $scope.drink.$update(function (success) {
+    //             $location.path('/home');
+    //         });
+    //     };
+    // };
+ 
+
+    $scope.code1 = {};
+    $scope.code2 = "1234"
+
+    $scope.enterCode = function() {
+        $scope.result = angular.equals($scope.code1, $scope.code2);
+    };
+
+    // $scope.enterCode = function() {
+    //     if (angular.equals($scope.code1, $scope.code2)) {
+    //         document.getElementById('goodmessage').innerHTML="Coupon applied!";
+    //         document.getElementById('err').innerHTML="";
+    //         return true;
+    //     } else {
+    //         document.getElementById('err').innerHTML="Invalid coupon";
+    //         document.getElementById('goodmessage').innerHTML="";
+    //         return false;
+    //     }
+    // };
+
+// KATIE'S SNIPPET FOR TEST
+//   $scope.user1 = {};
+//   $scope.user2 = {};
+//   $scope.compare = function() {
+//     $scope.result = angular.equals($scope.user1, $scope.user2);
+//   };
+
+}]);
+
+
+app.controller('EatUploadController', ['$scope', '$location', '$routeParams', '$http', 'Badge', 'User', 'UserService', 'Loc', 'Drink', 'Eat', 'Play', 'Shop', 'Obj', function ($scope, $location, $routeParams, $http, Badge, User, UserService, Loc, Drink, Eat, Play, Shop, Obj) {
+
+    UserService.requireLogin();
+
+    $scope.drinks = Drink.query();
+
+    Drink.get({ id: $routeParams.id }, function (success) {
+        $scope.drink = success;
+    });
+
+    var test = "1234";
+
+    
+    $scope.checkCoup = function () {
+        if ($scope.coupon !== test) {
+            console.log("nope");
+        } else {
+            $scope.drink.$update(function (success) {
+                $location.path('/home');
+            });
+        };
+    };
+ 
+
+    $scope.badges = Badge.query();
+
+// KATIE'S SNIPPET FOR TEST
+//   $scope.user1 = {};
+//   $scope.user2 = {};
+//   $scope.compare = function() {
+//     $scope.result = angular.equals($scope.user1, $scope.user2);
+//   };
+
+}]);
+
+app.controller('PlayUploadController', ['$scope', '$location', '$routeParams', '$http', 'Badge', 'User', 'UserService', 'Loc', 'Drink', 'Eat', 'Play', 'Shop', 'Obj', function ($scope, $location, $routeParams, $http, Badge, User, UserService, Loc, Drink, Eat, Play, Shop, Obj) {
+
+    UserService.requireLogin();
+
+    $scope.drinks = Drink.query();
+
+    Drink.get({ id: $routeParams.id }, function (success) {
+        $scope.drink = success;
+    });
+
+    var test = "1234";
+
+    
+    $scope.checkCoup = function () {
+        if ($scope.coupon !== test) {
+            console.log("nope");
+        } else {
+            $scope.drink.$update(function (success) {
+                $location.path('/home');
+            });
+        };
+    };
+ 
+
+    $scope.badges = Badge.query();
+
+// KATIE'S SNIPPET FOR TEST
+//   $scope.user1 = {};
+//   $scope.user2 = {};
+//   $scope.compare = function() {
+//     $scope.result = angular.equals($scope.user1, $scope.user2);
+//   };
+
+}]);

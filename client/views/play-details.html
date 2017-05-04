@@ -9,8 +9,11 @@
       <img ng-src="{{play.badgeimg}}" alt="Go to this Location">
       <div class="caption">
         <h3 id="caption">"{{play.obj_name}}"</h3>
-        <h5 id="caption">{{play.obj_description}}</h5>
+        <h5>{{play.obj_description}}</h5>
       </div>
+                      <a href="/play/{{play.obj_id}}/upload">
+            <button type="submit" id="button-contact" class="btn btn-default">Enter Code!</button>
+          </a>
     </div>
   </div>
   </div>
@@ -27,9 +30,10 @@
     <div class="thumbnail how-to-img">
       <img ng-src="{{play.locationimg}}" alt="Go to this Location">
       <div class="caption">
-        <h3 id="caption">"{{play.locationname}}"</h3>
-       <h5 id="caption">{{play.obj_description}}</h5>
-        <p id="caption">{{play.obj_description}}</p>
+               <h3 id="caption"><strong>{{play.locationname}}</strong></h3>
+        <p>{{play.locabout}}</p>
+        <h4 id="caption">Address:</h4>
+        <h5>{{play.locaddress}}</h5>
       </div>
     </div>
   </div>

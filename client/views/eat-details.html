@@ -14,6 +14,9 @@
         <h3 id="caption">"{{eat.obj_name}}"</h3>
         <h5 id="caption">{{eat.obj_description}}</h5>
       </div>
+                      <a href="/eat/{{eat.obj_id}}/upload">
+            <button type="submit" id="button-contact" class="btn btn-default">Enter Code!</button>
+          </a>
     </div>
   </div>
   </div>
@@ -30,9 +33,10 @@
     <div class="thumbnail how-to-img">
       <img ng-src="{{eat.locationimg}}" alt="Go to this Location">
       <div class="caption">
-        <h3 id="caption">"{{eat.locationname}}"</h3>
-       <h5 id="caption">{{eat.obj_description}}</h5>
-        <p id="caption">{{eat.obj_description}}</p>
+               <h3 id="caption"><strong>{{eat.locationname}}</strong></h3>
+        <p>{{eat.locabout}}</p>
+        <h4 id="caption">Address:</h4>
+        <h5>{{eat.locaddress}}</h5>
       </div>
     </div>
   </div>

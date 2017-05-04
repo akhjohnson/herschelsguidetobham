@@ -89,19 +89,19 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
         })
         .when('/play/:id/upload', {
             templateUrl: 'views/upload.html',
-            controller: 'UploadController'
+            controller: 'PlayUploadController'
         })
         .when('/shop/:id/upload', {
             templateUrl: 'views/upload.html',
-            controller: 'UploadController'
+            controller: 'ShopUploadController'
         })
         .when('/drink/:id/upload', {
             templateUrl: 'views/upload.html',
-            controller: 'UploadController'
+            controller: 'DrinkUploadController'
         })
         .when('/eat/:id/upload', {
             templateUrl: 'views/upload.html',
-            controller: 'UploadController'
+            controller: 'EatUploadController'
         })
 
 }]);

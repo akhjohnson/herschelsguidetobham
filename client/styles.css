@@ -392,3 +392,17 @@ body {
 #caption {
   color: #F68A46;
 }
+
+
+/*TEST STUFF*/
+#goodmessage {
+  position: relative;
+  top: 10px;
+  color:green;
+}
+
+#err { 
+  position: relative;
+  top: 10px;
+  color:red;
+}
