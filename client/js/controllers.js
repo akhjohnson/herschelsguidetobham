@@ -127,8 +127,8 @@ app.controller('PlayDetailsController', ['$scope', '$routeParams', '$location', 
         $scope.play = success;
     });
 
-        $scope.uploadCoup = function () {
-        $location.path('/drink/' + $routeParams.id + "/update");
+    $scope.uploadCoup = function () {
+        $location.path('/play/' + $routeParams.id + "/update");
     };
 
 }]);
