@@ -21,7 +21,7 @@ function makeRequest(to, subject, content) {
             content: [
                 {
                     type: 'text/plain',
-                    value: 'We will get to you shortly.',
+                    value: content,
                 },
             ],
         },
@@ -43,34 +43,3 @@ exports.sendEmail = function (to, subject, content) {
             console.log(error.response.statusCode);
         });
 }
-
-var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
-
-// GET Collection
-var request = sg.emptyRequest({
-  method: 'GET',
-  path: '/v3/api_keys'
-});
-
-// With promise
-sg.API(request)
-  .then(function (response) {
-    console.log(response.statusCode);
-    console.log(response.body);
-    console.log(response.headers);
-  })
-  .catch(function (error) {
-    // error is an instance of SendGridError
-    // The full response is attached to error.response
-    console.log(error.response.statusCode);
-  });
-
-// With callback
-sg.API(request, function (error, response) {
-  if (error) {
-    console.log('Error response received');
-  }
-  console.log(response.statusCode);
-  console.log(response.body);
-  console.log(response.headers);
-});
