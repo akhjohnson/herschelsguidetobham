@@ -11,18 +11,22 @@ app.controller('WelcomeController', ['$scope', '$location', function ($scope, $l
 app.controller('LoginController', ['$scope', '$location', 'UserService', 'User', function ($scope, $location, UserService, User) {
     
     UserService.me().then(function (success) {
-        redirect();
+        // redirect();
+        $location.path('/home');
     });
 
-    function redirect() {
-        var dest = $location.search().p;
-        if (!dest) { dest = '/'; }
-            $location.path(dest).search('p', null);
-    };
+//REDIRECT WAS CAUSING THE LOGIN LOOP - DON'T USE!
+    // function redirect() {
+    //     var dest = $location.search().p;
+    //     if (!dest) { dest = '/'; }
+    //         $location.path(dest).search('p', null);
+    // };
 
     $scope.login = function () {
         UserService.login($scope.email, $scope.password).then(function () {
-                redirect();
+                // redirect();
+                $location.path('/home');
+
             }, function (err) {
                 console.log(err);
             })
@@ -38,9 +42,9 @@ app.controller('SignupController', ['$scope', '$location', 'UserService', 'User'
             email: $scope.email,
             password: $scope.password,
             name: $scope.name
-        });
+        })
         u.$save(function () {
-            $location.path('/home');
+            $location.path('/login');
         });
     };
 }]);

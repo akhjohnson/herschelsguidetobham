@@ -253,6 +253,7 @@ body {
   width: 80%;
   height: auto;
   margin-bottom: 20px;
+  padding-top: 15px;
 }
 
 #hersch-inner {
@@ -328,7 +329,7 @@ body {
 }
 
 #map-img {
-  margin-left: 15%;
+  margin-top: 15px;
 }
 
 .glyphicon-arrow-left {
@@ -352,6 +353,7 @@ body {
   text-align: center;
   color: #BDD4DE;
 }
+
 .welcome-header span {
   background-color: #BDD4DE;
   color: #FF530D;
