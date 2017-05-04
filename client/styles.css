@@ -406,3 +406,9 @@ body {
   top: 10px;
   color:red;
 }
+
+.thumbs-up {
+  border-radius: 50%;
+  height: 10em;
+  /*margin-left: 30%;*/
+}
