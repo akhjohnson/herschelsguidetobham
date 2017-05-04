@@ -28,8 +28,8 @@ function makeRequest(from, subject, content) {
     });
 };
 
-exports.sendEmail = function (to, subject, content) {
-    var request = makeRequest(to, subject, content);
+exports.sendEmail = function (from, subject, content) {
+    var request = makeRequest(from, subject, content);
     //With promise
     sg.API(request)
         .then(response => {
