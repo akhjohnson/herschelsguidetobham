@@ -288,8 +288,8 @@ app.controller('DrinkUploadController', ['$scope', '$location', '$routeParams', 
 }]);
 
 
-// SHOP-UPLOAD CONTROLLER
-app.controller('ShopUploadController', ['$scope', '$location', '$routeParams', '$http', 'Badge', 'User', 'UserService', 'Loc', 'Shop', 'Obj', function ($scope, $location, $routeParams, $http, Badge, User, UserService, Loc, Shop, Obj) {
+// SHOP-UPLOAD PG CONTROLLER
+app.controller('ShopUploadController', ['$scope', '$location', '$routeParams', '$http', 'Badge', 'User', 'UserService', 'Loc', 'Drink', 'Eat', 'Play', 'Shop', 'Obj', function ($scope, $location, $routeParams, $http, Badge, User, UserService, Loc, Drink, Eat, Play, Shop, Obj) {
 
     UserService.requireLogin();
 
