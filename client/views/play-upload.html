@@ -26,10 +26,22 @@
           </div>
           <button type="submit" id="button-contact" class="btn btn-default" ng-click="enterCode()">SUBMIT CODE</button>
         </form>
-        <p>{{result}}</p>
       </div>
     </div>
   </div>
+</div>
+<!--ADD THUMBS UP AND THUMBS DOWN-->
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="container">
+      <div class="caption text-center">
+    <img class="thumbs-up" ng-hide="results" src="images/icon_badge-fail.png" alt="herschel">
+    <img class="thumbs-up" ng-show="results" src="images/icon_badge-success.png" alt="herschel">
+    <h3 class="team-name">{{result}}</h3>
+</div>
+
+</div>
+</div>
 </div>
 
 <!-- TABS FOOTER -->
