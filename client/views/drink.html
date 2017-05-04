@@ -10,8 +10,8 @@
       <div class="thumbnail how-to-img" ng-repeat="drink in drinks">
         <a ng-href="/drink/{{drink.obj_id}}">
           <img ng-src="{{drink.locationimg}}" alt="Logo">
-          <h4 class="title" id="thumbnail-back">{{ drink.locationname }}</h4>
-          <h4 id="thumbnail-back">Badge: {{ drink.badgename }}</h4>
+          <h3 class="title" id="thumbnail-back">{{ drink.locationname }}</h3>
+          <h4 style="color: #3F5765">Badge: {{ drink.badgename }}</h4>
         </a>
       </div>
     </div>

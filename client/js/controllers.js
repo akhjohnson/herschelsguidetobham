@@ -229,7 +229,7 @@ app.controller('ContactController', ['$scope', '$location', '$http', 'Message', 
         });
 
         newMessage.$save(function () {
-            $location.path('/');
+            $location.path('/thanks');
         });
     };
 }]);
