@@ -8,27 +8,29 @@
     <div class="thumbnail how-to-img">
       <img ng-src="{{shop.badgeimg}}" alt="Go to this Location">
       <div class="caption">
-        <h3 id="caption">"{{shop.obj_name}}"</h3>
-        <h5 id="caption">{{shop.obj_description}}</h5>
+        <h3 id="caption"><strong>"{{shop.obj_name}}"</strong></h3>
+        <h5>{{shop.obj_description}}</h5>
+        
       </div>
     </div>
   </div>
   </div>
 </div>
+
 <!--LOCATION DETAILS-->
 <div class="container">
 <h2 class="How-to-play-header"><span>WHERE</span></h2>
 </div>
-
 <div class="row">
   <div class="col-sm-6 col-md-4">
     <div class="text-center">
     <div class="thumbnail how-to-img">
       <img ng-src="{{shop.locationimg}}" alt="Go to this Location">
       <div class="caption">
-        <h3 id="caption">"{{shop.locationname}}"</h3>
-       <h5 id="caption">{{shop.obj_description}}</h5>
-        <p id="caption">{{shop.obj_description}}</p>
+        <h3 id="caption"><strong>{{shop.locationname}}</strong></h3>
+        <p>{{shop.locabout}}</p>
+        <h4 id="caption">Address:</h4>
+        <h5>{{shop.locaddress}}</h5>
       </div>
     </div>
   </div>
@@ -49,11 +51,11 @@
                     <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_map-blue.png">
       <br> Map </button></a>
             </div>
-            <div class="btn-group text-center" role="group">
+            <!--<div class="btn-group text-center" role="group">
                 <a href="/upload">
                     <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/tabicon-exchange.png">
       <br> Submit Coup'n </button></a>
-            </div>
+            </div>-->
             <div class="btn-group text-center" role="group">
                 <a href="/badges">
                     <button type="button" class="btn btn-default" id="test"> <img id="tabicon" src="images/icon_badge-blue.png">

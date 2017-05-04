@@ -87,7 +87,7 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
             templateUrl: 'views/play-details.html',
             controller: 'PlayDetailsController'
         })
-        .when('/:id/update', {
+        .when('/play/:id/upload', {
             templateUrl: 'views/upload.html',
             controller: 'UploadController'
         })
