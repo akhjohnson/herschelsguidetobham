@@ -269,7 +269,7 @@ app.controller('DrinkUploadController', ['$scope', '$location', '$routeParams', 
         $scope.drink = success;
     });
 
-   $scope.code1 = {};
+    $scope.code1 = {};
     $scope.code2 = {
         name: "1234"
     };
@@ -282,16 +282,13 @@ app.controller('DrinkUploadController', ['$scope', '$location', '$routeParams', 
         $scope.results = result;
 
         console.log($scope.results);
-
-        console.log(result);
-        
+        console.log(result);  
     };
-
-    $scope.badges = Badge.query();
-
 
 }]);
 
+
+// SHOP-UPLOAD CONTROLLER
 app.controller('ShopUploadController', ['$scope', '$location', '$routeParams', '$http', 'Badge', 'User', 'UserService', 'Loc', 'Shop', 'Obj', function ($scope, $location, $routeParams, $http, Badge, User, UserService, Loc, Shop, Obj) {
 
     UserService.requireLogin();
@@ -302,13 +299,12 @@ app.controller('ShopUploadController', ['$scope', '$location', '$routeParams', '
         $scope.shop = success;
     });
 
-
     $scope.code1 = {};
     $scope.code2 = {
         name: "1234"
     };
 
-    $scope.results = true;
+    $scope.results = false;
 
     $scope.enterCode = function() {
         var result = angular.equals($scope.code1, $scope.code2);
@@ -316,9 +312,7 @@ app.controller('ShopUploadController', ['$scope', '$location', '$routeParams', '
         $scope.results = result;
 
         console.log($scope.results);
-
-        console.log(result);
-        
+        console.log(result);  
     };
 
 }]);
@@ -334,21 +328,26 @@ app.controller('EatUploadController', ['$scope', '$location', '$routeParams', '$
         $scope.eat = success;
     });
 
-    var test = "1234";
-
-    
     $scope.code1 = {};
-    $scope.code2 = "1234";
-
-    $scope.enterCode = function() {
-        $scope.result = angular.equals($scope.code1, $scope.code2);
+    $scope.code2 = {
+        name: "1234"
     };
 
-    $scope.badges = Badge.query();
+    $scope.results = false;
 
+    $scope.enterCode = function() {
+        var result = angular.equals($scope.code1, $scope.code2);
+        
+        $scope.results = result;
+
+        console.log($scope.results);
+        console.log(result);  
+    };
 
 }]);
 
+
+// PLAY-UPLOAD CONTROLLER
 app.controller('PlayUploadController', ['$scope', '$location', '$routeParams', '$http', 'Badge', 'User', 'UserService', 'Loc', 'Drink', 'Eat', 'Play', 'Shop', 'Obj', function ($scope, $location, $routeParams, $http, Badge, User, UserService, Loc, Drink, Eat, Play, Shop, Obj) {
 
     UserService.requireLogin();
@@ -360,35 +359,20 @@ app.controller('PlayUploadController', ['$scope', '$location', '$routeParams', '
     });
 
     $scope.code1 = {};
-    $scope.code2 = "1234";
+    $scope.code2 = {
+        name: "1234"
+    };
+
+    $scope.results = false;
 
     $scope.enterCode = function() {
-        $scope.result = angular.equals($scope.code1, $scope.code2);
+        var result = angular.equals($scope.code1, $scope.code2);
+        
+        $scope.results = result;
+
+        console.log($scope.results);
+        console.log(result);  
     };
- 
-
-    $scope.badges = Badge.query();
-
-// KATIE'S SNIPPET FOR TEST
-//   $scope.user1 = {};
-//   $scope.user2 = {};
-//   $scope.compare = function() {
-//     $scope.result = angular.equals($scope.user1, $scope.user2);
-//   };
 
 }]);
 
-
-
-
-    
-    // $scope.checkCoup = function () {
-    //     if ($scope.coupon !== test) {
-    //         console.log("nope");
-    //     } else {
-    //         $scope.drink.$update(function (success) {
-    //             $location.path('/home');
-    //         });
-    //     };
-    // };
- 
