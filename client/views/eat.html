@@ -10,8 +10,8 @@
       <div class="thumbnail how-to-img" ng-repeat="eat in eats">
         <a ng-href="/eat/{{eat.obj_id}}">
           <img ng-src="{{eat.locationimg}}" alt="Logo">
-          <h4 class="title" id="thumbnail-back">{{ eat.locationname }}</h4>
-          <h4 id="thumbnail-back">Badge: {{ eat.badgename }}</h4>
+          <h3 class="title" id="thumbnail-back">{{ eat.locationname }}</h3>
+          <h4 style="color: #3F5765">Badge: {{ eat.badgename }}</h4>
         </a>
       </div>
     </div>

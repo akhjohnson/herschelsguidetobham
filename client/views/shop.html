@@ -8,8 +8,8 @@
       <div class="thumbnail how-to-img" ng-repeat="shop in shops">
         <a ng-href="/shop/{{shop.obj_id}}">
           <img ng-src="{{shop.locationimg}}" alt="Logo">
-          <h4 class="title" id="thumbnail-back">{{ shop.locationname }}</h4>
-          <h4 id="thumbnail-back">Badge: {{ shop.badgename }}</h4>
+          <h3 class="title" id="thumbnail-back">{{ shop.locationname }}</h3>
+          <h4 style="color: #3F5765">Badge: {{ shop.badgename }}</h4>
         </a>
       </div>
     </div>
