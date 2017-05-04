@@ -1,6 +1,6 @@
 <!-- HEADER FOR UPLOAD PG -->
 <div class="container">
-    <h2 class="How-to-play-header"><span>COUPON</span></h2>
+  <h2 class="How-to-play-header"><span>COUPON</span></h2>
 </div>
 
 <div class="row">
@@ -8,7 +8,7 @@
     <div class="container">
       <div class="caption text-center">
         <form>
-                    <div class="form-group">
+          <div class="form-group">
             <label for="badge" style="color: white; font-size: 1.5em;">Objective Name</label>
             <input type="text" class="form-control" id="badge" placeholder="{{eat.obj_objname}}" value="{{eat.badgename}}">
           </div>
@@ -16,7 +16,7 @@
           <!--<p>Objectvie Name: <select ng-model="post.categoryid" id="cat-list" >
                 <option ng-repeat="cat in cats" value="{{cat.id}}">{{ cat.name }}</option>
                     </select></p>-->
-          
+
           <div class="form-group">
             <label for="coupon" style="color: white; font-size: 1.5em;">Enter Code</label>
             <input type="text" class="form-control" id="coupon" ng-model="code1">
@@ -26,8 +26,20 @@
           </div>
           <button type="submit" id="button-contact" class="btn btn-default" ng-click="enterCode()">SUBMIT CODE</button>
         </form>
-        <p>{{result}}</p>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="container">
+      <div class="caption text-center">
+        <img class="thumbs-up"  ng-hide="results"  src="images/icon_badge-fail.png"  alt="herschel">
+          <img class="thumbs-up"  ng-show="results"  src="images/icon_badge-success.png"  alt="herschel">
+            <h3 class="team-name">{{result}}</h3>
+      </div>
+
     </div>
   </div>
 </div>
